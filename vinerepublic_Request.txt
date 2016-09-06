@@ -1,0 +1,11 @@
+GET http://www.vinerepublic.com/quick_search?term=Malbec HTTP/1.1
+Host: www.vinerepublic.com
+Connection: keep-alive
+Accept: application/json, text/javascript, */*; q=0.01
+X-Requested-With: XMLHttpRequest
+User-Agent: Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/52.0.2743.116 Safari/537.36
+Referer: http://www.vinerepublic.com/results
+Accept-Encoding: gzip, deflate, sdch
+Accept-Language: en-US,en;q=0.8
+Cookie: MV_SESSION_ID=8Xwxrdr7:nobody; fx_referrer=; fx_document_title=La%20Scolca%20Gavi%20di%20Gavi%20Black%20Label%202011%20-%20Vine%20Republic; fx_uuid=8032df5f-c9e2-4993-9b65-70a3fac10ba0; __atuvc=5%7C36; __atuvs=57cedbf1696f42c8003; fx_count=19; _ga=GA1.2.1520241581.1473172403
+

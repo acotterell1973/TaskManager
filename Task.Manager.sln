@@ -8,6 +8,9 @@ EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{A4F4E670-D845-4EC1-8D90-99AB244ABA18}"
 	ProjectSection(SolutionItems) = preProject
 		global.json = global.json
+		Notes.txt = Notes.txt
+		vinerepublic_Request.txt = vinerepublic_Request.txt
+		vinerepublic_Response.txt = vinerepublic_Response.txt
 	EndProjectSection
 EndProject
 Project("{8BB2217D-0F2D-49D1-97BC-3654ED321F3B}") = "Task.Manager", "src\Task.Manager\Task.Manager.xproj", "{963A0CBB-7920-42D8-B369-D3D767040AFF}"
