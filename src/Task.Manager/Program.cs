@@ -31,8 +31,10 @@ namespace Task.Manager
         //    private static Startup _startup;
         public static void Main(string[] args)
         {
-			var digitEyes = new DigitEyes();
-	        digitEyes.Run();
+			var wineMadeEasy = new WineMadeEasyCatalog();
+	        wineMadeEasy.Run();
+			//var digitEyes = new DigitEyes();
+	        //digitEyes.Run();
 	        //   var upcCatalog = new Task.UpcDb.Tasks.Catalog();
 	        //  upcCatalog.Run();
 

@@ -80,8 +80,6 @@ namespace Task.UpcDb.Tasks
             }
 
             return false;
-
-
         }
 
         #region Helpers

@@ -9,6 +9,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 	ProjectSection(SolutionItems) = preProject
 		global.json = global.json
 		Notes.txt = Notes.txt
+		upc.csv = upc.csv
 		vinerepublic_Request.txt = vinerepublic_Request.txt
 		vinerepublic_Response.txt = vinerepublic_Response.txt
 		WineMadeEasy_Request.txt = WineMadeEasy_Request.txt
