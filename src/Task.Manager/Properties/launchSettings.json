@@ -1,0 +1,8 @@
+{
+  "profiles": {
+    "Task.Manager": {
+      "commandName": "Project",
+      "commandLineArgs": "/list"
+    }
+  }
+}

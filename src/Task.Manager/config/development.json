@@ -1,0 +1,13 @@
+﻿{
+  "ApplicationInsights": {
+    "InstrumentationKey": "9647cf99-28b9-4d12-b962-b210dfcb0b94"
+  },
+  "queueConnectionString": "DefaultEndpointsProtocol=https;AccountName=asap;AccountKey=IUAGd76l/6kQwVhIEe08V5KOrfoAdcJCYpypiDRXK3L5oef3IaXJPIHSV3pxZn9lD+LQr6Vk1XqQ5vjE9jHgGA==",
+  "taskLib": "task.upstracking.dll, task.upcdb.dll",
+  "interfaceType": "IScheduledTask",
+  "externalAssemblyPath": "",
+  "TaskManifest": [
+    "Task.UPCDB"
+  ]
+
+}
