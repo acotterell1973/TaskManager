@@ -1,0 +1,1822 @@
+HTTP/1.1 200 OK
+Date: Tue, 06 Sep 2016 15:51:19 GMT
+Content-Type: text/html; charset=UTF-8
+Connection: keep-alive
+Vary: Accept-Encoding
+Expires: Thu, 19 Nov 1981 08:52:00 GMT
+Cache-Control: no-store, no-cache, must-revalidate, post-check=0, pre-check=0
+Pragma: no-cache
+Set-Cookie: frontend=qs7mmqcti5ghu5k8vct3v6sq42; expires=Tue, 06-Sep-2016 16:51:19 GMT; path=/; domain=www.winemadeeasy.com; httponly
+X-XSS-Protection: 1; mode=block
+X-Content-Type-Options: nosniff
+Server: cloudflare-nginx
+CF-RAY: 2de314e743ae5326-MIA
+Content-Length: 90597
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+<meta property="og:title" content="Search results for: 'Luca Malbec'"/>
+<meta property="og:type" content="website"/>
+<meta property="og:url" content="http://www.winemadeeasy.com:8080/catalogsearch/result/?q=Luca Malbec"/>
+<meta property="og:image" content=""/>
+<meta property="og:description" content="Wine shopping, for collectors and casual sippers alike, has never been easier with rare wines and top vintages just clicks away at WineMadeEasy.com"/>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<title>Search results for: 'Luca Malbec'</title>
+<script type="text/javascript">
+//<![CDATA[
+try{if (!window.CloudFlare) {var CloudFlare=[{verbose:0,p:1473140561,byc:0,owlid:"cf",bag2:1,mirage2:0,oracle:0,paths:{cloudflare:"/cdn-cgi/nexp/dok3v=1613a3a185/"},atok:"24898e3a24f460facee38a4a221c8bfa",petok:"009ca3b200370f0eba21bd3cc635784c28c7d12b-1473177079-1800",zone:"winemadeeasy.com",rocket:"0",apps:{"gamasec":{"domain_id":"15118903","account_id":"96133","seal_badge":"Right"}},sha2test:0}];!function(a,b){a=document.createElement("script"),b=document.getElementsByTagName("script")[0],a.async=!0,a.src="//ajax.cloudflare.com/cdn-cgi/nexp/dok3v=0489c402f5/cloudflare.min.js",b.parentNode.insertBefore(a,b)}()}}catch(e){};
+//]]>
+</script>
+<link href='https://fonts.googleapis.com/css?family=Noto+Sans:400,700,400italic|Montserrat:400,700|Oswald:400,300' rel='stylesheet' type='text/css'>
+<meta name="description" content="Wine shopping, for collectors and casual sippers alike, has never been easier with rare wines and top vintages just clicks away at WineMadeEasy.com"/>
+<meta name="keywords" content="WineMadeEasy.com, Premier Liquor, premier liquor orchard park, ny, Prestige Wine &amp; Spirits, Wine Made Easy, Wine Deals, wine, deals, The Premier Group, wine made easy, wine retail, Orchard Park, Buffalo, NY, New York, western new york"/>
+<meta name="robots" content="INDEX,FOLLOW"/>
+<link rel="icon" href="http://www.winemadeeasy.com/media/favicon/default/wine-glass-ico.ico" type="image/x-icon"/>
+<link rel="shortcut icon" href="http://www.winemadeeasy.com/media/favicon/default/wine-glass-ico.ico" type="image/x-icon"/>
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.6/jquery.min.js"></script>
+<!--[if lt IE 7]>
+<script type="text/javascript">
+//<![CDATA[
+    var BLANK_URL = 'http://www.winemadeeasy.com/js/blank.html';
+    var BLANK_IMG = 'http://www.winemadeeasy.com/js/spacer.gif';
+//]]>
+</script>
+<![endif]-->
+<link rel="stylesheet" type="text/css" href="http://www.winemadeeasy.com/media/css/c197d17341ea99028ff6270cedbfc96e.css" media="all"/>
+<link rel="stylesheet" type="text/css" href="http://www.winemadeeasy.com/media/css/5e003c3cb71a79b2bf3a95ebb5bfdf25.css" media="print"/>
+<script type="text/javascript" src="http://www.winemadeeasy.com/media/js/94b3375bfaf117f66fa96bf693c5ce0d.js"></script>
+<!--[if lt IE 8]>
+<link rel="stylesheet" type="text/css" href="http://www.winemadeeasy.com/media/css/dc9b5bd2fc92a9f4c01ed5e96f71fecc.css" media="all" />
+<![endif]-->
+<!--[if lt IE 7]>
+<script type="text/javascript" src="http://www.winemadeeasy.com/media/js/50e122c76c087998f3d770f8250480f0.js"></script>
+<![endif]-->
+<script type="text/javascript">
+//<![CDATA[
+Mage.Cookies.path     = '/';
+Mage.Cookies.domain   = '.www.winemadeeasy.com';
+//]]>
+</script>
+<script type="text/javascript">
+//<![CDATA[
+optionalZipCountries = [];
+//]]>
+</script>
+<script type="text/javascript">var Translator = new Translate({"Please use only letters (a-z or A-Z), numbers (0-9) or underscore(_) in this field, first character should be a letter.":"Please use only letters (a-z or A-Z), numbers (0-9) or underscores (_) in this field, first character must be a letter."});</script><script type="text/javascript" src="http://www.winemadeeasy.com/skin/frontend/premier/default/js/modernizr-2.0.6.min.js"></script>
+<script type="text/javascript" src="http://www.winemadeeasy.com/skin/frontend/premier/default/js/jscript.js"></script>
+ 
+ 
+<script>
+!function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;
+n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;
+t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,
+document,'script','//connect.facebook.net/en_US/fbevents.js');
+
+fbq('init', '978735038857858');
+fbq('track', 'PageView');
+</script>
+<noscript><img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=978735038857858&ev=PageView&noscript=1"/></noscript>
+ 
+<script language="javascript" type="text/javascript" src="https://tracking.godatafeed.com/gdf_click.js"></script></head>
+<body class=" catalogsearch-result-index" itemscope itemtype="http://schema.org/WebPage">
+ 
+ 
+ 
+ 
+<script type="text/javascript">
+//<![CDATA[
+    (function() {
+        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(ga);
+    })();
+
+    var _gaq = _gaq || [];
+
+_gaq.push(['_setAccount', 'UA-3956002-7']);
+_gaq.push(['_trackPageview']);
+
+
+//]]>
+</script>
+ <div id="canvas">
+<span class="t"></span>
+<noscript>
+<div class="noscript">
+<div class="noscript-inner">
+<p><strong>JavaScript seem to be disabled in your browser.</strong></p>
+<p>You must have JavaScript enabled in your browser to utilize the functionality of this website.</p>
+</div>
+</div>
+</noscript>
+<div class="page" id="site">
+ 
+ 
+<div id="branding" itemscope itemtype="http://schema.org/WPHeader">
+<div id="hgroup">
+<h2 class="logo"><strong>WineMadeEasy.com</strong><a href="http://www.winemadeeasy.com/" title="WineMadeEasy.com" class="logo"><img src="http://www.winemadeeasy.com/skin/frontend/premier/winemadeeasy/img/logo.png" alt="WineMadeEasy.com"/></a></h2>
+<h2 class="m">A member of the Premier Group </h2>
+</div>
+<div id="top-bar">
+<h3><span class="wine-deals">Premier</span><span class="wine-made-easy">Prestige</span><span class="wine-transit">Premium</span> Wine &amp; Spirits - A member store of the Premier Group<span class="r"></span></h3>
+</div>
+<div id="nav-account">
+<h2 class="m">My Account</h2>
+<ul class="links">
+<li class="first"><a href="https://www.winemadeeasy.com/sales/order/guest/" title="Order Status">Order Status</a></li>
+<li><a href="https://www.winemadeeasy.com/customer/account/login/referer/aHR0cDovL3d3dy53aW5lbWFkZWVhc3kuY29tL2NhdGFsb2dzZWFyY2gvcmVzdWx0L2luZGV4Lz9fX19TSUQ9VSZxPUx1Y2ErTWFsYmVj/" title="Log In">Login</a></li>
+<li class=" last"><a href="/customer/account/create" title="Create An Account">Create An Account</a></li>
+</ul>
+</div>
+<div id="quick-links">
+<ul>
+<li class="help first"><a href="/help/"><span>&nbsp;</span>Help/FAQ</a></li>
+<li class="shipping"><a href="/shipping-policy/"><span>&nbsp;</span>Shipping</a></li>
+<li class="chat"><a href="/live-chat/"><span>&nbsp;</span>Live Chat</a></li>
+<li class="account"><a href="/customer/account"><span>&nbsp;</span>My Account</a></li>
+<li class="myPremier last"><a href="/purchases/"><span>&nbsp;</span>myPremier</a></li>
+</ul> <div class="clr"></div>
+</div>
+<div class="clr"></div>
+ 
+<div class="m np">
+<h2>Page Access Navigation</h2>
+<ul>
+<li><a href="#main" accesskey="s">Jump to page Content</a></li>
+<li><a href="#nav-primary" accesskey="n">Jump to primary navigation links</a></li>
+<li><a href="#nav-primary" accesskey="4">Jump to search</a></li>
+<li><a href="#access-keys-legend" accesskey="0">Access Keys Legend</a></li>
+</ul>
+</div>
+ 
+</div>
+ 
+ 
+ 
+<div class="np" id="main-nav">
+<h2 class="m">Site Navigation</h2>
+<div id="nav-primary">
+<span class="r"></span>
+<h2 class="m">Primary Site Navigation</h2>
+<ul>
+<li class="level0 nav-1 level-top first parent">
+<a href="http://www.winemadeeasy.com/wine.html" class="level-top">
+<span>Wines</span>
+<span class="l"></span><span class="r"></span></a>
+<ul class="level0"><span class="r"></span>
+<li class="level1 nav-1-1 first parent topThree">
+<a href="http://www.winemadeeasy.com/wine/by-category.html">
+<span>By Category</span>
+<span class="l"></span><span class="r"></span></a>
+<ul class="level1"><span class="r"></span>
+<h2>By Category</h2>
+<h3>Additional Categories</h3>
+<li class="level2 nav-1-1-1 first topThree">
+<a href="http://www.winemadeeasy.com/wine/by-category/red-table-wine.html">
+<img src="/media/catalog/category/red-wine.jpg" alt="Red Wine"/>
+<span>Red Wine</span>
+<span class="l"></span><span class="r"></span></a>
+</li><li class="level2 nav-1-1-2 topThree">
+<a href="http://www.winemadeeasy.com/wine/by-category/white-table-wine.html">
+<img src="/media/catalog/category/white-wine.jpg" alt="White Wine"/>
+<span>White Wine</span>
+<span class="l"></span><span class="r"></span></a>
+</li><li class="level2 nav-1-1-3 topThree">
+<a href="http://www.winemadeeasy.com/wine/by-category/blush-wines.html">
+<img src="/media/catalog/category/rose-wine.jpg" alt="Rosé/Blush Wine"/>
+<span>Rosé/Blush Wine</span>
+<span class="l"></span><span class="r"></span></a>
+</li><li class="level2 nav-1-1-4">
+<a href="http://www.winemadeeasy.com/wine/by-category/sparkling-wines.html">
+<span>Sparkling Wine</span>
+<span class="l"></span><span class="r"></span></a>
+</li><li class="level2 nav-1-1-5">
+<a href="http://www.winemadeeasy.com/wine/by-category/ports.html">
+<span>Port</span>
+<span class="l"></span><span class="r"></span></a>
+</li><li class="level2 nav-1-1-6">
+<a href="http://www.winemadeeasy.com/wine/by-category/sherry.html">
+<span>Sherry</span>
+<span class="l"></span><span class="r"></span></a>
+</li><li class="level2 nav-1-1-7">
+<a href="http://www.winemadeeasy.com/wine/by-category/fruit-wine.html">
+<span>Fruit/Other Wine</span>
+<span class="l"></span><span class="r"></span></a>
+</li><li class="level2 nav-1-1-8 last">
+<a href="http://www.winemadeeasy.com/wine/by-category/sake.html">
+<span>Saké</span>
+<span class="l"></span><span class="r"></span></a>
+</li>
+<a class="arrow-link" href="http://www.winemadeeasy.com/wine/by-category.html">View all in this category<span class="r"></span></a>
+</ul>
+</li><li class="level1 nav-1-2 parent topThree">
+<a href="http://www.winemadeeasy.com/wine/by-grape.html">
+<span>By Grape</span>
+<span class="l"></span><span class="r"></span></a>
+<ul class="level1"><span class="r"></span>
+<h2>By Grape</h2>
+<h3>Additional Categories</h3>
+<li class="level2 nav-1-2-9 first topThree">
+<a href="http://www.winemadeeasy.com/wine/by-grape/cabernet-red-bordeaux.html">
+<img src="/media/catalog/category/grapes-cabernet-new.jpg" alt="Cabernet/Red Bordeaux"/>
+<span>Cabernet/Red Bordeaux</span>
+<span class="l"></span><span class="r"></span></a>
+</li><li class="level2 nav-1-2-10 topThree">
+<a href="http://www.winemadeeasy.com/wine/by-grape/chardonnay-wt-burgundy.html">
+<img src="/media/catalog/category/grapes-chardonnay.jpg" alt="Chardonnay/White Burgundy"/>
+<span>Chardonnay/White Burgundy</span>
+<span class="l"></span><span class="r"></span></a>
+</li><li class="level2 nav-1-2-11 topThree">
+<a href="http://www.winemadeeasy.com/wine/by-grape/merlot.html">
+<img src="/media/catalog/category/grapes-merlot.jpg" alt="Merlot"/>
+<span>Merlot</span>
+<span class="l"></span><span class="r"></span></a>
+</li><li class="level2 nav-1-2-12">
+<a href="http://www.winemadeeasy.com/wine/by-grape/gewurztraminer.html">
+<img src="/media/catalog/category/grapes-gewurtztraminer.jpg" alt="Gewurztraminer"/>
+<span>Gewurztraminer</span>
+<span class="l"></span><span class="r"></span></a>
+</li><li class="level2 nav-1-2-13">
+<a href="http://www.winemadeeasy.com/wine/by-grape/grenache-rhone-blends.html">
+<img src="/media/catalog/category/grapes-grenache.jpg" alt="Grenache/Rhone Blends"/>
+<span>Grenache/Rhone Blends</span>
+<span class="l"></span><span class="r"></span></a>
+</li><li class="level2 nav-1-2-14">
+<a href="http://www.winemadeeasy.com/wine/by-grape/malbec.html">
+<img src="/media/catalog/category/grapes-malbec.jpg" alt="Malbec"/>
+<span>Malbec</span>
+<span class="l"></span><span class="r"></span></a>
+</li><li class="level2 nav-1-2-15">
+<a href="http://www.winemadeeasy.com/wine/by-grape/moscato.html">
+<img src="/media/catalog/category/grapes-moscato.jpg" alt="Moscato"/>
+<span>Moscato</span>
+<span class="l"></span><span class="r"></span></a>
+</li><li class="level2 nav-1-2-16">
+<a href="http://www.winemadeeasy.com/wine/by-grape/nebbiolo-barolo.html">
+<img src="/media/catalog/category/grapes-nebbiolo.jpg" alt="Nebbiolo/Barolo"/>
+<span>Nebbiolo/Barolo</span>
+<span class="l"></span><span class="r"></span></a>
+</li><li class="level2 nav-1-2-17">
+<a href="http://www.winemadeeasy.com/wine/by-grape/pinot-grigio-gris.html">
+<img src="/media/catalog/category/grapes-pinot-grigio.jpg" alt="Pinot Grigio/Gris"/>
+<span>Pinot Grigio/Gris</span>
+<span class="l"></span><span class="r"></span></a>
+</li><li class="level2 nav-1-2-18">
+<a href="http://www.winemadeeasy.com/wine/by-grape/pinot-noir.html">
+<img src="/media/catalog/category/grapes-pinot-noir.jpg" alt="Pinot Noir/Red Burgundy"/>
+<span>Pinot Noir/Red Burgundy</span>
+<span class="l"></span><span class="r"></span></a>
+</li><li class="level2 nav-1-2-19">
+<a href="http://www.winemadeeasy.com/wine/by-grape/riesling.html">
+<img src="/media/catalog/category/grapes-riesling.jpg" alt="Riesling"/>
+<span>Riesling</span>
+<span class="l"></span><span class="r"></span></a>
+</li><li class="level2 nav-1-2-20">
+<a href="http://www.winemadeeasy.com/wine/by-grape/sangiovese-chianti.html">
+<img src="/media/catalog/category/grapes-sangiovese.jpg" alt="Sangiovese/Chianti"/>
+<span>Sangiovese/Chianti</span>
+<span class="l"></span><span class="r"></span></a>
+</li><li class="level2 nav-1-2-21">
+<a href="http://www.winemadeeasy.com/wine/by-grape/sauvignon-blanc-wt-bordeaux.html">
+<img src="/media/catalog/category/grapes-sauvignon-blanc.jpg" alt="Sauvignon Blanc/Wt. Bordeaux"/>
+<span>Sauvignon Blanc/Wt. Bordeaux</span>
+<span class="l"></span><span class="r"></span></a>
+</li><li class="level2 nav-1-2-22">
+<a href="http://www.winemadeeasy.com/wine/by-grape/shiraz-syrah.html">
+<img src="/media/catalog/category/grapes-shiraz.jpg" alt="Shiraz/Syrah"/>
+<span>Shiraz/Syrah</span>
+<span class="l"></span><span class="r"></span></a>
+</li><li class="level2 nav-1-2-23">
+<a href="http://www.winemadeeasy.com/wine/by-grape/tempranillo.html">
+<img src="/media/catalog/category/grapes-tempranillo.jpg" alt="Tempranillo"/>
+<span>Tempranillo</span>
+<span class="l"></span><span class="r"></span></a>
+</li><li class="level2 nav-1-2-24 last">
+<a href="http://www.winemadeeasy.com/wine/by-grape/zinfandel.html">
+<img src="/media/catalog/category/grapes-zinfandel.jpg" alt="Zinfandel"/>
+<span>Zinfandel</span>
+<span class="l"></span><span class="r"></span></a>
+</li>
+<a class="arrow-link" href="http://www.winemadeeasy.com/wine/by-grape.html">View all in this category<span class="r"></span></a>
+</ul>
+</li><li class="level1 nav-1-3 parent topThree">
+<a href="http://www.winemadeeasy.com/wine/by-country.html">
+<span>By Country</span>
+<span class="l"></span><span class="r"></span></a>
+<ul class="level1"><span class="r"></span>
+<h2>By Country</h2>
+<h3>Additional Categories</h3>
+<li class="level2 nav-1-3-25 first topThree">
+<a href="http://www.winemadeeasy.com/wine/by-country/united-states.html">
+<img src="/media/catalog/category/United-States_1.png" alt="United States"/>
+<span>United States</span>
+<span class="l"></span><span class="r"></span></a>
+</li><li class="level2 nav-1-3-26 topThree">
+<a href="http://www.winemadeeasy.com/wine/by-country/france.html">
+<img src="/media/catalog/category/France_1.png" alt="France"/>
+<span>France</span>
+<span class="l"></span><span class="r"></span></a>
+</li><li class="level2 nav-1-3-27 topThree">
+<a href="http://www.winemadeeasy.com/wine/by-country/italy.html">
+<img src="/media/catalog/category/Italy_1.png" alt="Italy"/>
+<span>Italy</span>
+<span class="l"></span><span class="r"></span></a>
+</li><li class="level2 nav-1-3-28">
+<a href="http://www.winemadeeasy.com/wine/by-country/argentina.html">
+<span>Argentina</span>
+<span class="l"></span><span class="r"></span></a>
+</li><li class="level2 nav-1-3-29">
+<a href="http://www.winemadeeasy.com/wine/by-country/australia.html">
+<span>Australia</span>
+<span class="l"></span><span class="r"></span></a>
+</li><li class="level2 nav-1-3-30">
+<a href="http://www.winemadeeasy.com/wine/by-country/chile.html">
+<span>Chile</span>
+<span class="l"></span><span class="r"></span></a>
+</li><li class="level2 nav-1-3-31">
+<a href="http://www.winemadeeasy.com/wine/by-country/germany.html">
+<span>Germany</span>
+<span class="l"></span><span class="r"></span></a>
+</li><li class="level2 nav-1-3-32">
+<a href="http://www.winemadeeasy.com/wine/by-country/portugal.html">
+<span>Portugal</span>
+<span class="l"></span><span class="r"></span></a>
+</li><li class="level2 nav-1-3-33">
+<a href="http://www.winemadeeasy.com/wine/by-country/spain.html">
+<span>Spain</span>
+<span class="l"></span><span class="r"></span></a>
+</li><li class="level2 nav-1-3-34 last">
+<a href="http://www.winemadeeasy.com/wine/by-country/new-zealand.html">
+<span>New Zealand</span>
+<span class="l"></span><span class="r"></span></a>
+</li>
+<a class="arrow-link" href="http://www.winemadeeasy.com/wine/by-country.html">View all in this category<span class="r"></span></a>
+</ul>
+</li><li class="level1 nav-1-4 parent">
+<a href="http://www.winemadeeasy.com/wine/by-region.html">
+<span>By Region</span>
+<span class="l"></span><span class="r"></span></a>
+<ul class="level1"><span class="r"></span>
+<h2>By Region</h2>
+<h3>Additional Categories</h3>
+<li class="level2 nav-1-4-35 first topThree">
+<a href="http://www.winemadeeasy.com/wine/by-region/california.html">
+<img src="/media/catalog/category/california.png" alt="California"/>
+<span>California</span>
+<span class="l"></span><span class="r"></span></a>
+</li><li class="level2 nav-1-4-36 topThree">
+<a href="http://www.winemadeeasy.com/wine/by-region/new-york.html">
+<img src="/media/catalog/category/new-york.png" alt="New York"/>
+<span>New York</span>
+<span class="l"></span><span class="r"></span></a>
+</li><li class="level2 nav-1-4-37 topThree">
+<a href="http://www.winemadeeasy.com/wine/by-region/bordeaux.html">
+<img src="/media/catalog/category/bordeaux-bubble-chateau_2.png" alt="Bordeaux"/>
+<span>Bordeaux</span>
+<span class="l"></span><span class="r"></span></a>
+</li><li class="level2 nav-1-4-38">
+<a href="http://www.winemadeeasy.com/wine/by-region/napa-valley.html">
+<span>Napa Valley</span>
+<span class="l"></span><span class="r"></span></a>
+</li><li class="level2 nav-1-4-39">
+<a href="http://www.winemadeeasy.com/wine/by-region/sonoma-county.html">
+<span>Sonoma County</span>
+<span class="l"></span><span class="r"></span></a>
+</li><li class="level2 nav-1-4-40">
+<a href="http://www.winemadeeasy.com/wine/by-region/finger-lakes.html">
+<span>Finger Lakes</span>
+<span class="l"></span><span class="r"></span></a>
+</li><li class="level2 nav-1-4-41">
+<a href="http://www.winemadeeasy.com/wine/by-region/burgundy.html">
+<span>Burgundy</span>
+<span class="l"></span><span class="r"></span></a>
+</li><li class="level2 nav-1-4-42">
+<a href="http://www.winemadeeasy.com/wine/by-region/beaujolais.html">
+<span>Beaujolais</span>
+<span class="l"></span><span class="r"></span></a>
+</li><li class="level2 nav-1-4-43">
+<a href="http://www.winemadeeasy.com/wine/by-region/rhone.html">
+<span>Rhone</span>
+<span class="l"></span><span class="r"></span></a>
+</li><li class="level2 nav-1-4-44">
+<a href="http://www.winemadeeasy.com/wine/by-region/champagne.html">
+<span>Champagne</span>
+<span class="l"></span><span class="r"></span></a>
+</li><li class="level2 nav-1-4-45">
+<a href="http://www.winemadeeasy.com/wine/by-region/tuscany.html">
+<span>Tuscany</span>
+<span class="l"></span><span class="r"></span></a>
+</li><li class="level2 nav-1-4-46">
+<a href="http://www.winemadeeasy.com/wine/by-region/piedmont.html">
+<span>Piedmont</span>
+<span class="l"></span><span class="r"></span></a>
+</li><li class="level2 nav-1-4-47">
+<a href="http://www.winemadeeasy.com/wine/by-region/barossa.html">
+<span>Barossa</span>
+<span class="l"></span><span class="r"></span></a>
+</li><li class="level2 nav-1-4-48">
+<a href="http://www.winemadeeasy.com/wine/by-region/rioja.html">
+<span>Rioja</span>
+<span class="l"></span><span class="r"></span></a>
+</li><li class="level2 nav-1-4-49 last">
+<a href="http://www.winemadeeasy.com/wine/by-region/mosel.html">
+<span>Mosel</span>
+<span class="l"></span><span class="r"></span></a>
+</li>
+<a class="arrow-link" href="http://www.winemadeeasy.com/wine/by-region.html">View all in this category<span class="r"></span></a>
+</ul>
+</li><li class="level1 nav-1-5 parent">
+<a href="http://www.winemadeeasy.com/wine/by-price.html">
+<span>By Price</span>
+<span class="l"></span><span class="r"></span></a>
+<ul class="level1"><span class="r"></span>
+<h2>By Price</h2>
+<li class="level2 nav-1-5-50 first topThree">
+<a href="http://www.winemadeeasy.com/wine/by-price/wines-under-10.html">
+<span>Wines Under $10</span>
+<span class="l"></span><span class="r"></span></a>
+</li><li class="level2 nav-1-5-51 last topThree">
+<a href="http://www.winemadeeasy.com/wine/by-price/wines-between-50-100.html">
+<span>Wines Between $50-$100</span>
+<span class="l"></span><span class="r"></span></a>
+</li>
+<a class="arrow-link" href="http://www.winemadeeasy.com/wine/by-price.html">View all in this category<span class="r"></span></a>
+</ul>
+</li><li class="level1 nav-1-6">
+<a href="http://www.winemadeeasy.com/wine/new-arrivals.html">
+<span>New Arrivals</span>
+<span class="l"></span><span class="r"></span></a>
+</li><li class="level1 nav-1-7 last parent">
+<a href="http://www.winemadeeasy.com/wine/premier-picks.html">
+<span>Premier Picks</span>
+<span class="l"></span><span class="r"></span></a>
+<ul class="level1"><span class="r"></span>
+<h2>Premier Picks</h2>
+<li class="level2 nav-1-7-52 first topThree">
+<a href="http://www.winemadeeasy.com/wine/premier-picks/gold-picks.html">
+<img src="/media/catalog/category/premier-gold.png" alt="Gold Picks"/>
+<span>Gold Picks</span>
+<span class="l"></span><span class="r"></span></a>
+</li><li class="level2 nav-1-7-53 last topThree">
+<a href="http://www.winemadeeasy.com/wine/premier-picks/platinum-picks.html">
+<img src="/media/catalog/category/premier-platinum_1.png" alt="Platinum Picks"/>
+<span>Platinum Picks</span>
+<span class="l"></span><span class="r"></span></a>
+</li>
+<a class="arrow-link" href="http://www.winemadeeasy.com/wine/premier-picks.html">View all in this category<span class="r"></span></a>
+</ul>
+</li>
+<a class="arrow-link" href="http://www.winemadeeasy.com/wine.html">View all in this category<span class="r"></span></a>
+</ul>
+</li><li class="level0 nav-2 level-top parent">
+<a href="http://www.winemadeeasy.com/spirits.html" class="level-top">
+<span>Spirits</span>
+<span class="l"></span><span class="r"></span></a>
+<ul class="level0"><span class="r"></span>
+<li class="level1 nav-2-1 first topThree">
+<a href="http://www.winemadeeasy.com/spirits/bourbon.html">
+<img src="/media/catalog/category/spirit-bourbon-whiskey_1.jpg" alt="Bourbon"/>
+<span>Bourbon</span>
+<span class="l"></span><span class="r"></span></a>
+</li><li class="level1 nav-2-2 parent topThree">
+<a href="http://www.winemadeeasy.com/spirits/scotch.html">
+<img src="/media/catalog/category/spirit-scotch-single-malt_1_1.jpg" alt="Scotch"/>
+<span>Scotch</span>
+<span class="l"></span><span class="r"></span></a>
+<ul class="level1"><span class="r"></span>
+<h2>Scotch</h2>
+<li class="level2 nav-2-2-1 first topThree">
+<a href="http://www.winemadeeasy.com/spirits/scotch/single-malts.html">
+<span>Single Malt</span>
+<span class="l"></span><span class="r"></span></a>
+</li><li class="level2 nav-2-2-2 last topThree">
+<a href="http://www.winemadeeasy.com/spirits/scotch/blended.html">
+<span>Blended</span>
+<span class="l"></span><span class="r"></span></a>
+</li>
+<a class="arrow-link" href="http://www.winemadeeasy.com/spirits/scotch.html">View all in this category<span class="r"></span></a>
+</ul>
+</li><li class="level1 nav-2-3 topThree">
+<a href="http://www.winemadeeasy.com/spirits/vodka.html">
+<img src="/media/catalog/category/spirit-vodka_1.jpg" alt="Vodka"/>
+<span>Vodka</span>
+<span class="l"></span><span class="r"></span></a>
+</li><li class="level1 nav-2-4">
+<a href="http://www.winemadeeasy.com/spirits/brandy-cognac.html">
+<img src="/media/catalog/category/spirit-cognac-brandy_1.jpg" alt="Brandy/Cognac"/>
+<span>Brandy/Cognac</span>
+<span class="l"></span><span class="r"></span></a>
+</li><li class="level1 nav-2-5">
+<a href="http://www.winemadeeasy.com/spirits/blends.html">
+<img src="/media/catalog/category/spirit-scotch-blended_1_1.jpg" alt="Blends"/>
+<span>Blends</span>
+<span class="l"></span><span class="r"></span></a>
+</li><li class="level1 nav-2-6">
+<a href="http://www.winemadeeasy.com/spirits/canadians.html">
+<img src="/media/catalog/category/spirit-Canadian-whiskey_1_1.jpg" alt="Canadians"/>
+<span>Canadians</span>
+<span class="l"></span><span class="r"></span></a>
+</li><li class="level1 nav-2-7">
+<a href="http://www.winemadeeasy.com/spirits/irish-whiskey.html">
+<img src="/media/catalog/category/spirit-irish-whiskey.jpg" alt="Irish Whiskey"/>
+<span>Irish Whiskey</span>
+<span class="l"></span><span class="r"></span></a>
+</li><li class="level1 nav-2-8">
+<a href="http://www.winemadeeasy.com/spirits/gin.html">
+<img src="/media/catalog/category/spirit-gin.jpg" alt="Gin"/>
+<span>Gin</span>
+<span class="l"></span><span class="r"></span></a>
+</li><li class="level1 nav-2-9">
+<a href="http://www.winemadeeasy.com/spirits/rum.html">
+<img src="/media/catalog/category/spirit-rum.jpg" alt="Rum"/>
+<span>Rum</span>
+<span class="l"></span><span class="r"></span></a>
+</li><li class="level1 nav-2-10">
+<a href="http://www.winemadeeasy.com/spirits/tequila.html">
+<img src="/media/catalog/category/spirit-tequila_1.jpg" alt="Tequila"/>
+<span>Tequila</span>
+<span class="l"></span><span class="r"></span></a>
+</li><li class="level1 nav-2-11">
+<a href="http://www.winemadeeasy.com/spirits/cordials-liqueurs.html">
+<span>Cordials &amp; Liqueurs</span>
+<span class="l"></span><span class="r"></span></a>
+</li><li class="level1 nav-2-12">
+<a href="http://www.winemadeeasy.com/spirits/cocktails.html">
+<span>Cocktails</span>
+<span class="l"></span><span class="r"></span></a>
+</li><li class="level1 nav-2-13 last">
+<a href="http://www.winemadeeasy.com/spirits/craft-spirits.html">
+<span>Craft Spirits</span>
+<span class="l"></span><span class="r"></span></a>
+</li>
+<a class="arrow-link" href="http://www.winemadeeasy.com/spirits.html">View all in this category<span class="r"></span></a>
+</ul>
+</li><li class="level0 nav-3 level-top parent">
+<a href="http://www.winemadeeasy.com/sale.html" class="level-top">
+<span>Sale</span>
+<span class="l"></span><span class="r"></span></a>
+<ul class="level0"><span class="r"></span>
+<li class="level1 nav-3-1 first parent topThree">
+<a href="http://www.winemadeeasy.com/sale/current-ad.html">
+<img src="/media/catalog/category/weekly-ad-placeholder_1.jpg" alt="Current Ad"/>
+<span>Current Ad</span>
+<span class="l"></span><span class="r"></span></a>
+<ul class="level1"><span class="r"></span>
+<h2>Current Ad</h2>
+<li class="level2 nav-3-1-1 first topThree">
+<a href="http://www.winemadeeasy.com/sale/current-ad/weekly-wine-specials.html">
+<span>Weekly Wine Specials</span>
+<span class="l"></span><span class="r"></span></a>
+</li><li class="level2 nav-3-1-2 last topThree">
+<a href="http://www.winemadeeasy.com/sale/current-ad/weekly-spirit-specials.html">
+<span>Weekly Spirit Specials</span>
+<span class="l"></span><span class="r"></span></a>
+</li>
+<a class="arrow-link" href="http://www.winemadeeasy.com/sale/current-ad.html">View all in this category<span class="r"></span></a>
+</ul>
+</li><li class="level1 nav-3-2 topThree">
+<a href="http://www.winemadeeasy.com/sale/premier-card.html">
+<span>Premier Card Savings</span>
+<span class="l"></span><span class="r"></span></a>
+</li><li class="level1 nav-3-3 topThree">
+<a href="http://www.winemadeeasy.com/sale/dollar-sale.html">
+<span>Dollar Sale</span>
+<span class="l"></span><span class="r"></span></a>
+</li><li class="level1 nav-3-4">
+<a href="http://www.winemadeeasy.com/sale/catalog.html">
+<span>Catalog</span>
+<span class="l"></span><span class="r"></span></a>
+</li><li class="level1 nav-3-5 last parent">
+<a href="http://www.winemadeeasy.com/sale/free-shipping-offers.html">
+<span>FREE Shipping Offers</span>
+<span class="l"></span><span class="r"></span></a>
+<ul class="level1"><span class="r"></span>
+<h2>FREE Shipping Offers</h2>
+<li class="level2 nav-3-5-3 first topThree">
+<a href="http://www.winemadeeasy.com/sale/free-shipping-offers/free-shipping-when-you-buy-6-or-more.html">
+<span>FREE Shipping When You Buy 6 or More</span>
+<span class="l"></span><span class="r"></span></a>
+</li><li class="level2 nav-3-5-4 last topThree">
+<a href="http://www.winemadeeasy.com/sale/free-shipping-offers/free-shipping-when-you-buy-12-or-more.html">
+<span>FREE Shipping When You Buy 12 or More</span>
+<span class="l"></span><span class="r"></span></a>
+</li>
+<a class="arrow-link" href="http://www.winemadeeasy.com/sale/free-shipping-offers.html">View all in this category<span class="r"></span></a>
+</ul>
+</li>
+<a class="arrow-link" href="http://www.winemadeeasy.com/sale.html">View all in this category<span class="r"></span></a>
+</ul>
+</li><li class="level0 nav-4 level-top parent">
+<a href="http://www.winemadeeasy.com/staff-picks.html" class="level-top">
+<span>Staff Picks</span>
+<span class="l"></span><span class="r"></span></a>
+<ul class="level0"><span class="r"></span>
+<li class="level1 nav-4-1 first topThree">
+<a href="http://www.winemadeeasy.com/staff-picks/jeff-vignaux.html">
+<img src="/media/catalog/category/jeff-vignaux-small.jpg" alt="Jeff Vignaux"/>
+<span>Jeff Vignaux</span>
+<span class="l"></span><span class="r"></span></a>
+</li><li class="level1 nav-4-2 topThree">
+<a href="http://www.winemadeeasy.com/staff-picks/ed-draves.html">
+<img src="/media/catalog/category/ed-draves-small.jpg" alt="Ed Draves"/>
+<span>Ed Draves</span>
+<span class="l"></span><span class="r"></span></a>
+</li><li class="level1 nav-4-3 topThree">
+<a href="http://www.winemadeeasy.com/staff-picks/dan-updike.html">
+<img src="/media/catalog/category/dan-updike-small.jpg" alt="Dan Updike"/>
+<span>Dan Updike</span>
+<span class="l"></span><span class="r"></span></a>
+</li><li class="level1 nav-4-4">
+<a href="http://www.winemadeeasy.com/staff-picks/brett-welgoss.html">
+<img src="/media/catalog/category/brett-welgoss-small.jpg" alt="Brett Welgoss"/>
+<span>Brett Welgoss</span>
+<span class="l"></span><span class="r"></span></a>
+</li><li class="level1 nav-4-5">
+<a href="http://www.winemadeeasy.com/staff-picks/bill-logue.html">
+<img src="/media/catalog/category/bill-logue-small.jpg" alt="Bill Logue"/>
+<span>Bill Logue</span>
+<span class="l"></span><span class="r"></span></a>
+</li><li class="level1 nav-4-6">
+<a href="http://www.winemadeeasy.com/staff-picks/alan-herrmann.html">
+<img src="/media/catalog/category/alan_herrmann_small_1.jpg" alt="Alan Herrmann"/>
+<span>Alan Herrmann</span>
+<span class="l"></span><span class="r"></span></a>
+</li><li class="level1 nav-4-7">
+<a href="http://www.winemadeeasy.com/staff-picks/barkley.html">
+<img src="/media/catalog/category/barkley-small.jpg" alt="Barkley"/>
+<span>Barkley</span>
+<span class="l"></span><span class="r"></span></a>
+</li><li class="level1 nav-4-8 last">
+<a href="http://www.winemadeeasy.com/staff-picks/jennie-potopchuk.html">
+<img src="/media/catalog/category/jennie-potochuk-small.jpg" alt="Jennie Potopchuk"/>
+<span>Jennie Potopchuk</span>
+<span class="l"></span><span class="r"></span></a>
+</li>
+<a class="arrow-link" href="http://www.winemadeeasy.com/staff-picks.html">View all in this category<span class="r"></span></a>
+</ul>
+</li><li class="level0 nav-5 level-top parent">
+<a href="http://www.winemadeeasy.com/tastings.html" class="level-top">
+<span>Tastings/Classes</span>
+<span class="l"></span><span class="r"></span></a>
+<ul class="level0"><span class="r"></span>
+<li class="level1 nav-5-1 first topThree">
+<a href="http://www.winemadeeasy.com/tastings/calendar.html">
+<span>Calendar</span>
+<span class="l"></span><span class="r"></span></a>
+</li><li class="level1 nav-5-2 topThree">
+<a href="http://www.winemadeeasy.com/tastings/wine-mind-classes.html">
+<span>Wine Mind Classes</span>
+<span class="l"></span><span class="r"></span></a>
+</li><li class="level1 nav-5-3 last topThree">
+<a href="http://www.winemadeeasy.com/tastings/in-store-tastings.html">
+<span>In-Store Producer Tastings</span>
+<span class="l"></span><span class="r"></span></a>
+</li>
+<a class="arrow-link" href="http://www.winemadeeasy.com/tastings.html">View all in this category<span class="r"></span></a>
+</ul>
+</li><li class="level0 nav-6 level-top">
+<a href="http://www.winemadeeasy.com/blog.html" class="level-top">
+<span>Blog</span>
+<span class="l"></span><span class="r"></span></a>
+</li><li class="level0 nav-7 level-top last">
+<a href="http://www.winemadeeasy.com/about-us.html" class="level-top">
+<span>About Us</span>
+<span class="l"></span><span class="r"></span></a>
+</li> </ul>
+</div>
+</div>
+ 
+ 
+<div id="nav-sec" class="np">
+<h2 class="m">Secondary Site Navigation</h2>
+ 
+<p><a id="email-updates" rel="external" href="http://go.winemadeeasy.com/l/j/jkl/i/_/_/pkl/signup.htm">Get Email Updates</a></p> <a href="https://www.winemadeeasy.com/wishlist/" id="wish-list">Your Wish List</a>
+ 
+<div id="shopping-cart">
+<span class="l"></span>
+<span class="r"></span>
+<h2><a href="http://www.winemadeeasy.com/checkout/cart/">Shopping Cart</a></h2>
+<div id="nav-cart">
+<ul>
+<li><a href="http://www.winemadeeasy.com/checkout/cart/">View Cart &amp; Checkout</a></li>
+ 
+</ul>
+</div>
+<div class="cart-info">
+<span class="cart-count"><span>0</span> items</span>
+<span class="cart-total"><span>$</span>0.00</span>
+</div>
+</div>
+ 
+</div>
+ 
+ 
+<div id="quick-search">
+<h2><span class="l"></span>Quick Finder</h2>
+ 
+<div id="search-site">
+<form id="search_mini_form" action="http://www.winemadeeasy.com/catalogsearch/result/" method="get">
+<fieldset>
+<legend>Search Site</legend>
+<div class="mini-search form-search">
+<div id="searchajaxico" class=""></div>
+<input id="search" type="text" class="input-text" name="q" value="What are you looking for?"/>
+<button type="submit" title="Search" class="button"><span><span>Search</span></span></button>
+<script type="text/javascript">
+            //<![CDATA[
+			function initAutocomplete(){
+				new Autocomplete('search', { 
+					serviceUrl:'http://www.winemadeeasy.com/ajaxsearch/',
+					store:'1',
+					enableimage:'1',
+					enableloader:'1',
+					enabledescription:'0',
+					descriptionchars:'50',
+					minChars:'3', 
+					maxHeight:'300',
+					width:'600',
+					searchtext:'What are you looking for?',
+                    baseUrl:'http://www.winemadeeasy.com/',
+                    secureUrl:'https://www.winemadeeasy.com/',
+					onSelect: onAutocompleteSubmit 
+				});
+			}
+			if (Prototype.Browser.IE) {
+			    Event.observe(window, 'load', initAutocomplete);
+			} else {
+			    document.observe("dom:loaded", initAutocomplete);
+			}
+            //]]>
+            </script>
+</div>
+</fieldset>
+</form>
+</div>
+ 
+</div>
+ 
+ 
+<div id="main">
+<span class="l"></span>
+<span class="b"></span>
+ 
+<div id="content">
+ 
+<div id="content-aside">
+<div class="col-left sidebar" itemscope itemtype="http://schema.org/WPSideBar"><div class="block block-layered-nav" id="quick-finder">
+<div id="filters">
+<div id="nav-search">
+<ul>
+<li class="first active"><a href="/wine.html">Wine</a></li>
+<li class="last"><a href="/spirits.html">Spirits</a></li>
+</ul>
+</div>
+<div class="block-content">
+<dl id="narrow-by block-layered-nav-list">
+<dt>Free Shipping on</dt>
+<dd><ol>
+<li><a href="http://www.winemadeeasy.com/catalogsearch/result/?prem_free_shipping_prestige=12677&amp;q=Luca+Malbec"><img src="http://www.winemadeeasy.com/media/amshopby/small2449.png" title="6 or more" alt="6 or more"></a><a href="http://www.winemadeeasy.com/catalogsearch/result/?prem_free_shipping_prestige=12678&amp;q=Luca+Malbec"><img src="http://www.winemadeeasy.com/media/amshopby/small2450.png" title="12 or more" alt="12 or more"></a><a style="display:none" class="amshopby-attr-prem_free_shipping_prestige" href="http://www.winemadeeasy.com/catalogsearch/result/?prem_free_shipping_prestige=12698&amp;q=Luca+Malbec"><img src="" title="none" alt="none"></a></li><li class="clearer"><a id="amshopby-more-prem_free_shipping_prestige" class="amshopby-more more" href="#">View More<span class="r"></span></a></li><li class="clearer"><a id="amshopby-less-prem_free_shipping_prestige" class="amshopby-less less" href="#" style="display:none">View Less<span class="r"></span></a></li></ol></dd>
+<dt>Primary Grape</dt>
+<dd><ol>
+<li><a class="amshopby-attr" href="http://www.winemadeeasy.com/catalogsearch/result/?prem_primary_grape=1517&amp;q=Luca+Malbec">Cabernet Sauvignon<span> (2)</span></a></li><li><a class="amshopby-attr" href="http://www.winemadeeasy.com/catalogsearch/result/?prem_primary_grape=1509&amp;q=Luca+Malbec">Merlot<span> (1)</span></a></li><li><a class="amshopby-attr" href="http://www.winemadeeasy.com/catalogsearch/result/?prem_primary_grape=1565&amp;q=Luca+Malbec">Shiraz<span> (1)</span></a></li><li><a class="amshopby-attr" href="http://www.winemadeeasy.com/catalogsearch/result/?prem_primary_grape=1537&amp;q=Luca+Malbec">Riesling<span> (1)</span></a></li><li><a class="amshopby-attr" href="http://www.winemadeeasy.com/catalogsearch/result/?prem_primary_grape=1570&amp;q=Luca+Malbec">Cabernet Franc<span> (1)</span></a></li><li><a class="amshopby-attr" href="http://www.winemadeeasy.com/catalogsearch/result/?prem_primary_grape=1501&amp;q=Luca+Malbec">Glera<span> (1)</span></a></li><li style="display:none" class="amshopby-attr-prem_primary_grape"><a class="amshopby-attr" href="http://www.winemadeeasy.com/catalogsearch/result/?prem_primary_grape=1714&amp;q=Luca+Malbec">Malbec<span> (100)</span></a></li><li style="display:none" class="amshopby-attr-prem_primary_grape"><a class="amshopby-attr" href="http://www.winemadeeasy.com/catalogsearch/result/?prem_primary_grape=1591&amp;q=Luca+Malbec">Seyval Blanc<span> (1)</span></a></li><li class="clearer"><a id="amshopby-more-prem_primary_grape" class="amshopby-more more" href="#">View More<span class="r"></span></a></li><li class="clearer"><a id="amshopby-less-prem_primary_grape" class="amshopby-less less" href="#" style="display:none">View Less<span class="r"></span></a></li></ol></dd>
+<dt>Country</dt>
+<dd><ol>
+<li><a class="amshopby-attr" href="http://www.winemadeeasy.com/catalogsearch/result/?prem_country=1315&amp;q=Luca+Malbec">United States<span> (9)</span></a></li><li><a class="amshopby-attr" href="http://www.winemadeeasy.com/catalogsearch/result/?prem_country=1314&amp;q=Luca+Malbec">Italy<span> (1)</span></a></li><li><a class="amshopby-attr" href="http://www.winemadeeasy.com/catalogsearch/result/?prem_country=1317&amp;q=Luca+Malbec">France<span> (9)</span></a></li><li><a class="amshopby-attr" href="http://www.winemadeeasy.com/catalogsearch/result/?prem_country=1325&amp;q=Luca+Malbec">Argentina<span> (85)</span></a></li><li><a class="amshopby-attr" href="http://www.winemadeeasy.com/catalogsearch/result/?prem_country=1322&amp;q=Luca+Malbec">Chile<span> (3)</span></a></li><li style="display:none" class="amshopby-attr-prem_country"><a class="amshopby-attr" href="http://www.winemadeeasy.com/catalogsearch/result/?prem_country=1323&amp;q=Luca+Malbec">South Africa<span> (1)</span></a></li><li class="clearer"><a id="amshopby-more-prem_country" class="amshopby-more more" href="#">View More<span class="r"></span></a></li><li class="clearer"><a id="amshopby-less-prem_country" class="amshopby-less less" href="#" style="display:none">View Less<span class="r"></span></a></li></ol></dd>
+<dt>Region</dt>
+<dd><ol>
+<li><a class="amshopby-attr" href="http://www.winemadeeasy.com/catalogsearch/result/?prem_region=1508&amp;q=Luca+Malbec">California<span> (6)</span></a></li><li><a class="amshopby-attr" href="http://www.winemadeeasy.com/catalogsearch/result/?prem_region=1503&amp;q=Luca+Malbec">New York<span> (3)</span></a></li><li><a class="amshopby-attr" href="http://www.winemadeeasy.com/catalogsearch/result/?prem_region=1579&amp;q=Luca+Malbec">Valle Central<span> (3)</span></a></li><li><a class="amshopby-attr" href="http://www.winemadeeasy.com/catalogsearch/result/?prem_region=13857&amp;q=Luca+Malbec">San Juan<span> (2)</span></a></li><li><a class="amshopby-attr" href="http://www.winemadeeasy.com/catalogsearch/result/?prem_region=1521&amp;q=Luca+Malbec">Bordeaux<span> (1)</span></a></li><li style="display:none" class="amshopby-attr-prem_region"><a class="amshopby-attr" href="http://www.winemadeeasy.com/catalogsearch/result/?prem_region=1763&amp;q=Luca+Malbec">Loire<span> (1)</span></a></li><li style="display:none" class="amshopby-attr-prem_region"><a class="amshopby-attr" href="http://www.winemadeeasy.com/catalogsearch/result/?prem_region=1644&amp;q=Luca+Malbec">Mendoza<span> (76)</span></a></li><li style="display:none" class="amshopby-attr-prem_region"><a class="amshopby-attr" href="http://www.winemadeeasy.com/catalogsearch/result/?prem_region=1827&amp;q=Luca+Malbec">Salta<span> (2)</span></a></li><li style="display:none" class="amshopby-attr-prem_region"><a class="amshopby-attr" href="http://www.winemadeeasy.com/catalogsearch/result/?prem_region=1713&amp;q=Luca+Malbec">South West France<span> (4)</span></a></li><li style="display:none" class="amshopby-attr-prem_region"><a class="amshopby-attr" href="http://www.winemadeeasy.com/catalogsearch/result/?prem_region=1500&amp;q=Luca+Malbec">Veneto<span> (1)</span></a></li><li style="display:none" class="amshopby-attr-prem_region"><a class="amshopby-attr" href="http://www.winemadeeasy.com/catalogsearch/result/?prem_region=1681&amp;q=Luca+Malbec">Vin de Pays<span> (2)</span></a></li><li style="display:none" class="amshopby-attr-prem_region"><a class="amshopby-attr" href="http://www.winemadeeasy.com/catalogsearch/result/?prem_region=1739&amp;q=Luca+Malbec">Vin de Table<span> (1)</span></a></li><li style="display:none" class="amshopby-attr-prem_region"><a class="amshopby-attr" href="http://www.winemadeeasy.com/catalogsearch/result/?prem_region=1622&amp;q=Luca+Malbec">Western Cape<span> (1)</span></a></li><li class="clearer"><a id="amshopby-more-prem_region" class="amshopby-more more" href="#">View More<span class="r"></span></a></li><li class="clearer"><a id="amshopby-less-prem_region" class="amshopby-less less" href="#" style="display:none">View Less<span class="r"></span></a></li></ol></dd>
+<dt>District</dt>
+<dd><ol>
+<li><a class="amshopby-attr" href="http://www.winemadeeasy.com/catalogsearch/result/?prem_district=1530&amp;q=Luca+Malbec">Finger Lakes<span> (2)</span></a></li><li><a class="amshopby-attr" href="http://www.winemadeeasy.com/catalogsearch/result/?prem_district=1552&amp;q=Luca+Malbec">Napa Valley<span> (2)</span></a></li><li><a class="amshopby-attr" href="http://www.winemadeeasy.com/catalogsearch/result/?prem_district=1702&amp;q=Luca+Malbec">Central Valley<span> (1)</span></a></li><li><a class="amshopby-attr" href="http://www.winemadeeasy.com/catalogsearch/result/?prem_district=1766&amp;q=Luca+Malbec">Touraine<span> (1)</span></a></li><li><a class="amshopby-attr" href="http://www.winemadeeasy.com/catalogsearch/result/?prem_district=1683&amp;q=Luca+Malbec">Vin de Pays d'Oc<span> (1)</span></a></li></ol></dd>
+<dt>Price</dt>
+<dd><ol>
+<li>
+<a href="http://www.winemadeeasy.com/catalogsearch/result/?price=0%2C10&amp;q=Luca+Malbec" class="amshopby-attr">Under <span class="price">$10</span></a>
+(42)
+</li>
+<li>
+<a href="http://www.winemadeeasy.com/catalogsearch/result/?price=10%2C20&amp;q=Luca+Malbec" class="amshopby-attr"><span class="price">$10</span> - <span class="price">$20</span></a>
+(49)
+</li>
+<li>
+<a href="http://www.winemadeeasy.com/catalogsearch/result/?price=20%2C50&amp;q=Luca+Malbec" class="amshopby-attr"><span class="price">$20</span> - <span class="price">$50</span></a>
+(16)
+</li>
+<li>
+<a href="http://www.winemadeeasy.com/catalogsearch/result/?price=50%2C100&amp;q=Luca+Malbec" class="amshopby-attr"><span class="price">$50</span> - <span class="price">$100</span></a>
+(2)
+</li>
+ 
+<li>
+<input type="text" size="2" value="From" name="price_from" class="input-text" id="amshopby-price-from"/> -
+<input type="text" size="2" value="To" name="price_to" class="input-text" id="amshopby-price-to"/>
+<button type="submit" title="Find" class="form-button button amshopby-price-find" name="price_find" id="amshopby-price-btn"><span><span>Find</span></span></button>
+</li>
+<input type="hidden" id="amshopby-price-url" value="http://www.winemadeeasy.com/catalogsearch/result/?price=price-from%2Cprice-to&q=Luca+Malbec"/>
+</ol></dd>
+<dt>Vintage</dt>
+<dd><ol>
+<li><a class="amshopby-attr" href="http://www.winemadeeasy.com/catalogsearch/result/?prem_vintage=7179&amp;q=Luca+Malbec">2015<span> (4)</span></a></li><li><a class="amshopby-attr" href="http://www.winemadeeasy.com/catalogsearch/result/?prem_vintage=9412&amp;q=Luca+Malbec">2014<span> (30)</span></a></li><li><a class="amshopby-attr" href="http://www.winemadeeasy.com/catalogsearch/result/?prem_vintage=8387&amp;q=Luca+Malbec">2013<span> (28)</span></a></li><li><a class="amshopby-attr" href="http://www.winemadeeasy.com/catalogsearch/result/?prem_vintage=7538&amp;q=Luca+Malbec">2012<span> (16)</span></a></li><li><a class="amshopby-attr" href="http://www.winemadeeasy.com/catalogsearch/result/?prem_vintage=1400&amp;q=Luca+Malbec">2011<span> (11)</span></a></li><li style="display:none" class="amshopby-attr-prem_vintage"><a class="amshopby-attr" href="http://www.winemadeeasy.com/catalogsearch/result/?prem_vintage=1102&amp;q=Luca+Malbec">2010<span> (4)</span></a></li><li style="display:none" class="amshopby-attr-prem_vintage"><a class="amshopby-attr" href="http://www.winemadeeasy.com/catalogsearch/result/?prem_vintage=840&amp;q=Luca+Malbec">2009<span> (2)</span></a></li><li style="display:none" class="amshopby-attr-prem_vintage"><a class="amshopby-attr" href="http://www.winemadeeasy.com/catalogsearch/result/?prem_vintage=933&amp;q=Luca+Malbec">2008<span> (4)</span></a></li><li style="display:none" class="amshopby-attr-prem_vintage"><a class="amshopby-attr" href="http://www.winemadeeasy.com/catalogsearch/result/?prem_vintage=900&amp;q=Luca+Malbec">2006<span> (1)</span></a></li><li style="display:none" class="amshopby-attr-prem_vintage"><a class="amshopby-attr" href="http://www.winemadeeasy.com/catalogsearch/result/?prem_vintage=836&amp;q=Luca+Malbec">NV<span> (8)</span></a></li><li style="display:none" class="amshopby-attr-prem_vintage"><a class="amshopby-attr" href="http://www.winemadeeasy.com/catalogsearch/result/?prem_vintage=8901&amp;q=Luca+Malbec">AR - 2<span> (1)</span></a></li><li class="clearer"><a id="amshopby-more-prem_vintage" class="amshopby-more more" href="#">View More<span class="r"></span></a></li><li class="clearer"><a id="amshopby-less-prem_vintage" class="amshopby-less less" href="#" style="display:none">View Less<span class="r"></span></a></li></ol></dd>
+<dt>Rated By</dt>
+<dd><ol>
+<li><a class="amshopby-attr" href="http://www.winemadeeasy.com/catalogsearch/result/?prem_rating_sources=2004&amp;q=Luca+Malbec">Parker<span> (31)</span></a></li><li><a class="amshopby-attr" href="http://www.winemadeeasy.com/catalogsearch/result/?prem_rating_sources=2002&amp;q=Luca+Malbec">Spectator<span> (19)</span></a></li><li><a class="amshopby-attr" href="http://www.winemadeeasy.com/catalogsearch/result/?prem_rating_sources=2003&amp;q=Luca+Malbec">Enthusiast<span> (7)</span></a></li><li><a class="amshopby-attr" href="http://www.winemadeeasy.com/catalogsearch/result/?prem_rating_sources=2007&amp;q=Luca+Malbec">Miscellaneous<span> (5)</span></a></li><li style="display:none" class="amshopby-attr-prem_rating_sources"><a class="amshopby-attr" href="http://www.winemadeeasy.com/catalogsearch/result/?prem_rating_sources=13230&amp;q=Luca+Malbec">Vinous<span> (5)</span></a></li><li style="display:none" class="amshopby-attr-prem_rating_sources"><a class="amshopby-attr" href="http://www.winemadeeasy.com/catalogsearch/result/?prem_rating_sources=2006&amp;q=Luca+Malbec">Wine & Spirits<span> (3)</span></a></li><li class="clearer"><a id="amshopby-more-prem_rating_sources" class="amshopby-more more" href="#">View More<span class="r"></span></a></li><li class="clearer"><a id="amshopby-less-prem_rating_sources" class="amshopby-less less" href="#" style="display:none">View Less<span class="r"></span></a></li></ol></dd>
+<dt>Package Size</dt>
+<dd><ol>
+<li><a class="amshopby-attr" href="http://www.winemadeeasy.com/catalogsearch/result/?prem_package_size=131&amp;q=Luca+Malbec">750 ml.<span> (103)</span></a></li><li><a class="amshopby-attr" href="http://www.winemadeeasy.com/catalogsearch/result/?prem_package_size=144&amp;q=Luca+Malbec">3.0 L.<span> (3)</span></a></li><li><a class="amshopby-attr" href="http://www.winemadeeasy.com/catalogsearch/result/?prem_package_size=136&amp;q=Luca+Malbec">1.5 L.<span> (3)</span></a></li></ol></dd>
+<dt>Premier Picks</dt>
+<dd><ol>
+<li><a class="amshopby-attr" href="http://www.winemadeeasy.com/catalogsearch/result/?prem_pick=326&amp;q=Luca+Malbec">Gold<span> (5)</span></a></li><li><a class="amshopby-attr" href="http://www.winemadeeasy.com/catalogsearch/result/?prem_pick=325&amp;q=Luca+Malbec">Platinum<span> (1)</span></a></li></ol></dd>
+</dl>
+<script type="text/javascript">decorateDataList('narrow-by block-layered-nav-list')</script>
+</div>
+</div>
+</div>
+<script>amshopby_start(1)</script><div class="block block-cart">
+<div class="block-title">
+<strong><span>My Cart</span></strong>
+</div>
+<div class="block-content">
+<p class="empty">You have no items in your shopping cart.</p>
+</div>
+</div>
+<div class="block block-list block-compare">
+<div class="block-title">
+<strong><span>Compare Products </span></strong>
+</div>
+<div class="block-content">
+<p class="empty">You have no items to compare.</p>
+</div>
+</div>
+<div class="block block-list block-viewed">
+<div class="block-title">
+<strong><span>Recently Viewed Products</span></strong>
+</div>
+<div class="block-content">
+<ol id="recently-viewed-items">
+<li class="item">
+<p class="product-name"><a href="http://www.winemadeeasy.com/santa-margherita-pinot-grigio-valdadige-2014-750-ml-23101.html">Santa Margherita Pinot Grigio Valdadige 2014 / 750 ml.</a></p>
+</li>
+</ol>
+<script type="text/javascript">decorateList('recently-viewed-items');</script>
+</div>
+</div>
+</div>
+</div>
+ 
+ 
+<div id="content-main" class="internal">
+<div class="breadcrumbs" itemscope itemtype="http://schema.org/Breadcrumb">
+<ul>
+<li class="home" itemprop="child" itemscope itemtype="http://schema.org/Breadcrumb">
+<a itemprop="url" href="http://www.winemadeeasy.com/" title="Go to Home Page"><span itemprop="title">Home</span></a>
+<span>/ </span>
+</li>
+<li class="search" itemprop="child" itemscope itemtype="http://schema.org/Breadcrumb">
+<strong itemprop="title"> Search results for: 'Luca Malbec'</strong>
+</li>
+</ul>
+</div>
+<div class="col-main">
+<div class="page-title">
+<h1>Search results for 'Luca Malbec'</h1>
+</div>
+<div class="category-products">
+<div class="toolbar">
+<div class="sorter">
+<p class="view-mode">
+<span style="font-size:1.273em;">Search Results</span>
+</p>
+<div class="sort-by">
+<label>Sort results by</label>
+<select onchange="setLocation(this.value)">
+<option value="http://www.winemadeeasy.com/catalogsearch/result/index/?dir=asc&amp;order=relevance&amp;q=Luca+Malbec" selected="selected">
+Relevance </option>
+<option value="http://www.winemadeeasy.com/catalogsearch/result/index/?dir=asc&amp;order=name&amp;q=Luca+Malbec">
+Name </option>
+<option value="http://www.winemadeeasy.com/catalogsearch/result/index/?dir=asc&amp;order=price&amp;q=Luca+Malbec">
+Price </option>
+<option value="http://www.winemadeeasy.com/catalogsearch/result/index/?dir=asc&amp;order=prem_date_added&amp;q=Luca+Malbec">
+Date Added </option>
+<option value="http://www.winemadeeasy.com/catalogsearch/result/index/?dir=asc&amp;order=prem_rating_numeric&amp;q=Luca+Malbec">
+Rating </option>
+</select>
+<a href="http://www.winemadeeasy.com/catalogsearch/result/index/?dir=asc&amp;order=relevance&amp;q=Luca+Malbec" title="Set Ascending Direction"><img src="http://www.winemadeeasy.com/skin/frontend/premier/default/images/i_desc_arrow.gif" alt="Set Ascending Direction" class="v-middle"/></a>
+</div>
+</div>
+<div class="pager">
+<p class="amount">
+Showing 1-10 of <span style="color:#1fa60d">109</span> results </p>
+<div class="limiter">
+<label>Show</label>
+<select onchange="setLocation(this.value)">
+<option value="http://www.winemadeeasy.com/catalogsearch/result/index/?limit=10&amp;q=Luca+Malbec" selected="selected">
+10 </option>
+<option value="http://www.winemadeeasy.com/catalogsearch/result/index/?limit=25&amp;q=Luca+Malbec">
+25 </option>
+<option value="http://www.winemadeeasy.com/catalogsearch/result/index/?limit=50&amp;q=Luca+Malbec">
+50 </option>
+<option value="http://www.winemadeeasy.com/catalogsearch/result/index/?limit=100&amp;q=Luca+Malbec">
+100 </option>
+</select> </div>
+<div class="pages">
+<strong>Result Page:</strong>
+<ol>
+<li class="current">1</li>
+<li><a href="http://www.winemadeeasy.com/catalogsearch/result/index/?p=2&amp;q=Luca+Malbec">2</a></li>
+<li><a href="http://www.winemadeeasy.com/catalogsearch/result/index/?p=3&amp;q=Luca+Malbec">3</a></li>
+<li><a href="http://www.winemadeeasy.com/catalogsearch/result/index/?p=4&amp;q=Luca+Malbec">4</a></li>
+<li><a href="http://www.winemadeeasy.com/catalogsearch/result/index/?p=5&amp;q=Luca+Malbec">5</a></li>
+<li>
+<a class="next i-next" href="http://www.winemadeeasy.com/catalogsearch/result/index/?p=2&amp;q=Luca+Malbec" title="Next">
+<img src="http://www.winemadeeasy.com/skin/frontend/premier/default/images/pager_arrow_right.gif" alt="Next" class="v-middle"/>
+</a>
+</li>
+</ol>
+</div>
+</div>
+</div>
+<ol class="products-list" id="products-list">
+<li class="item">
+<a href="http://www.winemadeeasy.com/lucas-vineyards-semi-dry-riesling-2010-750-ml-18331.html" title="Lucas Vineyards Semi Dry Riesling  2010 / 750 ml." class="product-image"><img src="http://b208032a1d3287a6d3f3-258d94be31bdb406871c37e2eb1690c4.r56.cf1.rackcdn.com/catalog/product/cache/1/small_image/135x/0dc2d03fe217f8c83829496872af24a0/g/e/generic-white.png" width="135" height="135" alt="Lucas Vineyards Semi Dry Riesling  2010 / 750 ml."/></a>
+<div class="product-shop">
+<div class="f-fix">
+<div id="product-info">
+<h2 class="product-name"><a href="http://www.winemadeeasy.com/lucas-vineyards-semi-dry-riesling-2010-750-ml-18331.html" title="Lucas Vineyards Semi Dry Riesling  2010 / 750 ml.">
+Lucas Vineyards Semi Dry Riesling</a></h2>
+ 
+<h3 class="product-subtitle">2010 / 750 ml.</h3>
+ 
+ 
+<div class="product-desc">
+United States | New York | Finger Lakes </div>
+ 
+ 
+ 
+ 
+ 
+ 
+<div class="ratings">
+<span class="SP"><span>SP</span>86</span> </div>
+ 
+ 
+<div class="prem-size-sku">Item #18331</div>
+ 
+ 
+ 
+ 
+<div class="desc std">
+&#8227; <a href="http://www.winemadeeasy.com/lucas-vineyards-semi-dry-riesling-2010-750-ml-18331.html" title="Lucas Vineyards Semi Dry Riesling  2010 / 750 ml." class="link-learn">Learn More</a>
+</div>
+ 
+<p class="limited-inventory"><strong>Limited inventory.</strong><br/>10 bottles or less in stock; we will confirm your order by email.</p>
+ 
+</div>
+<div id="pricing-info">
+<div class="price-box">
+<meta itemprop="priceCurrency" content="USD"/>
+<span class="regular-price" itemprop="price" id="product-price-30814">
+<span class="price">$14.99</span> </span>
+</div>
+ 
+ 
+ 
+<span class="save">Only $13.49 when you buy a solid or mixed case</span>
+ 
+ 
+<form action="http://www.winemadeeasy.com/checkout/cart/add/uenc/aHR0cDovL3d3dy53aW5lbWFkZWVhc3kuY29tOjgwODAvY2F0YWxvZ3NlYXJjaC9yZXN1bHQvP3E9THVjYStNYWxiZWM,/product/30814/" method="post" id="product_addtocart_form_">
+<label for="qty">Qty</label>
+<input type="text" class="input-text qty" name="qty" id="qty" maxlength="3" value="1"/>
+<button type="button" class="b01" onclick="listAddToCart('http://www.winemadeeasy.com/checkout/cart/add/uenc/aHR0cDovL3d3dy53aW5lbWFkZWVhc3kuY29tOjgwODAvY2F0YWxvZ3NlYXJjaC9yZXN1bHQvP3E9THVjYStNYWxiZWM,/product/30814/', '1', 'This product cannot be shipped via UPS and can only be picked up at our store. Do you wish to continue?', this.form)"><span><span>Add to Cart</span></span></button>
+</form>
+ 
+ 
+<ul class="add-to-links">
+<li><a href="https://www.winemadeeasy.com/wishlist/index/add/product/30814/" class="link-wishlist">add to wishlist</a></li>
+<li><a href="http://www.winemadeeasy.com/catalog/product_compare/add/product/30814/uenc/aHR0cDovL3d3dy53aW5lbWFkZWVhc3kuY29tOjgwODAvY2F0YWxvZ3NlYXJjaC9yZXN1bHQvP3E9THVjYStNYWxiZWM,/" class="link-compare">add to compare</a></li>
+</ul>
+ 
+</div>
+</div>
+</div>
+</li>
+<li class="item">
+<a href="http://www.winemadeeasy.com/gato-negro-malbec-2014-1-5-l-24058.html" title="Gato Negro Malbec  2014 / 1.5 L." class="product-image"><img src="http://b208032a1d3287a6d3f3-258d94be31bdb406871c37e2eb1690c4.r56.cf1.rackcdn.com/catalog/product/cache/1/small_image/135x/0dc2d03fe217f8c83829496872af24a0/g/a/gato_negro_malbec_11_15.jpg" width="135" height="135" alt="Gato Negro Malbec  2014 / 1.5 L."/></a>
+<div class="product-shop">
+<div class="f-fix">
+<div id="product-info">
+<h2 class="product-name"><a href="http://www.winemadeeasy.com/gato-negro-malbec-2014-1-5-l-24058.html" title="Gato Negro Malbec  2014 / 1.5 L.">
+Gato Negro Malbec</a></h2>
+ 
+<h3 class="product-subtitle">2014 / 1.5 L.</h3>
+ 
+ 
+<div class="product-desc">
+Argentina | Mendoza </div>
+ 
+ 
+ 
+ 
+ 
+ 
+<div class="ratings">
+</div>
+ 
+ 
+<div class="prem-size-sku">Item #24058</div>
+ 
+ 
+ 
+ 
+<div class="desc std">
+&#8227; <a href="http://www.winemadeeasy.com/gato-negro-malbec-2014-1-5-l-24058.html" title="Gato Negro Malbec  2014 / 1.5 L." class="link-learn">Learn More</a>
+</div>
+ 
+ 
+</div>
+<div id="pricing-info">
+<div class="price-box">
+<meta itemprop="priceCurrency" content="USD"/>
+<span class="regular-price" itemprop="price" id="product-price-31553">
+<span class="price">$7.99</span> </span>
+</div>
+ 
+<span class="compare">Compare: <span class="compare-price"><span class="price">$12.99</span></span></span>
+ 
+ 
+<span class="save">You save: $5.00</span>
+ 
+ 
+<form action="http://www.winemadeeasy.com/checkout/cart/add/uenc/aHR0cDovL3d3dy53aW5lbWFkZWVhc3kuY29tOjgwODAvY2F0YWxvZ3NlYXJjaC9yZXN1bHQvP3E9THVjYStNYWxiZWM,/product/31553/" method="post" id="product_addtocart_form_">
+<label for="qty">Qty</label>
+<input type="text" class="input-text qty" name="qty" id="qty" maxlength="3" value="1"/>
+<button type="button" class="b01" onclick="listAddToCart('http://www.winemadeeasy.com/checkout/cart/add/uenc/aHR0cDovL3d3dy53aW5lbWFkZWVhc3kuY29tOjgwODAvY2F0YWxvZ3NlYXJjaC9yZXN1bHQvP3E9THVjYStNYWxiZWM,/product/31553/', '0', 'This product cannot be shipped via UPS and can only be picked up at our store. Do you wish to continue?', this.form)"><span><span>Add to Cart</span></span></button>
+</form>
+ 
+ 
+<ul class="add-to-links">
+<li><a href="https://www.winemadeeasy.com/wishlist/index/add/product/31553/" class="link-wishlist">add to wishlist</a></li>
+<li><a href="http://www.winemadeeasy.com/catalog/product_compare/add/product/31553/uenc/aHR0cDovL3d3dy53aW5lbWFkZWVhc3kuY29tOjgwODAvY2F0YWxvZ3NlYXJjaC9yZXN1bHQvP3E9THVjYStNYWxiZWM,/" class="link-compare">add to compare</a></li>
+</ul>
+ 
+</div>
+</div>
+</div>
+</li>
+<li class="item">
+<a href="http://www.winemadeeasy.com/silvertop-oak-cask-malbec-2015-750-ml-24507.html" title="Silvertop Oak Cask Malbec  2015 / 750 ml." class="product-image"><img src="http://b208032a1d3287a6d3f3-258d94be31bdb406871c37e2eb1690c4.r56.cf1.rackcdn.com/catalog/product/cache/1/small_image/135x/0dc2d03fe217f8c83829496872af24a0/s/i/silvertop_oak_malbec_14_750.png" width="135" height="135" alt="Silvertop Oak Cask Malbec  2015 / 750 ml."/></a>
+<div class="product-shop">
+<div class="f-fix">
+<div id="product-info">
+<h2 class="product-name"><a href="http://www.winemadeeasy.com/silvertop-oak-cask-malbec-2015-750-ml-24507.html" title="Silvertop Oak Cask Malbec  2015 / 750 ml.">
+Silvertop Oak Cask Malbec</a></h2>
+ 
+<h3 class="product-subtitle">2015 / 750 ml.</h3>
+ 
+ 
+<div class="product-desc">
+Argentina | Mendoza </div>
+ 
+ 
+ 
+ 
+<div class="prem-pick">
+<a title="Premier Gold - Best Value (as rated by our staff)"><span class="gold">Gold</span></a>
+</div>
+ 
+ 
+<div class="ratings">
+</div>
+ 
+ 
+<div class="prem-size-sku">Item #24507</div>
+ 
+ 
+ 
+ 
+<div class="desc std">
+&#8227; <a href="http://www.winemadeeasy.com/silvertop-oak-cask-malbec-2015-750-ml-24507.html" title="Silvertop Oak Cask Malbec  2015 / 750 ml." class="link-learn">Learn More</a>
+</div>
+ 
+ 
+</div>
+<div id="pricing-info">
+<div class="price-box">
+<meta itemprop="priceCurrency" content="USD"/>
+<span class="regular-price" itemprop="price" id="product-price-31621">
+<span class="price">$8.99</span> </span>
+</div>
+ 
+<span class="compare">Compare: <span class="compare-price"><span class="price">$11.99</span></span></span>
+ 
+ 
+<span class="save">You save: $3.00</span>
+ 
+ 
+<form action="http://www.winemadeeasy.com/checkout/cart/add/uenc/aHR0cDovL3d3dy53aW5lbWFkZWVhc3kuY29tOjgwODAvY2F0YWxvZ3NlYXJjaC9yZXN1bHQvP3E9THVjYStNYWxiZWM,/product/31621/" method="post" id="product_addtocart_form_">
+<label for="qty">Qty</label>
+<input type="text" class="input-text qty" name="qty" id="qty" maxlength="3" value="1"/>
+<button type="button" class="b01" onclick="listAddToCart('http://www.winemadeeasy.com/checkout/cart/add/uenc/aHR0cDovL3d3dy53aW5lbWFkZWVhc3kuY29tOjgwODAvY2F0YWxvZ3NlYXJjaC9yZXN1bHQvP3E9THVjYStNYWxiZWM,/product/31621/', '1', 'This product cannot be shipped via UPS and can only be picked up at our store. Do you wish to continue?', this.form)"><span><span>Add to Cart</span></span></button>
+</form>
+ 
+ 
+<ul class="add-to-links">
+<li><a href="https://www.winemadeeasy.com/wishlist/index/add/product/31621/" class="link-wishlist">add to wishlist</a></li>
+<li><a href="http://www.winemadeeasy.com/catalog/product_compare/add/product/31621/uenc/aHR0cDovL3d3dy53aW5lbWFkZWVhc3kuY29tOjgwODAvY2F0YWxvZ3NlYXJjaC9yZXN1bHQvP3E9THVjYStNYWxiZWM,/" class="link-compare">add to compare</a></li>
+</ul>
+ 
+</div>
+</div>
+</div>
+</li>
+<li class="item">
+<a href="http://www.winemadeeasy.com/gato-negro-malbec-2013-750-ml-25505.html" title="Gato Negro Malbec  2013 / 750 ml." class="product-image"><img src="http://b208032a1d3287a6d3f3-258d94be31bdb406871c37e2eb1690c4.r56.cf1.rackcdn.com/catalog/product/cache/1/small_image/135x/0dc2d03fe217f8c83829496872af24a0/g/a/gato_negro_malbec_750.png" width="135" height="135" alt="Gato Negro Malbec  2013 / 750 ml."/></a>
+<div class="product-shop">
+<div class="f-fix">
+<div id="product-info">
+<h2 class="product-name"><a href="http://www.winemadeeasy.com/gato-negro-malbec-2013-750-ml-25505.html" title="Gato Negro Malbec  2013 / 750 ml.">
+Gato Negro Malbec</a></h2>
+ 
+<h3 class="product-subtitle">2013 / 750 ml.</h3>
+ 
+ 
+<div class="product-desc">
+Argentina | Mendoza </div>
+ 
+ 
+ 
+ 
+ 
+ 
+<div class="ratings">
+</div>
+ 
+ 
+<div class="prem-size-sku">Item #25505</div>
+ 
+ 
+ 
+ 
+<div class="desc std">
+&#8227; <a href="http://www.winemadeeasy.com/gato-negro-malbec-2013-750-ml-25505.html" title="Gato Negro Malbec  2013 / 750 ml." class="link-learn">Learn More</a>
+</div>
+ 
+ 
+</div>
+<div id="pricing-info">
+<div class="price-box">
+<meta itemprop="priceCurrency" content="USD"/>
+<span class="regular-price" itemprop="price" id="product-price-31779">
+<span class="price">$5.99</span> </span>
+</div>
+ 
+ 
+ 
+<span class="save">Only $5.39 when you buy a solid or mixed case</span>
+ 
+ 
+<form action="http://www.winemadeeasy.com/checkout/cart/add/uenc/aHR0cDovL3d3dy53aW5lbWFkZWVhc3kuY29tOjgwODAvY2F0YWxvZ3NlYXJjaC9yZXN1bHQvP3E9THVjYStNYWxiZWM,/product/31779/" method="post" id="product_addtocart_form_">
+<label for="qty">Qty</label>
+<input type="text" class="input-text qty" name="qty" id="qty" maxlength="3" value="1"/>
+<button type="button" class="b01" onclick="listAddToCart('http://www.winemadeeasy.com/checkout/cart/add/uenc/aHR0cDovL3d3dy53aW5lbWFkZWVhc3kuY29tOjgwODAvY2F0YWxvZ3NlYXJjaC9yZXN1bHQvP3E9THVjYStNYWxiZWM,/product/31779/', '1', 'This product cannot be shipped via UPS and can only be picked up at our store. Do you wish to continue?', this.form)"><span><span>Add to Cart</span></span></button>
+</form>
+ 
+ 
+<ul class="add-to-links">
+<li><a href="https://www.winemadeeasy.com/wishlist/index/add/product/31779/" class="link-wishlist">add to wishlist</a></li>
+<li><a href="http://www.winemadeeasy.com/catalog/product_compare/add/product/31779/uenc/aHR0cDovL3d3dy53aW5lbWFkZWVhc3kuY29tOjgwODAvY2F0YWxvZ3NlYXJjaC9yZXN1bHQvP3E9THVjYStNYWxiZWM,/" class="link-compare">add to compare</a></li>
+</ul>
+ 
+</div>
+</div>
+</div>
+</li>
+<li class="item">
+<a href="http://www.winemadeeasy.com/astica-malbec-2015-750-ml-27802.html" title="Astica Malbec  2015 / 750 ml." class="product-image"><img src="http://b208032a1d3287a6d3f3-258d94be31bdb406871c37e2eb1690c4.r56.cf1.rackcdn.com/catalog/product/cache/1/small_image/135x/0dc2d03fe217f8c83829496872af24a0/a/s/astica_malbec_15_750.png" width="135" height="135" alt="Astica Malbec  2015 / 750 ml."/></a>
+<div class="product-shop">
+<div class="f-fix">
+<div id="product-info">
+<h2 class="product-name"><a href="http://www.winemadeeasy.com/astica-malbec-2015-750-ml-27802.html" title="Astica Malbec  2015 / 750 ml.">
+Astica Malbec</a></h2>
+ 
+<h3 class="product-subtitle">2015 / 750 ml.</h3>
+ 
+ 
+<div class="product-desc">
+Argentina | Mendoza | Cuyo </div>
+ 
+ 
+ 
+ 
+ 
+ 
+<div class="ratings">
+</div>
+ 
+ 
+<div class="prem-size-sku">Item #27802</div>
+ 
+ 
+ 
+ 
+<div class="desc std">
+&#8227; <a href="http://www.winemadeeasy.com/astica-malbec-2015-750-ml-27802.html" title="Astica Malbec  2015 / 750 ml." class="link-learn">Learn More</a>
+</div>
+ 
+ 
+</div>
+<div id="pricing-info">
+<div class="price-box">
+<meta itemprop="priceCurrency" content="USD"/>
+<span class="regular-price" itemprop="price" id="product-price-32163">
+<span class="price">$4.99</span> </span>
+</div>
+ 
+<span class="compare">Compare: <span class="compare-price"><span class="price">$6.99</span></span></span>
+ 
+ 
+<span class="save">You save: $2.00</span>
+ 
+ 
+<form action="http://www.winemadeeasy.com/checkout/cart/add/uenc/aHR0cDovL3d3dy53aW5lbWFkZWVhc3kuY29tOjgwODAvY2F0YWxvZ3NlYXJjaC9yZXN1bHQvP3E9THVjYStNYWxiZWM,/product/32163/" method="post" id="product_addtocart_form_">
+<label for="qty">Qty</label>
+<input type="text" class="input-text qty" name="qty" id="qty" maxlength="3" value="1"/>
+<button type="button" class="b01" onclick="listAddToCart('http://www.winemadeeasy.com/checkout/cart/add/uenc/aHR0cDovL3d3dy53aW5lbWFkZWVhc3kuY29tOjgwODAvY2F0YWxvZ3NlYXJjaC9yZXN1bHQvP3E9THVjYStNYWxiZWM,/product/32163/', '1', 'This product cannot be shipped via UPS and can only be picked up at our store. Do you wish to continue?', this.form)"><span><span>Add to Cart</span></span></button>
+</form>
+ 
+ 
+<ul class="add-to-links">
+<li><a href="https://www.winemadeeasy.com/wishlist/index/add/product/32163/" class="link-wishlist">add to wishlist</a></li>
+<li><a href="http://www.winemadeeasy.com/catalog/product_compare/add/product/32163/uenc/aHR0cDovL3d3dy53aW5lbWFkZWVhc3kuY29tOjgwODAvY2F0YWxvZ3NlYXJjaC9yZXN1bHQvP3E9THVjYStNYWxiZWM,/" class="link-compare">add to compare</a></li>
+</ul>
+ 
+</div>
+</div>
+</div>
+</li>
+<li class="item">
+<a href="http://www.winemadeeasy.com/cupcake-malbec-2014-750-ml-28752.html" title="Cupcake Malbec  2014 / 750 ml." class="product-image"><img src="http://b208032a1d3287a6d3f3-258d94be31bdb406871c37e2eb1690c4.r56.cf1.rackcdn.com/catalog/product/cache/1/small_image/135x/0dc2d03fe217f8c83829496872af24a0/c/u/cupcake_malbec_750.png" width="135" height="135" alt="Cupcake Malbec  2014 / 750 ml."/></a>
+<div class="product-shop">
+<div class="f-fix">
+<div id="product-info">
+<h2 class="product-name"><a href="http://www.winemadeeasy.com/cupcake-malbec-2014-750-ml-28752.html" title="Cupcake Malbec  2014 / 750 ml.">
+Cupcake Malbec</a></h2>
+ 
+<h3 class="product-subtitle">2014 / 750 ml.</h3>
+ 
+ 
+<div class="product-desc">
+Argentina | Mendoza </div>
+ 
+ 
+ 
+ 
+ 
+ 
+<div class="ratings">
+</div>
+ 
+ 
+<div class="prem-size-sku">Item #28752</div>
+ 
+ 
+ 
+ 
+<div class="desc std">
+&#8227; <a href="http://www.winemadeeasy.com/cupcake-malbec-2014-750-ml-28752.html" title="Cupcake Malbec  2014 / 750 ml." class="link-learn">Learn More</a>
+</div>
+ 
+ 
+</div>
+<div id="pricing-info">
+<div class="price-box">
+<meta itemprop="priceCurrency" content="USD"/>
+<span class="regular-price" itemprop="price" id="product-price-32314">
+<span class="price">$7.99</span> </span>
+</div>
+ 
+<span class="compare">Compare: <span class="compare-price"><span class="price">$11.99</span></span></span>
+ 
+ 
+<span class="save">You save: $4.00</span>
+ 
+ 
+<form action="http://www.winemadeeasy.com/checkout/cart/add/uenc/aHR0cDovL3d3dy53aW5lbWFkZWVhc3kuY29tOjgwODAvY2F0YWxvZ3NlYXJjaC9yZXN1bHQvP3E9THVjYStNYWxiZWM,/product/32314/" method="post" id="product_addtocart_form_">
+<label for="qty">Qty</label>
+<input type="text" class="input-text qty" name="qty" id="qty" maxlength="3" value="1"/>
+<button type="button" class="b01" onclick="listAddToCart('http://www.winemadeeasy.com/checkout/cart/add/uenc/aHR0cDovL3d3dy53aW5lbWFkZWVhc3kuY29tOjgwODAvY2F0YWxvZ3NlYXJjaC9yZXN1bHQvP3E9THVjYStNYWxiZWM,/product/32314/', '1', 'This product cannot be shipped via UPS and can only be picked up at our store. Do you wish to continue?', this.form)"><span><span>Add to Cart</span></span></button>
+</form>
+ 
+ 
+<ul class="add-to-links">
+<li><a href="https://www.winemadeeasy.com/wishlist/index/add/product/32314/" class="link-wishlist">add to wishlist</a></li>
+<li><a href="http://www.winemadeeasy.com/catalog/product_compare/add/product/32314/uenc/aHR0cDovL3d3dy53aW5lbWFkZWVhc3kuY29tOjgwODAvY2F0YWxvZ3NlYXJjaC9yZXN1bHQvP3E9THVjYStNYWxiZWM,/" class="link-compare">add to compare</a></li>
+</ul>
+ 
+</div>
+</div>
+</div>
+</li>
+<li class="item">
+<a href="http://www.winemadeeasy.com/poesia-malbec-2010-750-ml-29423.html" title="Poesia Malbec  2010 / 750 ml." class="product-image"><img src="http://b208032a1d3287a6d3f3-258d94be31bdb406871c37e2eb1690c4.r56.cf1.rackcdn.com/catalog/product/cache/1/small_image/135x/0dc2d03fe217f8c83829496872af24a0/g/e/generic-red.png" width="135" height="135" alt="Poesia Malbec  2010 / 750 ml."/></a>
+<div class="product-shop">
+<div class="f-fix">
+<div id="product-info">
+<h2 class="product-name"><a href="http://www.winemadeeasy.com/poesia-malbec-2010-750-ml-29423.html" title="Poesia Malbec  2010 / 750 ml.">
+Poesia Malbec</a></h2>
+ 
+<h3 class="product-subtitle">2010 / 750 ml.</h3>
+ 
+ 
+<div class="product-desc">
+Argentina | Mendoza </div>
+ 
+ 
+ 
+ 
+ 
+ 
+<div class="ratings">
+</div>
+ 
+ 
+<div class="prem-size-sku">Item #29423</div>
+ 
+ 
+ 
+ 
+<div class="desc std">
+&#8227; <a href="http://www.winemadeeasy.com/poesia-malbec-2010-750-ml-29423.html" title="Poesia Malbec  2010 / 750 ml." class="link-learn">Learn More</a>
+</div>
+ 
+<p class="limited-inventory"><strong>Limited inventory.</strong><br/>6 bottles or less in stock; we will confirm your order by email.</p>
+ 
+</div>
+<div id="pricing-info">
+<div class="price-box">
+<meta itemprop="priceCurrency" content="USD"/>
+<span class="regular-price" itemprop="price" id="product-price-32458">
+<span class="price">$8.99</span> </span>
+</div>
+ 
+ 
+ 
+<span class="save">Only $8.09 when you buy a solid or mixed case</span>
+ 
+ 
+<form action="http://www.winemadeeasy.com/checkout/cart/add/uenc/aHR0cDovL3d3dy53aW5lbWFkZWVhc3kuY29tOjgwODAvY2F0YWxvZ3NlYXJjaC9yZXN1bHQvP3E9THVjYStNYWxiZWM,/product/32458/" method="post" id="product_addtocart_form_">
+<label for="qty">Qty</label>
+<input type="text" class="input-text qty" name="qty" id="qty" maxlength="3" value="1"/>
+<button type="button" class="b01" onclick="listAddToCart('http://www.winemadeeasy.com/checkout/cart/add/uenc/aHR0cDovL3d3dy53aW5lbWFkZWVhc3kuY29tOjgwODAvY2F0YWxvZ3NlYXJjaC9yZXN1bHQvP3E9THVjYStNYWxiZWM,/product/32458/', '1', 'This product cannot be shipped via UPS and can only be picked up at our store. Do you wish to continue?', this.form)"><span><span>Add to Cart</span></span></button>
+</form>
+ 
+ 
+<ul class="add-to-links">
+<li><a href="https://www.winemadeeasy.com/wishlist/index/add/product/32458/" class="link-wishlist">add to wishlist</a></li>
+<li><a href="http://www.winemadeeasy.com/catalog/product_compare/add/product/32458/uenc/aHR0cDovL3d3dy53aW5lbWFkZWVhc3kuY29tOjgwODAvY2F0YWxvZ3NlYXJjaC9yZXN1bHQvP3E9THVjYStNYWxiZWM,/" class="link-compare">add to compare</a></li>
+</ul>
+ 
+</div>
+</div>
+</div>
+</li>
+<li class="item">
+<a href="http://www.winemadeeasy.com/black-box-wines-malbec-2013-3-0-l-box-29746.html" title="Black Box Wines Malbec  2013 / 3.0 L. box" class="product-image"><img src="http://b208032a1d3287a6d3f3-258d94be31bdb406871c37e2eb1690c4.r56.cf1.rackcdn.com/catalog/product/cache/1/small_image/135x/0dc2d03fe217f8c83829496872af24a0/b/l/black_box_malbec_mv_3l.jpg" width="135" height="135" alt="Black Box Wines Malbec  2013 / 3.0 L. box"/></a>
+<div class="product-shop">
+<div class="f-fix">
+<div id="product-info">
+<h2 class="product-name"><a href="http://www.winemadeeasy.com/black-box-wines-malbec-2013-3-0-l-box-29746.html" title="Black Box Wines Malbec  2013 / 3.0 L. box">
+Black Box Wines Malbec</a></h2>
+ 
+<h3 class="product-subtitle">2013 / 3.0 L. box</h3>
+ 
+ 
+<div class="product-desc">
+Argentina | Mendoza </div>
+ 
+ 
+ 
+ 
+ 
+ 
+<div class="ratings">
+</div>
+ 
+ 
+<div class="prem-size-sku">Item #29746</div>
+ 
+ 
+ 
+ 
+<div class="desc std">
+&#8227; <a href="http://www.winemadeeasy.com/black-box-wines-malbec-2013-3-0-l-box-29746.html" title="Black Box Wines Malbec  2013 / 3.0 L. box" class="link-learn">Learn More</a>
+</div>
+ 
+ 
+</div>
+<div id="pricing-info">
+<div class="price-box">
+<meta itemprop="priceCurrency" content="USD"/>
+<span class="regular-price" itemprop="price" id="product-price-32519">
+<span class="price">$26.99</span> </span>
+</div>
+ 
+ 
+ 
+<span class="save">Only $24.29 when you buy a solid or mixed case</span>
+ 
+ 
+<form action="http://www.winemadeeasy.com/checkout/cart/add/uenc/aHR0cDovL3d3dy53aW5lbWFkZWVhc3kuY29tOjgwODAvY2F0YWxvZ3NlYXJjaC9yZXN1bHQvP3E9THVjYStNYWxiZWM,/product/32519/" method="post" id="product_addtocart_form_">
+<label for="qty">Qty</label>
+<input type="text" class="input-text qty" name="qty" id="qty" maxlength="3" value="1"/>
+<button type="button" class="b01" onclick="listAddToCart('http://www.winemadeeasy.com/checkout/cart/add/uenc/aHR0cDovL3d3dy53aW5lbWFkZWVhc3kuY29tOjgwODAvY2F0YWxvZ3NlYXJjaC9yZXN1bHQvP3E9THVjYStNYWxiZWM,/product/32519/', '0', 'This product cannot be shipped via UPS and can only be picked up at our store. Do you wish to continue?', this.form)"><span><span>Add to Cart</span></span></button>
+</form>
+ 
+ 
+<ul class="add-to-links">
+<li><a href="https://www.winemadeeasy.com/wishlist/index/add/product/32519/" class="link-wishlist">add to wishlist</a></li>
+<li><a href="http://www.winemadeeasy.com/catalog/product_compare/add/product/32519/uenc/aHR0cDovL3d3dy53aW5lbWFkZWVhc3kuY29tOjgwODAvY2F0YWxvZ3NlYXJjaC9yZXN1bHQvP3E9THVjYStNYWxiZWM,/" class="link-compare">add to compare</a></li>
+</ul>
+ 
+</div>
+</div>
+</div>
+</li>
+<li class="item">
+<a href="http://www.winemadeeasy.com/sottano-reserva-blend-2008-750-ml-29842.html" title="Sottano Reserva Blend  2008 / 750 ml." class="product-image"><img src="http://b208032a1d3287a6d3f3-258d94be31bdb406871c37e2eb1690c4.r56.cf1.rackcdn.com/catalog/product/cache/1/small_image/135x/0dc2d03fe217f8c83829496872af24a0/g/e/generic-red.png" width="135" height="135" alt="Sottano Reserva Blend  2008 / 750 ml."/></a>
+<div class="product-shop">
+<div class="f-fix">
+<div id="product-info">
+<h2 class="product-name"><a href="http://www.winemadeeasy.com/sottano-reserva-blend-2008-750-ml-29842.html" title="Sottano Reserva Blend  2008 / 750 ml.">
+Sottano Reserva Blend</a></h2>
+ 
+<h3 class="product-subtitle">2008 / 750 ml.</h3>
+ 
+ 
+<div class="product-desc">
+Argentina | Mendoza </div>
+ 
+ 
+<div class="prem-free-shipping">
+</div>
+ 
+ 
+ 
+ 
+<div class="ratings">
+<span class="ST"><span>ST</span>88</span> </div>
+ 
+ 
+<div class="prem-size-sku">Item #29842</div>
+ 
+ 
+ 
+ 
+<div class="desc std">
+&#8227; <a href="http://www.winemadeeasy.com/sottano-reserva-blend-2008-750-ml-29842.html" title="Sottano Reserva Blend  2008 / 750 ml." class="link-learn">Learn More</a>
+</div>
+ 
+ 
+</div>
+<div id="pricing-info">
+<div class="price-box">
+<meta itemprop="priceCurrency" content="USD"/>
+<span class="regular-price" itemprop="price" id="product-price-32535">
+<span class="price">$19.99</span> </span>
+</div>
+ 
+<span class="compare">Compare: <span class="compare-price"><span class="price">$25.99</span></span></span>
+ 
+ 
+<span class="save">You save: $6.00</span>
+ 
+ 
+<form action="http://www.winemadeeasy.com/checkout/cart/add/uenc/aHR0cDovL3d3dy53aW5lbWFkZWVhc3kuY29tOjgwODAvY2F0YWxvZ3NlYXJjaC9yZXN1bHQvP3E9THVjYStNYWxiZWM,/product/32535/" method="post" id="product_addtocart_form_">
+<label for="qty">Qty</label>
+<input type="text" class="input-text qty" name="qty" id="qty" maxlength="3" value="1"/>
+<button type="button" class="b01" onclick="listAddToCart('http://www.winemadeeasy.com/checkout/cart/add/uenc/aHR0cDovL3d3dy53aW5lbWFkZWVhc3kuY29tOjgwODAvY2F0YWxvZ3NlYXJjaC9yZXN1bHQvP3E9THVjYStNYWxiZWM,/product/32535/', '1', 'This product cannot be shipped via UPS and can only be picked up at our store. Do you wish to continue?', this.form)"><span><span>Add to Cart</span></span></button>
+</form>
+ 
+ 
+<ul class="add-to-links">
+<li><a href="https://www.winemadeeasy.com/wishlist/index/add/product/32535/" class="link-wishlist">add to wishlist</a></li>
+<li><a href="http://www.winemadeeasy.com/catalog/product_compare/add/product/32535/uenc/aHR0cDovL3d3dy53aW5lbWFkZWVhc3kuY29tOjgwODAvY2F0YWxvZ3NlYXJjaC9yZXN1bHQvP3E9THVjYStNYWxiZWM,/" class="link-compare">add to compare</a></li>
+</ul>
+ 
+</div>
+</div>
+</div>
+</li>
+<li class="item last">
+<a href="http://www.winemadeeasy.com/ocaso-gran-reserva-blend-2006-750-ml-30061.html" title="Ocaso Gran Reserva Blend  2006 / 750 ml." class="product-image"><img src="http://b208032a1d3287a6d3f3-258d94be31bdb406871c37e2eb1690c4.r56.cf1.rackcdn.com/catalog/product/cache/1/small_image/135x/0dc2d03fe217f8c83829496872af24a0/o/c/ocaso_gran_res_blend_750.png" width="135" height="135" alt="Ocaso Gran Reserva Blend  2006 / 750 ml."/></a>
+<div class="product-shop">
+<div class="f-fix">
+<div id="product-info">
+<h2 class="product-name"><a href="http://www.winemadeeasy.com/ocaso-gran-reserva-blend-2006-750-ml-30061.html" title="Ocaso Gran Reserva Blend  2006 / 750 ml.">
+Ocaso Gran Reserva Blend</a></h2>
+ 
+<h3 class="product-subtitle">2006 / 750 ml.</h3>
+ 
+ 
+<div class="product-desc">
+Argentina | Mendoza </div>
+ 
+ 
+<div class="prem-free-shipping">
+</div>
+ 
+ 
+<div class="prem-pick">
+<a title="Premier Platinum - Our Highest Recommendation"><span class="plat">Platinum</span></a>
+</div>
+ 
+ 
+<div class="ratings">
+</div>
+ 
+ 
+<div class="prem-size-sku">Item #30061</div>
+ 
+ 
+ 
+ 
+<div class="desc std">
+&#8227; <a href="http://www.winemadeeasy.com/ocaso-gran-reserva-blend-2006-750-ml-30061.html" title="Ocaso Gran Reserva Blend  2006 / 750 ml." class="link-learn">Learn More</a>
+</div>
+ 
+ 
+</div>
+<div id="pricing-info">
+<div class="price-box">
+<meta itemprop="priceCurrency" content="USD"/>
+<span class="regular-price" itemprop="price" id="product-price-32589">
+<span class="price">$24.99</span> </span>
+</div>
+ 
+ 
+ 
+<span class="save">Only $22.49 when you buy a solid or mixed case</span>
+ 
+ 
+<form action="http://www.winemadeeasy.com/checkout/cart/add/uenc/aHR0cDovL3d3dy53aW5lbWFkZWVhc3kuY29tOjgwODAvY2F0YWxvZ3NlYXJjaC9yZXN1bHQvP3E9THVjYStNYWxiZWM,/product/32589/" method="post" id="product_addtocart_form_">
+<label for="qty">Qty</label>
+<input type="text" class="input-text qty" name="qty" id="qty" maxlength="3" value="1"/>
+<button type="button" class="b01" onclick="listAddToCart('http://www.winemadeeasy.com/checkout/cart/add/uenc/aHR0cDovL3d3dy53aW5lbWFkZWVhc3kuY29tOjgwODAvY2F0YWxvZ3NlYXJjaC9yZXN1bHQvP3E9THVjYStNYWxiZWM,/product/32589/', '1', 'This product cannot be shipped via UPS and can only be picked up at our store. Do you wish to continue?', this.form)"><span><span>Add to Cart</span></span></button>
+</form>
+ 
+ 
+<ul class="add-to-links">
+<li><a href="https://www.winemadeeasy.com/wishlist/index/add/product/32589/" class="link-wishlist">add to wishlist</a></li>
+<li><a href="http://www.winemadeeasy.com/catalog/product_compare/add/product/32589/uenc/aHR0cDovL3d3dy53aW5lbWFkZWVhc3kuY29tOjgwODAvY2F0YWxvZ3NlYXJjaC9yZXN1bHQvP3E9THVjYStNYWxiZWM,/" class="link-compare">add to compare</a></li>
+</ul>
+ 
+</div>
+</div>
+</div>
+</li>
+</ol>
+<script type="text/javascript">decorateList('products-list', 'none-recursive')</script>
+<div class="toolbar-bottom">
+<div class="toolbar">
+<div class="sorter">
+<p class="view-mode">
+<span style="font-size:1.273em;">Search Results</span>
+</p>
+<div class="sort-by">
+<label>Sort results by</label>
+<select onchange="setLocation(this.value)">
+<option value="http://www.winemadeeasy.com/catalogsearch/result/index/?dir=asc&amp;order=relevance&amp;q=Luca+Malbec" selected="selected">
+Relevance </option>
+<option value="http://www.winemadeeasy.com/catalogsearch/result/index/?dir=asc&amp;order=name&amp;q=Luca+Malbec">
+Name </option>
+<option value="http://www.winemadeeasy.com/catalogsearch/result/index/?dir=asc&amp;order=price&amp;q=Luca+Malbec">
+Price </option>
+<option value="http://www.winemadeeasy.com/catalogsearch/result/index/?dir=asc&amp;order=prem_date_added&amp;q=Luca+Malbec">
+Date Added </option>
+<option value="http://www.winemadeeasy.com/catalogsearch/result/index/?dir=asc&amp;order=prem_rating_numeric&amp;q=Luca+Malbec">
+Rating </option>
+</select>
+<a href="http://www.winemadeeasy.com/catalogsearch/result/index/?dir=asc&amp;order=relevance&amp;q=Luca+Malbec" title="Set Ascending Direction"><img src="http://www.winemadeeasy.com/skin/frontend/premier/default/images/i_desc_arrow.gif" alt="Set Ascending Direction" class="v-middle"/></a>
+</div>
+</div>
+<div class="pager">
+<p class="amount">
+Showing 1-10 of <span style="color:#1fa60d">109</span> results </p>
+<div class="limiter">
+<label>Show</label>
+<select onchange="setLocation(this.value)">
+<option value="http://www.winemadeeasy.com/catalogsearch/result/index/?limit=10&amp;q=Luca+Malbec" selected="selected">
+10 </option>
+<option value="http://www.winemadeeasy.com/catalogsearch/result/index/?limit=25&amp;q=Luca+Malbec">
+25 </option>
+<option value="http://www.winemadeeasy.com/catalogsearch/result/index/?limit=50&amp;q=Luca+Malbec">
+50 </option>
+<option value="http://www.winemadeeasy.com/catalogsearch/result/index/?limit=100&amp;q=Luca+Malbec">
+100 </option>
+</select> </div>
+<div class="pages">
+<strong>Result Page:</strong>
+<ol>
+<li class="current">1</li>
+<li><a href="http://www.winemadeeasy.com/catalogsearch/result/index/?p=2&amp;q=Luca+Malbec">2</a></li>
+<li><a href="http://www.winemadeeasy.com/catalogsearch/result/index/?p=3&amp;q=Luca+Malbec">3</a></li>
+<li><a href="http://www.winemadeeasy.com/catalogsearch/result/index/?p=4&amp;q=Luca+Malbec">4</a></li>
+<li><a href="http://www.winemadeeasy.com/catalogsearch/result/index/?p=5&amp;q=Luca+Malbec">5</a></li>
+<li>
+<a class="next i-next" href="http://www.winemadeeasy.com/catalogsearch/result/index/?p=2&amp;q=Luca+Malbec" title="Next">
+<img src="http://www.winemadeeasy.com/skin/frontend/premier/default/images/pager_arrow_right.gif" alt="Next" class="v-middle"/>
+</a>
+</li>
+</ol>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+ 
+</div>
+ 
+</div>
+ 
+<div id="site-footer" itemscope itemtype="http://schema.org/WPFooter">
+<span class="t"></span>
+ 
+<div id="nav-site-info" class="np">
+<h2 class="m">Site Information</h2>
+<ul>
+<li class="first"><a href="/contact">Contact</a></li>
+<li><a href="/catalogsearch/advanced/">Advanced Search</a></li>
+<li><a href="/shipping-policy">Shipping Policy</a></li>
+<li class="last"><a href="/privacy-policy">Privacy Policy</a></li>
+</ul> </div>
+ 
+ 
+<div id="sitemap">
+<h2 class="m">Sitemap</h2>
+<div id="nav-sitemap">
+<ul class="col">
+<li class="lv1 first"><a href="/wine.html">Wine</a>
+<ul>
+<li class="lv2 first"><a href="/wine/new-arrivals.html">New Arrivals</a></li>
+<li class="lv2"><a href="/staff-picks.html">Staff Picks</a></li>
+<li class="lv2"><a href="/wine/premier-picks/gold-picks.html">Premier Gold</a></li>
+<li class="lv2 last"><a href="/wine/premier-picks/platinum-picks.html">Premier Platinum</a></li>
+</ul>
+</li>
+<li class="lv1"><a href="/sale.html">Sale</a>
+<ul>
+<li class="lv2 first"><a href="/sale/current-ad.html">Weekly Ad</a></li>
+</ul>
+</li>
+</ul>
+<ul class="col">
+<li class="lv1"><a href="/spirits.html">Spirits</a>
+<ul>
+<li class="lv2"><a href="/spirits/vodka.html">Vodka</a></li>
+<li class="lv2"><a href="/spirits/scotch.html">Scotch</a></li>
+<li class="lv2"><a href="/spirits/bourbon.html">Bourbon</a></li>
+<li class="lv2"><a href="/spirits/rum.html">Rum</a></li>
+<li class="lv2"><a href="/spirits/tequila.html">Tequila</a></li>
+<li class="lv2"><a href="/spirits/gin.html">Gin</a></li>
+<li class="lv2 last"><a href="/spirits/cordials-liqueurs.html">Liqueurs</a></li>
+</ul>
+</li>
+</ul>
+<ul class="col">
+<li class="lv1"><a href="/staff-picks.html">Staff Picks</a>
+<ul>
+<li class="lv2 first"><a href="/staff-picks/jon-notarius.html">Jon Notarius</a></li>
+<li class="lv2"><a href="/staff-picks/jeff-vignaux.html">Jeff Vignaux</a></li>
+<li class="lv2"><a href="/staff-picks/ed-draves.html">Ed Draves</a></li>
+<li class="lv2"><a href="/staff-picks/dan-updike.html">Dan Updike</a></li>
+<li class="lv2"><a href="/staff-picks/brett-welgoss.html">Brett Welgoss</a></li>
+<li class="lv2"><a href="/staff-picks/bill-logue.html">Bill Logue</a></li>
+<li class="lv2"><a href="/staff-picks/barkley.html">Barkley</a></li>
+</ul>
+</li>
+</ul>
+<ul class="col">
+<li class="lv1"><a href="/about-us.html">About Us</a>
+<ul>
+<li class="lv2 first"><a href="/about-us.html">Location and Hours</a></li>
+<li class="lv2"><a href="/shipping-policy">Shipping Policy</a></li>
+<li class="lv2"><a href="/about-us.html">Store History</a></li>
+<li class="lv2"><a href="http://www.premierwines.com">Premier Group</a></li>
+</ul>
+</li>
+<li class="lv1"><a href="#">Affiliated Sites</a>
+<ul>
+<li class="lv2 first"><a href="http://premierwines.com/">PremierWines.com</a></li>
+<li class="lv2"><a href="http://winedeals.com/">WineDeals.com</a></li>
+<li class="lv2"><a href="http://winetransit.com/">WineTransit.com</a></li>
+<li class="lv2 last"><a href="http://premierwinemind.com/">PremierWineMind.com</a></li>
+</ul>
+</li>
+</ul>
+<ul class="col">
+<li class="lv1 last"><a href="/help/">Help</a>
+<ul>
+<li class="lv2 first"><a href="/terms-of-service">Terms of Service</a></li>
+<li class="lv2"><a href="/shipping-policy/">Shipping Policy</a></li>
+<li class="lv2"><a href="/contact/">Contact Us</a></li>
+<li class="lv2"><a href="/live-chat/">Live Chat</a></li>
+</ul>
+</li>
+</ul> </div>
+</div>
+ 
+ 
+<div id="connect-with-us">
+<h2 class="m">Connect with us</h2>
+ 
+<div id="social-media">
+<div class="c">
+<h3 style="height: 25px; line-height: 25px;">Connect With Us:&nbsp;<a rel="external" href="http://www.facebook.com/PremierWinesOP"><img title="Friend us on Facebook" src="http://www.winemadeeasy.com/media/wysiwyg/icons/Facebook_sm.png" alt="Friend us on Facebook"/></a>&nbsp;<a rel="external" href="http://twitter.com/#!/PremierwinesOP/"><img title="Follow us on Twitter" src="http://www.winemadeeasy.com/media/wysiwyg/icons/Twitter_sm.png" alt="Follow us on Twitter"/></a></h3>
+</div> </div>
+ 
+ 
+<div id="email-alerts">
+<div class="c">
+<h3>Email Alerts</h3>
+<p>Sign up for email alerts to receive exclusive offers, new arrival alerts, and much more!&nbsp;<a class="arrow-link" rel="external" href="http://eepurl.com/bSGbuP" target="_blank">Sign Up<span class="r">&nbsp;</span></a></p>
+</div> </div>
+ 
+ 
+<div id="need-help">
+<div class="c">
+<h3>Need Help?</h3>
+<p>Call 1 (877) 577.4077<br/>or<br/>Live Chat with a<br/>Wine Associate on <span class="skype"><a href="#">Skype</a></span></p>
+</div> </div>
+ 
+</div>
+ 
+<div id="below-footer">
+<div style="float:left; margin:0 20px 0 0;"><table style="margin:0;">
+<tbody>
+<tr>
+<td width="120">
+ 
+  <div class="AuthorizeNetSeal"> <script type="text/javascript" language="javascript">var ANS_customer_id="31ff46cd-4c76-48f3-ade5-d67d71b44627";</script> <script type="text/javascript" language="javascript" src="//verify.authorize.net/anetseal/seal.js"></script> <a href="http://www.authorize.net/" id="AuthorizeNetText" target="_blank">Merchant Services</a> </div>
+ 
+</td>
+<td width="135">
+ 
+<table width="135" border="0" cellpadding="2" cellspacing="0" title="Click to Verify - This site chose VeriSign SSL for secure e-commerce and confidential communications.">
+<tr>
+<td width="135" align="center" valign="top"><script type="text/javascript" src="https://seal.verisign.com/getseal?host_name=www.winemadeeasy.com&amp;size=S&amp;use_flash=NO&amp;use_transparent=NO&amp;lang=en"></script><br/>
+<a href="http://www.verisign.com/ssl-certificate/" target="_blank" style="color:#000000; text-decoration:none; font:bold 7px verdana,sans-serif; letter-spacing:.5px; text-align:center; margin:0px; padding:0px;">ABOUT SSL CERTIFICATES</a></td>
+</tr>
+</table>
+ 
+</td>
+</tr>
+</tbody>
+</table></div>
+<div style="float:left;"></div>
+</div>
+ 
+<h2 class="m">Company Information</h2>
+<p id="copyright">&copy; <span>Copyright 2016 by Prestige Wine &amp; Spirits</span></p>
+<address>
+<span class="first" title="Address">Prestige Wine & Spirits
+3410 Amelia Drive
+Orchard Park, NY 14127-1560</span><br>
+<span title="Phone Number">(716) 825-9848 | 1-877-577-4077</span>
+</address>
+ 
+ 
+<div class="m np">
+<h2>Page Access Navigation</h2>
+<ul>
+<li><a href="#" accesskey="t">Top of Page</a></li>
+<li><a href="#main" accesskey="s">Jump to page Content</a></li>
+<li><a href="#nav-primary" accesskey="n">Jump to primary navigation links</a></li>
+<li><a href="#access-keys-legend" accesskey="0">Access Keys Legend</a></li>
+</ul>
+</div>
+ 
+<div id="access-keys-legend" class="m np">
+<h2>Access Keys Legend</h2>
+<dl>
+<dt>0</dt>
+<dd>Access Keys legend.</dd>
+<dt>1</dt>
+<dd>Return to the "Home Page"</dd>
+<dt>3</dt>
+<dd>Go to "Site Map"</dd>
+<dt>4</dt>
+<dd>Go to the "Site Search"</dd>
+<dt>N</dt>
+<dd>Go to the main navigation links</dd>
+<dt>S</dt>
+<dd>Skip to the main content of the page.</dd>
+</dl>
+</div>
+</div>
+</div>
+</div>
+</body>
+</html>

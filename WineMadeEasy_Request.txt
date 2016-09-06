@@ -1,0 +1,11 @@
+GET http://www.winemadeeasy.com/catalogsearch/result/?q=Luca+Malbec HTTP/1.1
+Host: www.winemadeeasy.com
+Connection: keep-alive
+Upgrade-Insecure-Requests: 1
+User-Agent: Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/52.0.2743.116 Safari/537.36
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8
+Referer: http://www.winemadeeasy.com/santa-margherita-pinot-grigio-valdadige-2014-750-ml-23101.html?vfsku=23101&vfsku=23101&gpla=pla&gclid=Cj0KEQjw0rm-BRCn85bm8uS-zK0BEiQAHo4vrEylYMMtw_cwHRJRm6lYkBH55peS2dlv9U0ZN8SRZIAaAnbg8P8HAQ
+Accept-Encoding: gzip, deflate, sdch
+Accept-Language: en-US,en;q=0.8
+Cookie: __cfduid=dccece97b0c9257abc68dd41e56c1a6e41473176861; X-Mapping-fjhppofk=4BFFFB0803499692B98B94A360B30D22; external_no_cache=1; __utmt=1; __utma=227407899.1722055184.1473176859.1473176859.1473176859.1; __utmb=227407899.1.10.1473176859; __utmc=227407899; __utmz=227407899.1473176859.1.1.utmgclid=Cj0KEQjw0rm-BRCn85bm8uS-zK0BEiQAHo4vrEylYMMtw_cwHRJRm6lYkBH55peS2dlv9U0ZN8SRZIAaAnbg8P8HAQ|utmccn=(not%20set)|utmcmd=(not%20set)|utmctr=(not%20provided); frontend=qs7mmqcti5ghu5k8vct3v6sq42
+
