@@ -17,5 +17,6 @@ namespace Task.UpcDb.Tasks
         public int Size { get; set; }
         public double AlchoholLevel { get; set; }
         public string Rating { get; set; }
-    }
+		public string Category { get; set; }
+	}
 }
