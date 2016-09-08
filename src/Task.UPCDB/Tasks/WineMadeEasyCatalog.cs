@@ -23,6 +23,7 @@ namespace Task.UPCDB.Tasks
         readonly List<string> _pages;
         private const string taskCode = "WINEMADEEASY";
         private string _fileName = "upc.csv";
+        private string _fileNameError;
         private readonly string _runPath = @"c:\";
 
         public WineMadeEasyCatalog() : base(taskCode)
@@ -30,6 +31,7 @@ namespace Task.UPCDB.Tasks
             _pages = new List<string>();
             _runPath += @"\" + taskCode + @"\";
             _fileName = @"C:\GIT\Task.Manager\" + _fileName;
+            _fileNameError = @"C:\GIT\Task.Manager\processError.csv";
         }
 
         public override string TaskCode => taskCode;
@@ -90,8 +92,9 @@ namespace Task.UPCDB.Tasks
 
            });
         }
-        private bool InsertItemDetailQueue()
+        private async Task<bool> InsertItemDetailQueue()
         {
+   
             CloudStorageAccount account;
             CloudStorageAccount.TryParse("DefaultEndpointsProtocol=https;AccountName=winehunter;AccountKey=tuG0LI1tGsBilE+R8GnG0PlWCFvtoULCOwh/IeFydllu7Onc0k4coRXiCFS3d4bDmcBc4oVdBR951PuAW0NjTw==;", out account);
             var queueClient = account.CreateCloudQueueClient();
@@ -100,66 +103,76 @@ namespace Task.UPCDB.Tasks
 
             // Create the queue if it doesn't already exist
             shopsImportDataQueue.CreateIfNotExists();
-            _fileName = @"c:\UPCDB\upc.csv";
+
             var itemDetailUrls = (from line in ReadFrom(_fileName)
                                   select line);
 
             foreach (var itemUrl in itemDetailUrls)
             {
-                var wine = GetUpcData(itemUrl);
-
+                var wine = await GetUpcData(itemUrl);
+                if (wine == null) continue;
                 var value = Newtonsoft.Json.JsonConvert.SerializeObject(wine);
                 var message = new CloudQueueMessage(value);
-                System.Threading.Tasks.Task.Run(async () =>
-                {
-                    await shopsImportDataQueue.AddMessageAsync(message);
-                    Console.Write("+");
-                });
-
+                await shopsImportDataQueue.AddMessageAsync(message);
             }
+
             Console.Write("Item Queue complete.");
             return true;
         }
 
-        private UpcDbModel GetUpcData(string page)
+        private async Task<UpcDbModel> GetUpcData(string page)
         {
             var getHtmlWeb = new HtmlWeb();
             var document = getHtmlWeb.Load(page);
-            //prem-prod-info
-            var upcNodesName = document.DocumentNode.SelectNodes("//div[@class='product-name']//h1");
-            var upcNodesRatings = document.DocumentNode.SelectNodes("//div[@class='ratings']");
-            var upcNodesRegion = document.DocumentNode.SelectNodes("//div[@id='prem-prod-info']//div[@id='prem-prod-region']//dl/dd");
-            var upcNodesContents = document.DocumentNode.SelectNodes("//div[@id='prem-prod-info']//div[@id='prem-prod-contents']");
-            var upcNodesDetails = document.DocumentNode.SelectNodes("//div[@id='prem-prod-info']//div[@id='prem-prod-details']//dl/dd");
-            var upcNodesUpc = document.DocumentNode.SelectNodes("//div[@id='prem-prod-info']//div[@id='prem-prod-details']//dl/meta");
-            var upcNodesUpcImage = document.DocumentNode.SelectNodes("//p[@class='product-image']//img");
 
-            var wine = new UpcDbModel
+            try
             {
-                WineName = upcNodesName[0].InnerText.Replace("\n", string.Empty),
-                Category = upcNodesDetails[0].InnerText.Replace("\n", string.Empty),
-                Winery = upcNodesDetails[1].InnerText.Replace("\n", string.Empty),
-                Varietal = upcNodesContents[0].InnerText.Replace("\n", string.Empty),
-                Region = upcNodesRegion[0].InnerText.Replace("\n", string.Empty),
-                UpcCode = upcNodesUpc?[0].Attributes["content"].Value.Replace("\n", string.Empty),
-                Rating = upcNodesRatings[0].InnerText.Replace("\n", string.Empty),
-                ImagePath = upcNodesUpcImage?[0].Attributes["src"].Value.Replace("\n", string.Empty),
-            };
+                //prem-prod-info
+                var upcNodesName = document.DocumentNode.SelectNodes("//div[@class='product-name']//h1");
+                var upcNodesRatings = document.DocumentNode.SelectNodes("//div[@class='ratings']");
+                var upcNodesRegion = document.DocumentNode.SelectNodes("//div[@id='prem-prod-info']//div[@id='prem-prod-region']//dl/dd");
+                var upcNodesContents = document.DocumentNode.SelectNodes("//div[@id='prem-prod-info']//div[@id='prem-prod-contents']");
+                var upcNodesDetails = document.DocumentNode.SelectNodes("//div[@id='prem-prod-info']//div[@id='prem-prod-details']//dl/dd");
+                var upcNodesUpc = document.DocumentNode.SelectNodes("//div[@id='prem-prod-info']//div[@id='prem-prod-details']//dl/meta");
+                var upcNodesUpcImage = document.DocumentNode.SelectNodes("//p[@class='product-image']//img");
 
-            var wineSize = 0;
-            int.TryParse(upcNodesDetails[2].InnerText.Replace("&nbsp;", string.Empty).Replace("ml.", string.Empty), out wineSize);
-            wine.Size = wineSize;
+                var wine = new UpcDbModel
+                {
+                    WineName = upcNodesName?[0].InnerText.Replace("\n", string.Empty),
+                    Category = upcNodesDetails?[0].InnerText.Replace("\n", string.Empty),
+                    Winery = upcNodesDetails?[1].InnerText.Replace("\n", string.Empty),
+                    Varietal = upcNodesContents?[0].InnerText.Replace("\n", string.Empty),
+                    Region = upcNodesRegion?[0].InnerText.Replace("\n", string.Empty),
+                    UpcCode = upcNodesUpc?[0].Attributes["content"].Value.Replace("\n", string.Empty),
+                    Rating = upcNodesRatings?[0].InnerText.Replace("\n", string.Empty),
+                    ImagePath = upcNodesUpcImage?[0].Attributes["src"].Value.Replace("\n", string.Empty),
+                };
 
-            var wineYear = 0;
-            int.TryParse(upcNodesDetails[3].InnerText.Replace("&nbsp;", string.Empty).Replace("ml", string.Empty), out wineYear);
-            wine.Year = wineYear;
-            return wine;
 
+                var wineSize = 0;
+                int.TryParse(upcNodesDetails?[2].InnerText.Replace("&nbsp;", string.Empty).Replace("ml.", string.Empty), out wineSize);
+                wine.Size = wineSize;
+
+                var wineYear = 0;
+                int.TryParse(upcNodesDetails?[3].InnerText.Replace("&nbsp;", string.Empty).Replace("ml", string.Empty), out wineYear);
+                wine.Year = wineYear;
+                
+                return wine;
+
+            }
+            catch (Exception)
+            {
+                using (var processLog = File.AppendText(_fileNameError))
+                {
+                    await processLog.WriteLineAsync(page);
+                }
+            }
+            return null;
         }
         public override bool Run()
         {
-       //   var x =  GetUpcData("http://www.winemadeeasy.com/yardstick-cabernet-sauvignon-ruth-s-reach-2010-750-ml-36114.html");
-        //    return true;
+            //   var x =  GetUpcData("http://www.winemadeeasy.com/yardstick-cabernet-sauvignon-ruth-s-reach-2010-750-ml-36114.html");
+            //    return true;
             var processTask = System.Threading.Tasks.Task.Run(async () =>
             {
                 for (int i = 1; i < 53; i++)
