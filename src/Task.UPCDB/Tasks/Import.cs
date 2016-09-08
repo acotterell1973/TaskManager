@@ -2,6 +2,8 @@
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+using System.Text;
+using System.Text.RegularExpressions;
 using Attributes;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.WindowsAzure.Storage;
@@ -104,7 +106,7 @@ namespace Task.UpcDb.Tasks
                            UpcCode = wineInfo.UpcCode,
                            Varietal = wineInfo.Varietal,
                            AlchoholLevel = (decimal?)wineInfo.AlchoholLevel,
-                           WineCategoryId = category.WineCategoryId,
+                           WineCategoryId = category?.WineCategoryId,
                            Rating = wineInfo.Rating,
                            Region = wineInfo.Region,
                            WineName = wineInfo.WineName,
@@ -176,6 +178,37 @@ namespace Task.UpcDb.Tasks
 
         }
 
+        private static Random rng = new Random(Environment.TickCount);
+
+        private static void GetNumber(int objlength)
+        {
+            for (int index = 0; index < 20; index++)
+            {
+                int length = Convert.ToInt32(objlength);
+                var number = rng.NextDouble().ToString("0.000000000000").Substring(2, length);
+                Console.WriteLine(number);
+            }
+        }
+
+        public static string GetInternalBarCode()
+        {
+            var temp = Guid.NewGuid().ToString().Replace("-", string.Empty);
+            var barcode = Regex.Replace(temp, "[a-zA-Z]", string.Empty).Substring(0, 12);
+            return barcode;
+        }
+        public static string GenerateRandomString(int size)
+        {
+            Random random = new Random((int)DateTime.Now.Ticks);//thanks to McAden
+            StringBuilder builder = new StringBuilder();
+            char ch;
+            for (int i = 0; i < size; i++)
+            {
+                ch = Convert.ToChar(Convert.ToInt32(Math.Floor(26 * random.NextDouble() + 65)));
+                builder.Append(ch);
+            }
+
+            return builder.ToString();
+        }
         #region Helpers
 
 

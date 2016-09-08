@@ -1,0 +1,3 @@
+Image resizing http://imageresizing.net/docs/v4/docs/cloud 
+
+Azue Image Upload http://devcenter.wintellect.com/rrobinson/azure-bits-2-saving-the-image-to-azure-blob-storage
