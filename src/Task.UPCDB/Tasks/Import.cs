@@ -8,6 +8,7 @@ using Microsoft.WindowsAzure.Storage;
 using Microsoft.WindowsAzure.Storage.Queue;
 using Task.Common;
 using Task.UPCDB.Models;
+using static System.String;
 
 namespace Task.UpcDb.Tasks
 {
@@ -48,20 +49,25 @@ namespace Task.UpcDb.Tasks
                 _context = new WinejournaldbContext();
                 _context.ChangeTracker.AutoDetectChangesEnabled = false;
                 var currentWineList = await _context.WineList.ToListAsync();
+                List<WineCategories> wineCategories = await _context.WineCategories.ToListAsync();
+
                 for (var i = 0; i < loopCount; i++)
                 {
-                    ImportTask(importDataQueue, maxQueueSize, currentWineList).Wait();
+                    ImportTask(importDataQueue, maxQueueSize, currentWineList, wineCategories).Wait();
                     Console.WriteLine($"Task Count Added: {i}");
                     currentWineList = await _context.WineList.ToListAsync();
+                    wineCategories = await _context.WineCategories.ToListAsync();
                 }
                 await System.Threading.Tasks.Task.WhenAll(processResults);
+
             });
 
             task.Wait();
             return true;
         }
 
-        private async System.Threading.Tasks.Task ImportTask(CloudQueue importDataQueue, int maxQueueSize, List<WineList> currentList)
+
+        private async System.Threading.Tasks.Task ImportTask(CloudQueue importDataQueue, int maxQueueSize, List<WineList> currentList, List<WineCategories> wineCategories)
         {
 
             await System.Threading.Tasks.Task.Run(async () =>
@@ -76,20 +82,37 @@ namespace Task.UpcDb.Tasks
 
                    if (currentList.Any(w => w.UpcCode == wineInfo.UpcCode) == false)
                    {
+
+                       //Todo: Get CategoryId or insert new one
+                       var category = wineCategories.First(wc =>
+                               wc.Name.ToLower().Replace(" ", Empty) ==
+                               wineInfo.Category.ToLower().Replace(" ", Empty));
+
+                       if (category == null && wineInfo.Category != null)
+                       {
+                           if (!wineInfo.Category.IsNullOrEmpty())
+                           {
+                               category = new WineCategories { Name = wineInfo.Category };
+                               _context.WineCategories.Add(category);
+                               category.WineCategoryId = await _context.SaveChangesAsync();
+                           }
+                       }
+
+                       
                        var wineData = new WineList()
                        {
                            UpcCode = wineInfo.UpcCode,
                            Varietal = wineInfo.Varietal,
                            AlchoholLevel = (decimal?)wineInfo.AlchoholLevel,
-                           //     CreatedDate = DateTime.Now,
+                           WineCategoryId = category.WineCategoryId,
                            Rating = wineInfo.Rating,
                            Region = wineInfo.Region,
                            WineName = wineInfo.WineName,
                            Winery = wineInfo.Winery,
                            Year = wineInfo.Year,
                            Size = wineInfo.Size,
-
                        };
+
                        _context.WineList.Add(wineData);
                        Console.Write(".");
                        try

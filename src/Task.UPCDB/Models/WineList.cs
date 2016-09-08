@@ -7,6 +7,7 @@ namespace Task.UPCDB.Models
     {
         public int WineListId { get; set; }
         public string UpcCode { get; set; }
+        public int? WineCategoryId { get; set; }
         public string WineName { get; set; }
         public string Winery { get; set; }
         public string Varietal { get; set; }

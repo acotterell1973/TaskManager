@@ -175,21 +175,21 @@ namespace Task.UPCDB.Tasks
             //    return true;
             var processTask = System.Threading.Tasks.Task.Run(async () =>
             {
-                for (int i = 1; i < 53; i++)
-                {
-                    Console.WriteLine("page " + i);
-                    var pg = await GetPageUrls(i, 100);
-                    Console.WriteLine("adding results " + i);
-                    _pages.AddRange(pg);
-                }
-                using (var processLog = File.AppendText(_fileName))
-                {
-                    foreach (var upc in _pages)
-                    {
-                        await processLog.WriteLineAsync(upc);
-                    }
-                }
-
+                //for (int i = 1; i < 53; i++)
+                //{
+                //    Console.WriteLine("page " + i);
+                //    var pg = await GetPageUrls(i, 100);
+                //    Console.WriteLine("adding results " + i);
+                //    _pages.AddRange(pg);
+                //}
+                //using (var processLog = File.AppendText(_fileName))
+                //{
+                //    foreach (var upc in _pages)
+                //    {
+                //        await processLog.WriteLineAsync(upc);
+                //    }
+                //}
+                await InsertItemDetailQueue();
             });
             processTask.Wait();
 
