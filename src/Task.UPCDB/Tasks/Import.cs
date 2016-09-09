@@ -9,6 +9,7 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.WindowsAzure.Storage;
 using Microsoft.WindowsAzure.Storage.Queue;
 using Task.Common;
+using Task.UPCDB;
 using Task.UPCDB.Models;
 using static System.String;
 
@@ -68,11 +69,11 @@ namespace Task.UpcDb.Tasks
             return true;
         }
 
-
+        ImageService imageService = new ImageService();
         private async System.Threading.Tasks.Task ImportTask(CloudQueue importDataQueue, int maxQueueSize, List<WineList> currentList, List<WineCategories> wineCategories)
         {
-
-            await System.Threading.Tasks.Task.Run(async () =>
+            
+           await System.Threading.Tasks.Task.Run(async () =>
            {
                // var context = new WinejournaldbContext();
                //   context.ChangeTracker.AutoDetectChangesEnabled = false;
@@ -115,11 +116,18 @@ namespace Task.UpcDb.Tasks
                            Size = wineInfo.Size,
                        };
 
-                       _context.WineList.Add(wineData);
+                       if (wineData.UpcCode.IsNullOrEmpty())
+                       {
+                           wineData.UpcCode = GetInternalBarCode();
+                       }
+
+                       _context.WineList.Add(wineData); 
                        Console.Write(".");
                        try
                        {
                            await _context.SaveChangesAsync();
+                           var imageData = await imageService.CreateUploadedImage(wineInfo.ImagePath, wineInfo.UpcCode);
+                           await imageService.AddImageToBlobStorageAsync(imageData);
                            await importDataQueue.DeleteMessageAsync(data);
                        }
                        catch (Exception exception)
@@ -193,9 +201,10 @@ namespace Task.UpcDb.Tasks
         public static string GetInternalBarCode()
         {
             var temp = Guid.NewGuid().ToString().Replace("-", string.Empty);
-            var barcode = Regex.Replace(temp, "[a-zA-Z]", string.Empty).Substring(0, 12);
-            return barcode;
+            var barcode = Regex.Replace(temp, "[a-zA-Z]", string.Empty).Substring(0, 7);
+            return "9999-" + barcode;
         }
+
         public static string GenerateRandomString(int size)
         {
             Random random = new Random((int)DateTime.Now.Ticks);//thanks to McAden

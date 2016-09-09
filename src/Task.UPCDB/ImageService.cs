@@ -57,6 +57,11 @@ namespace Task.UPCDB
             if (!string.IsNullOrEmpty(imageName))
             {
                 byte[] fileBytes = await LoadImage(new Uri(imageUrl));
+                
+                using (System.Drawing.Image image = Image.FromStream(new MemoryStream(fileBytes)))
+                {
+                    image.Save("output.jpg", ImageFormat.Jpeg);  // Or Png
+                }
                 return new UploadedImage
                 {
                     ContentType = "image/jpg",
