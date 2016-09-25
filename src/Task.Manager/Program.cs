@@ -117,9 +117,6 @@ namespace Task.Manager
             //                    return;
             //                }
 
-
-
-
             //                var diags = new DiagnosticReporting();
             //                // Parse the command line arguments:
             //                var argQueue = new Queue<string>(args);
