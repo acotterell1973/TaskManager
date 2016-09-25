@@ -1,13 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
 using System.Text;
 using System.Text.RegularExpressions;
-using System.Threading;
-using Microsoft.Extensions.DependencyModel;
-using Microsoft.Extensions.PlatformAbstractions;
-using Task.Common;
-using Task.UPCDB.Tasks;
 
 namespace Task.Manager
 {
@@ -62,15 +55,15 @@ namespace Task.Manager
         }
 
 
-        //    private static Startup _startup;
+        private static Startup _startup;
         public static void Main(string[] args)
         {
-            var barcodeData1 = GetInternalBarCode();
-            var barcodeData2 = GenerateRandomString(7);
-            GetNumber(12);
-            Console.WriteLine("barcode data 1 :: " + barcodeData1);
-            Console.WriteLine("barcode data 2 :: " + barcodeData2);
-            Console.ReadLine();
+            //var barcodeData1 = GetInternalBarCode();
+            //var barcodeData2 = GenerateRandomString(7);
+            //GetNumber(12);
+            //Console.WriteLine("barcode data 1 :: " + barcodeData1);
+            //Console.WriteLine("barcode data 2 :: " + barcodeData2);
+            //Console.ReadLine();
             //	var wineMadeEasy = new WineMadeEasyCatalog();
             //    wineMadeEasy.Run();
             //var digitEyes = new DigitEyes();
@@ -78,7 +71,7 @@ namespace Task.Manager
             //   var upcCatalog = new Task.UpcDb.Tasks.Catalog();
             //  upcCatalog.Run();
 
-            //    var upcdb = new UpcDb.Tasks.Import();
+            //  var upcdb = new UpcDb.Tasks.Import();
             //    upcdb.Run();
 
 
@@ -99,12 +92,12 @@ namespace Task.Manager
             //                    return;
             //                }
 
-            //                _startup = new Startup();
-            //                //Load the base application configuration
-            //                _startup.Configure(args);
+            _startup = new Startup();
+            //Load the base application configuration
+            _startup.Configure(args);
 
-            //                //look and get packages that implements the IScheduleTask interface
-            //                _startup.ConfigureServices();
+            //look and get packages that implements the IScheduleTask interface
+            _startup.ConfigureServices();
 
 
 

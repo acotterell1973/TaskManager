@@ -12,6 +12,15 @@
           "lib/Net45/HtmlAgilityPack.dll": {}
         }
       },
+      "ImageProcessor/2.4.4": {
+        "type": "package",
+        "compile": {
+          "lib/net45/ImageProcessor.dll": {}
+        },
+        "runtime": {
+          "lib/net45/ImageProcessor.dll": {}
+        }
+      },
       "Microsoft.AspNet.WebApi.Client/5.2.2": {
         "type": "package",
         "dependencies": {
@@ -1345,7 +1354,7 @@
   },
   "libraries": {
     "HtmlAgilityPack/1.4.9.5": {
-      "sha512": "i5di/J7GO4y2kx/hhVzctPrBI8G2cefWZDMDU/FdOUD3iVkiidN1q1NDZ0FvqrhB28LSaYaM4Z0hs86Tnp0IzA==",
+      "sha512": "iKBDxJHESRCIRbmgLKVkNM86LIX52jf6wsVQdbSsLpPUG9oSnAD1Pz8IHjJT+dQ3TWJEu4WYZvbdlixdmWKMVw==",
       "type": "package",
       "path": "HtmlAgilityPack/1.4.9.5",
       "files": [
@@ -1376,6 +1385,17 @@
         "lib/sl5/HtmlAgilityPack.dll",
         "lib/sl5/HtmlAgilityPack.pdb",
         "readme.txt"
+      ]
+    },
+    "ImageProcessor/2.4.4": {
+      "sha512": "eflRSDzqquWgbP3sxhUYKycxEGkrjuJjBaprbKiaH+vmg51W4ZRDgR9ocLHMpk5KRk5QeryXRIGpYRtgGvkgwA==",
+      "type": "package",
+      "path": "ImageProcessor/2.4.4",
+      "files": [
+        "ImageProcessor.2.4.4.nupkg.sha512",
+        "ImageProcessor.nuspec",
+        "lib/net40/ImageProcessor.dll",
+        "lib/net45/ImageProcessor.dll"
       ]
     },
     "Microsoft.AspNet.WebApi.Client/5.2.2": {
@@ -4788,6 +4808,7 @@
     "": [
       "Attributes >= 1.0.0-*",
       "HtmlAgilityPack >= 1.4.9.5",
+      "ImageProcessor >= 2.4.4",
       "Microsoft.AspNet.WebApi.Client >= 5.2.2",
       "Microsoft.EntityFrameworkCore.SqlServer >= 1.0.0",
       "Microsoft.EntityFrameworkCore.SqlServer.Design >= 1.0.0",

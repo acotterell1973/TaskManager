@@ -80,21 +80,21 @@ namespace Task.UPCDB.Tasks
         {
             List<string> pg;
             return await System.Threading.Tasks.Task.Run(() =>
-           {
-               string page = $"http://www.winemadeeasy.com/wine/products/?limit={pageSize}&p={pageCount}";
-               var getHtmlWeb = new HtmlWeb();
-               var document = getHtmlWeb.Load(page);
+            {
+                string page = $"http://www.winemadeeasy.com/wine/products/?limit={pageSize}&p={pageCount}";
+                var getHtmlWeb = new HtmlWeb();
+                var document = getHtmlWeb.Load(page);
 
-               var upcNodes = document.DocumentNode.SelectNodes("//ol[@class='products-list']//li//a[@class='product-image']");
+                var upcNodes = document.DocumentNode.SelectNodes("//ol[@class='products-list']//li//a[@class='product-image']");
 
-               pg = upcNodes.Select(s => s.Attributes["href"].Value).ToList();
-               return pg;
+                pg = upcNodes.Select(s => s.Attributes["href"].Value).ToList();
+                return pg;
 
-           });
+            });
         }
         private async Task<bool> InsertItemDetailQueue()
         {
-   
+
             CloudStorageAccount account;
             CloudStorageAccount.TryParse("DefaultEndpointsProtocol=https;AccountName=winehunter;AccountKey=tuG0LI1tGsBilE+R8GnG0PlWCFvtoULCOwh/IeFydllu7Onc0k4coRXiCFS3d4bDmcBc4oVdBR951PuAW0NjTw==;", out account);
             var queueClient = account.CreateCloudQueueClient();
@@ -114,6 +114,7 @@ namespace Task.UPCDB.Tasks
                 var value = Newtonsoft.Json.JsonConvert.SerializeObject(wine);
                 var message = new CloudQueueMessage(value);
                 await shopsImportDataQueue.AddMessageAsync(message);
+                Console.WriteLine(".");
             }
 
             Console.Write("Item Queue complete.");
@@ -156,15 +157,15 @@ namespace Task.UPCDB.Tasks
                 var wineYear = 0;
                 int.TryParse(upcNodesDetails?[3].InnerText.Replace("&nbsp;", string.Empty).Replace("ml", string.Empty), out wineYear);
                 wine.Year = wineYear;
-                
+
                 return wine;
 
             }
-            catch (Exception)
+            catch (Exception exception)
             {
                 using (var processLog = File.AppendText(_fileNameError))
                 {
-                    await processLog.WriteLineAsync(page);
+                    await processLog.WriteLineAsync($"{page} :: {exception.Message}");
                 }
             }
             return null;

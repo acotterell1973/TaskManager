@@ -5,7 +5,7 @@
   "queueConnectionString": "DefaultEndpointsProtocol=https;AccountName=asap;AccountKey=IUAGd76l/6kQwVhIEe08V5KOrfoAdcJCYpypiDRXK3L5oef3IaXJPIHSV3pxZn9lD+LQr6Vk1XqQ5vjE9jHgGA==",
   "taskLib": "task.upstracking.dll, task.upcdb.dll",
   "interfaceType": "IScheduledTask",
-  "externalAssemblyPath": "",
+  "ExternalAssemblyPath": "C:\\GIT\\Task.Manager\\src\\Task.Manager\\bin\\Debug\\net46",
   "TaskManifest": [
     "Task.UPCDB"
   ]

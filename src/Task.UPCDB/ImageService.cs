@@ -7,6 +7,8 @@ using System.Net.Http;
 using System.Net.Mime;
 using System.Text;
 using System.Threading.Tasks;
+using ImageProcessor;
+using ImageProcessor.Imaging.Formats;
 using Microsoft.WindowsAzure.Storage;
 using Microsoft.WindowsAzure.Storage.Blob;
 
@@ -57,11 +59,35 @@ namespace Task.UPCDB
             if (!string.IsNullOrEmpty(imageName))
             {
                 byte[] fileBytes = await LoadImage(new Uri(imageUrl));
-                
-                using (System.Drawing.Image image = Image.FromStream(new MemoryStream(fileBytes)))
+
+                ISupportedImageFormat format = new JpegFormat { Quality = 70 };
+                //   Size size = new Size(150, 0)
+                using (MemoryStream inStream = new MemoryStream(fileBytes))
                 {
-                    image.Save("output.jpg", ImageFormat.Jpeg);  // Or Png
+                    using (MemoryStream outStream = new MemoryStream())
+                    {
+                        // Initialize the ImageFactory using the overload to preserve EXIF metadata.
+                        using (ImageFactory imageFactory = new ImageFactory(preserveExifData: true))
+                        {
+                            // Load, resize, set the format and quality and save an image.
+                            imageFactory.Load(inStream)
+                                        // .Resize(size)
+                                        // .Format(format)
+                                        .Save(outStream);
+                        }
+                        // Do something with the stream.
+                   
+                        using (var fileStream = new FileStream(@"C:\GIT\Task.Manager\" + imageName + ".jpg", FileMode.CreateNew, FileAccess.ReadWrite))
+                        {
+                            outStream.Position = 0;
+                            outStream.CopyTo(fileStream);
+                        }
+                    }
                 }
+                //using (System.Drawing.Image image = Image.FromStream(new MemoryStream(fileBytes)))
+                //{
+                //    image.Save("output.jpg", ImageFormat.Jpeg);  // Or Png
+                //}
                 return new UploadedImage
                 {
                     ContentType = "image/jpg",

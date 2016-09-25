@@ -5,17 +5,20 @@
   },
 
   "dependencies": {
+
     "Microsoft.ApplicationInsights": "2.1.0",
+    "Microsoft.ApplicationInsights.AspNetCore": "1.0.0",
     "Microsoft.Extensions.Configuration": "1.0.0",
+    "Microsoft.Extensions.Configuration.Abstractions": "1.0.0",
     "Microsoft.Extensions.Configuration.FileExtensions": "1.0.0",
     "Microsoft.Extensions.Configuration.Json": "1.0.0",
-    "Microsoft.Extensions.OptionsModel": "1.0.0-rc1-final",
-    "Task.Common": "1.0.0-*",
-    "DependencyInjection": "1.0.0-*",
-    "Microsoft.Extensions.Configuration.CommandLine": "1.0.0",
-    "Microsoft.Extensions.DependencyModel": "1.0.0-*",
+    "Microsoft.Extensions.DependencyInjection": "1.0.0",
+    "Microsoft.Extensions.DependencyInjection.Abstractions": "1.0.0",
+    "Microsoft.Extensions.Options": "1.0.0",
+    "Microsoft.Extensions.Options.ConfigurationExtensions": "1.0.0",
     "Microsoft.Extensions.PlatformAbstractions": "1.0.0",
-    "Task.UPCDB": "1.0.0-*"
+    "Microsoft.Extensions.PlatformAbstractions.Dnx": "1.0.0-rc2-20221",
+    "Task.PlugInsLoader": "1.0.0"
   },
 
 

@@ -2,11 +2,11 @@
 using System.Collections.Generic;
 using Microsoft.ApplicationInsights;
 using Microsoft.ApplicationInsights.Extensibility;
-using Task.Common;
+//using Task.Common;
 
 namespace Task.Manager
 {
-    internal class DiagnosticReporting : IDiagnosticReporting
+    internal class DiagnosticReporting// : IDiagnosticReporting
     {
         private TelemetryClient _telemetryClient;
 

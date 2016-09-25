@@ -59,7 +59,7 @@ namespace Task.UpcDb.Tasks
                     ImportTask(importDataQueue, maxQueueSize, currentWineList, wineCategories).Wait();
                     Console.WriteLine($"Task Count Added: {i}");
                     currentWineList = await _context.WineList.ToListAsync();
-                    wineCategories = await _context.WineCategories.ToListAsync();
+
                 }
                 await System.Threading.Tasks.Task.WhenAll(processResults);
 
@@ -69,83 +69,107 @@ namespace Task.UpcDb.Tasks
             return true;
         }
 
-        ImageService imageService = new ImageService();
+        ImageService _imageService = new ImageService();
         private async System.Threading.Tasks.Task ImportTask(CloudQueue importDataQueue, int maxQueueSize, List<WineList> currentList, List<WineCategories> wineCategories)
         {
-            
-           await System.Threading.Tasks.Task.Run(async () =>
-           {
-               // var context = new WinejournaldbContext();
-               //   context.ChangeTracker.AutoDetectChangesEnabled = false;
-               var items = importDataQueue.GetMessages(maxQueueSize);
-               foreach (var data in items.ToList())
 
-               {
-                   var wineInfo = Newtonsoft.Json.JsonConvert.DeserializeObject<UpcDbModel>(data.AsString);
+            await System.Threading.Tasks.Task.Run(async () =>
+            {
+                // var context = new WinejournaldbContext();
+                //   context.ChangeTracker.AutoDetectChangesEnabled = false;
+                var items = importDataQueue.GetMessages(maxQueueSize);
+                foreach (var data in items.ToList())
 
-                   if (currentList.Any(w => w.UpcCode == wineInfo.UpcCode) == false)
-                   {
+                {
+                    var wineInfo = Newtonsoft.Json.JsonConvert.DeserializeObject<UpcDbModel>(data.AsString);
 
-                       //Todo: Get CategoryId or insert new one
-                       var category = wineCategories.First(wc =>
-                               wc.Name.ToLower().Replace(" ", Empty) ==
-                               wineInfo.Category.ToLower().Replace(" ", Empty));
+                    if (currentList.Any(w => w.UpcCode == wineInfo.UpcCode) == false)
+                    {
 
-                       if (category == null && wineInfo.Category != null)
-                       {
-                           if (!wineInfo.Category.IsNullOrEmpty())
-                           {
-                               category = new WineCategories { Name = wineInfo.Category };
-                               _context.WineCategories.Add(category);
-                               category.WineCategoryId = await _context.SaveChangesAsync();
-                           }
-                       }
+                        //Todo: Get CategoryId or insert new one
+                        var category = wineCategories.Where(wc => wineInfo.Category != null && wc.Name.ToLower().Replace(" ", Empty) ==
+                                                                   wineInfo.Category.ToLower().Replace(" ", Empty)).ToList();
+                        // var category = categoryList.First();
+                        WineCategories wineCategory = new WineCategories();
+                        if (!category.Any() && wineInfo.Category != null)
+                        {
+                            if (!wineInfo.Category.IsNullOrEmpty())
+                            {
+                                try
+                                {
+                                    wineCategory = new WineCategories { Name = wineInfo.Category };
+                                    _context.WineCategories.Add(wineCategory);
+                                    await _context.SaveChangesAsync();
 
-                       
-                       var wineData = new WineList()
-                       {
-                           UpcCode = wineInfo.UpcCode,
-                           Varietal = wineInfo.Varietal,
-                           AlchoholLevel = (decimal?)wineInfo.AlchoholLevel,
-                           WineCategoryId = category?.WineCategoryId,
-                           Rating = wineInfo.Rating,
-                           Region = wineInfo.Region,
-                           WineName = wineInfo.WineName,
-                           Winery = wineInfo.Winery,
-                           Year = wineInfo.Year,
-                           Size = wineInfo.Size,
-                       };
+                                    wineCategory.WineCategoryId = wineCategories.Last().WineCategoryId + 1;
+                                }
+                                catch (Exception ex)
+                                {
+                                    Console.WriteLine(ex.Message + " ----- " + wineInfo.Category);
+                                }
 
-                       if (wineData.UpcCode.IsNullOrEmpty())
-                       {
-                           wineData.UpcCode = GetInternalBarCode();
-                       }
+                            }
+                        }
+                        else
+                        {
+                            if (category.Any())
+                                wineCategory = category?.First();
+                        }
+                        wineCategories = await _context.WineCategories.ToListAsync();
 
-                       _context.WineList.Add(wineData); 
-                       Console.Write(".");
-                       try
-                       {
-                           await _context.SaveChangesAsync();
-                           var imageData = await imageService.CreateUploadedImage(wineInfo.ImagePath, wineInfo.UpcCode);
-                           await imageService.AddImageToBlobStorageAsync(imageData);
-                           await importDataQueue.DeleteMessageAsync(data);
-                       }
-                       catch (Exception exception)
-                       {
-                           Console.ForegroundColor = ConsoleColor.Red;
-                           Console.WriteLine(exception.Message);
-                           Console.ResetColor();
-                       }
-                   }
-                   else
-                   {
-                       await importDataQueue.DeleteMessageAsync(data);
-                   }
-               }
+                        var wineData = new WineList()
+                        {
+                            UpcCode = wineInfo.UpcCode,
+                            Varietal = wineInfo.Varietal ?? "N/A",
+                            AlchoholLevel = (decimal?)wineInfo.AlchoholLevel,
+                            WineCategoryId = wineCategory?.WineCategoryId,
+                            Rating = wineInfo.Rating,
+                            Region = wineInfo.Region,
+                            WineName = wineInfo.WineName ?? "N/A",
+                            Winery = wineInfo.Winery ?? "N/A",
+                            Year = wineInfo.Year,
+                            Size = wineInfo.Size,
+                        };
+
+                        if (wineData.UpcCode.IsNullOrEmpty())
+                        {
+                            wineData.UpcCode = GetInternalBarCode();
+                        }
+
+                        if (wineData.Region.IsNullOrEmpty())
+                        {
+                            wineData.Region = string.Empty;
+                        }
+
+                        _context.WineList.Add(wineData);
+                        Console.Write(".");
+                        try
+                        {
+                            await _context.SaveChangesAsync();
+                            var imageData = await _imageService.CreateUploadedImage(wineInfo.ImagePath, wineData.UpcCode);
+                            await _imageService.AddImageToBlobStorageAsync(imageData);
+                            await importDataQueue.DeleteMessageAsync(data);
+                        }
+                        catch (Exception exception)
+                        {
+                            Console.ForegroundColor = ConsoleColor.Red;
+                            Console.WriteLine(exception.InnerException?.Message);
+                            Console.ResetColor();
+                            using (var processLog = File.AppendText(@"C:\GIT\Task.Manager\ImportError.csv"))
+                            {
+                                await processLog.WriteLineAsync($"{data.AsString} :: {exception.Message}");
+                            }
+                        }
+                    }
+                    else
+                    {
+                        await importDataQueue.DeleteMessageAsync(data);
+                    }
+                }
 
 
-               Console.WriteLine("finised");
-           });
+                Console.WriteLine("finised");
+            });
 
         }
 

@@ -1,0 +1,20 @@
+{
+  "version": "1.0.0-*",
+
+  "dependencies": {
+    "Attributes": "1.0.0-*",
+    "Microsoft.Extensions.DependencyInjection": "1.0.0",
+    "Microsoft.Extensions.FileProviders.Abstractions": "1.0.0",
+    "Microsoft.Extensions.Options": "1.0.0",
+    "System.Linq": "4.0.0",
+    "Microsoft.Extensions.PlatformAbstractions": "1.0.0",
+    "Microsoft.Extensions.PlatformAbstractions.Dnx": "1.0.0-rc2-20221"
+  },
+
+
+  "frameworks": {
+    "net46": {
+
+    }
+  }
+}

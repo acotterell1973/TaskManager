@@ -1,95 +1,80 @@
-﻿//using System;
-//using System.Collections.Generic;
-//using DependencyInjection;
-//using Microsoft.Extensions.Configuration;
-//using Microsoft.Extensions.DependencyInjection;
-//using Microsoft.Extensions.OptionsModel;
+﻿using System;
+using System.Collections.Generic;
+using System.Reflection;
+using Microsoft.Extensions.Configuration;
 
-//using Task.Manager.config;
-//using DependencyInjection.Extensions;
-//using Microsoft.Extensions.PlatformAbstractions;
+using Task.Manager.config;
+using Microsoft.Extensions.DependencyInjection;
+using Microsoft.Extensions.DependencyModel;
+using Microsoft.Extensions.FileProviders;
+using Microsoft.Extensions.PlatformAbstractions;
+using Task.PlugInsLoader;
+using Task.PlugInsLoader.Extensions;
+#pragma warning disable 649
 
-//namespace Task.Manager
-//{
+namespace Task.Manager
+{
 
-//    public class Startup
-//    {
-//        private static IConfigurationRoot _configuration;
-//        private static IServiceProvider _provider;
-//        private readonly IConfigurationBuilder _configurationBuilder;
-//        private readonly IServiceCollection _services;
+    public class Startup
+    {
+        private static IConfigurationRoot _configuration;
+        private static IServiceProvider _provider;
+        private readonly IConfigurationBuilder _configurationBuilder;
+        private readonly IServiceCollection _services;
+   
 
-//        public Startup()
-//        {
-//            _configurationBuilder = new ConfigurationBuilder();
-//            _services = new ServiceCollection();
-//        }
+        public Startup()
+        {
+            _configurationBuilder = new ConfigurationBuilder();
+            _services = new ServiceCollection();
+        }
+        public static ApplicationEnvironment Application => PlatformServices.Default.Application;
 
-  
-//        public static ApplicationEnvironment Application => PlatformServices.Default.Application;
+        public static int DisplayWidth { get; set; }
 
-//        public static TaskManagerConfigurationSettings ConfigurationSettings { get; private set; }
-//        public static int DisplayWidth { get; set; }
-
-//        public void Configure(string[] args)
-//        {
-
-//            var switchMappings = new Dictionary<string, string>
-//            {
-//                {"--help", "displayHelp" },
-//                {"-h", "displayHelp" },
-//            };
-
-//            _configurationBuilder
-//                .SetBasePath(Application.ApplicationBasePath)
-//                .AddJsonFile($@"config\development.json");
-
-//            determine if argument is in name/value pair (this is if you ever want to override any of the application settings)
-//            if (false) _configurationBuilder.AddCommandLine(args, switchMappings);
+        public void Configure(string[] args)
+        {
+            _configurationBuilder
+                .SetBasePath(Application.ApplicationBasePath)
+                .AddJsonFile($@"config\development.json");
+            _configuration = _configurationBuilder.Build();
 
 
-//            _configuration = _configurationBuilder.Build();
+        }
 
-//        }
+        public void ConfigureServices()
+        {
+            var fileProvider = new PhysicalFileProvider(_configuration.GetSection("ExternalAssemblyPath").Value);
 
-//        public void ConfigureServices()
-//        {
-//            _services.AddOptions();
-//            _services.Configure<TaskManagerConfigurationSettings>(_configuration.GetSection(string.Empty));
+            _services.AddOptions();  //Make IOptions available via D.I.
+            _services.AddApplicationInsightsTelemetry(_configuration);
 
-//            ConfigurationSettings = _configuration.Get<TaskManagerConfigurationSettings>();
+            //Make TaskManagerConfigurationSettings available via IOptions
+            _services.Configure<TaskManagerConfigurationSettings>(_configuration.GetSection(string.Empty));
+            _services.Configure<RegisterDependencyTypeOptions>(options =>
+            {
+                options.AssemblyPathLocation = _configuration.GetSection("externalAssemblyPath").Value;
+                options.InjectFromInterfaceName = _configuration.GetSection("interfaceType").Value;
+                options.FileProvider = fileProvider;
+            });
+            
+            //  Custom Application Services
+            _services
+                .AddDependencyScanner() //Register Dependency Scan
+                .AddDependencyScan();    //Scan Internal Library
+               // .AddDependencyScanFromAllAssemblies();
 
-//               _services.AddApplicationInsightsTelemetry(_configuration);
-//            _services.AddInstance<IAssemblyLoadContext>(PlatformServices.Default.AssemblyLoadContextAccessor.Default);
-//            _services.AddInstance<ILibraryManager>(PlatformServices.Default.LibraryManager);
-//            _services.AddTransient<IConfigureOptions<RegisterDependencyTypeOptions>, RegisterDependencyTypeOptionsSetup>();
-//            _services.Configure<RegisterDependencyTypeOptions>(options =>
-//            {
-//                options.QueueConnectionString = ConfigurationSettings.QueueConnectionString;
-//                options.AssemblyPathLocation = ConfigurationSettings.ExternalAssemblyPath;
-//                options.InjectFromInterfaceName = ConfigurationSettings.InterfaceType;
-//                options.TaskManifest = ConfigurationSettings.TaskManifest;
-//            });
+            _provider = _services.BuildServiceProvider();
+        }
 
-//            Custom Application Services
-//            _services.AddDependencyScanner()
-//                .AddDependencyScan()
-//                .AddDependencyScanFromAllAssemblies();
+        public T GetService<T>()
+        {
+            return _provider.GetService<T>();
+        }
 
-//            _provider = _services.BuildServiceProvider();
-
-
-
-//        }
-
-//        public T GetService<T>()
-//        {
-//            return _provider.GetService<T>();
-//        }
-
-//        public IEnumerable<T> GetServices<T>()
-//        {
-//            return _provider.GetServices<T>();
-//        }
-//    }
-//}
+        public IEnumerable<T> GetServices<T>()
+        {
+            return _provider.GetServices<T>();
+        }
+    }
+}

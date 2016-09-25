@@ -1,0 +1,16 @@
+{
+  "version": "1.0.0-*",
+
+  "dependencies": {
+    "Attributes": "1.0.0-*",
+
+
+  },
+
+
+  "frameworks": {
+    "net46": {
+
+    }
+  }
+}
