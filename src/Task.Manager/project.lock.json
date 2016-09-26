@@ -1525,6 +1525,30 @@
           "net46/Attributes.dll": {}
         }
       },
+      "Common/1.0.0": {
+        "type": "project",
+        "framework": ".NETFramework,Version=v4.6",
+        "compile": {
+          "net46/Common.dll": {}
+        },
+        "runtime": {
+          "net46/Common.dll": {}
+        }
+      },
+      "Task.Common/1.0.0": {
+        "type": "project",
+        "framework": ".NETFramework,Version=v4.6",
+        "dependencies": {
+          "Common": "1.0.0",
+          "NETStandard.Library": "1.6.0"
+        },
+        "compile": {
+          "net46/Task.Common.dll": {}
+        },
+        "runtime": {
+          "net46/Task.Common.dll": {}
+        }
+      },
       "Task.PlugInsLoader/1.0.0": {
         "type": "project",
         "framework": ".NETFramework,Version=v4.6",
@@ -5243,6 +5267,16 @@
       "path": "../Attributes/project.json",
       "msbuildProject": "../Attributes/Attributes.xproj"
     },
+    "Common/1.0.0": {
+      "type": "project",
+      "path": "../Common/project.json",
+      "msbuildProject": "../Common/Common.xproj"
+    },
+    "Task.Common/1.0.0": {
+      "type": "project",
+      "path": "../Task.Common/project.json",
+      "msbuildProject": "../Task.Common/Task.Common.xproj"
+    },
     "Task.PlugInsLoader/1.0.0": {
       "type": "project",
       "path": "../Task.PlugInsLoader/project.json",
@@ -5263,6 +5297,8 @@
       "Microsoft.Extensions.Options.ConfigurationExtensions >= 1.0.0",
       "Microsoft.Extensions.PlatformAbstractions >= 1.0.0",
       "Microsoft.Extensions.PlatformAbstractions.Dnx >= 1.0.0-rc2-20221",
+      "System.Linq >= 4.1.0",
+      "Task.Common >= 1.0.0",
       "Task.PlugInsLoader >= 1.0.0"
     ],
     ".NETFramework,Version=v4.6": [

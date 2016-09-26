@@ -42,14 +42,20 @@ namespace Task.PlugInsLoader
             var availableTasks = _internalDirectoryAssemblyProvider.CandidateAssemblies;
             var availableTasksList = availableTasks.ToList();
 
-            foreach (var type in availableTasksList)
+            foreach (var assembly in availableTasksList)
             {
-                var dependencyAttributes = type.GetCustomAttributes<Attributes.DependencyAttribute>();
-
-                // Each dependency can be registered as various types
-                foreach (var serviceDescriptor in dependencyAttributes.Select(dependencyAttribute => dependencyAttribute.BuiildServiceDescriptor(type)))
+                foreach (var type in assembly.DefinedTypes)
                 {
-                    services.Add(serviceDescriptor);
+                    var taskInterface = type.GetInterface(_options.InjectFromInterfaceName, true);
+                    if (taskInterface == null) continue;
+
+                    var dependencyAttributes = type.GetCustomAttributes<Attributes.DependencyAttribute>();
+
+                    // Each dependency can be registered as various types
+                    foreach (var serviceDescriptor in dependencyAttributes.Select(dependencyAttribute => dependencyAttribute.BuiildServiceDescriptor(type)))
+                    {
+                        services.Add(serviceDescriptor);
+                    }
                 }
             }
         }

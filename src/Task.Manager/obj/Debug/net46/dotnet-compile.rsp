@@ -121,6 +121,8 @@
 --reference:C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.6\Facades\System.Xml.ReaderWriter.dll
 --reference:C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.6\Facades\System.Xml.XDocument.dll
 --reference:C:\GIT\Task.Manager\src\Attributes\bin\Debug\net46\Attributes.dll
+--reference:C:\GIT\Task.Manager\src\Common\bin\Debug\net46\Common.dll
+--reference:C:\GIT\Task.Manager\src\Task.Common\bin\Debug\net46\Task.Common.dll
 --reference:C:\GIT\Task.Manager\src\Task.PlugInsLoader\bin\Debug\net46\Task.PlugInsLoader.dll
 --reference:C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.6\mscorlib.dll
 --reference:C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.6\System.dll
