@@ -22,8 +22,6 @@ namespace Task.Manager
         public string Rating { get; set; }
     }
 
-
-
     public class Program
     {
 
@@ -197,13 +195,14 @@ namespace Task.Manager
             //                return;
             //            try
             //            {
-            //                // No arguments displays the usage text:
-            //                if (args.Length == 0)
-            //                {
-            //                    DisplayUsageText();
-            //                    Environment.ExitCode = -1;
-            //                    return;
-            //                }
+
+            // No arguments displays the usage text:
+            if (args.Length == 0)
+            {
+                DisplayUsageText();
+                Environment.ExitCode = -1;
+                return;
+            }
 
             _startup = new Startup();
             //Load the base application configuration

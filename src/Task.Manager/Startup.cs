@@ -30,7 +30,7 @@ namespace Task.Manager
         }
         public static ApplicationEnvironment Application => PlatformServices.Default.Application;
 
-        public static int DisplayWidth { get; set; }
+        public static int DisplayWidth { get; set; } = 80;
 
         public void Configure(string[] args)
         {
