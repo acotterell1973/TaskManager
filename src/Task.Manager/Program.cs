@@ -212,8 +212,6 @@ namespace Task.Manager
             _startup.ConfigureServices();
 
 
-
-
             //get all instantiated task
             var registeredTaskInstances = _startup.GetServices<IScheduledTask>().ToList();
 

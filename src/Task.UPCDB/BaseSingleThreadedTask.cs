@@ -1,6 +1,6 @@
 ﻿namespace Task.UpcDb
 {
-    public abstract class BaseSingleThreadedTask : BaseTask
+    public abstract class BaseSingleThreadedTask : BaseTask 
     {
         protected BaseSingleThreadedTask(string taskCode) : base(taskCode)
         {

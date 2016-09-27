@@ -5,6 +5,7 @@ using System.Linq;
 using System.Net.Http;
 using System.Net.Http.Headers;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 using Attributes;
 using HtmlAgilityPack;
@@ -20,18 +21,18 @@ namespace Task.UPCDB.Tasks
     [ScopedDependency(ServiceType = typeof(IScheduledTask))]
     public class WineMadeEasyCatalog : BaseSingleThreadedTask
     {
-        readonly List<string> _pages;
+         List<string> _pages;
         private const string taskCode = "WINEMADEEASY";
         private string _fileName = "upc.csv";
-        private string _fileNameError;
-        private readonly string _runPath = @"c:\";
+        private readonly string _fileNameError;
+        private readonly string _runPath = @"C:\";
 
         public WineMadeEasyCatalog() : base(taskCode)
         {
             _pages = new List<string>();
             _runPath += @"\" + taskCode + @"\";
-            _fileName = @"C:\GIT\Task.Manager\" + _fileName;
-            _fileNameError = @"C:\GIT\Task.Manager\processError.csv";
+            _fileName = _runPath + _fileName;
+            _fileNameError = _runPath + @"\processError.csv";
         }
 
         public override string TaskCode => taskCode;
@@ -47,16 +48,17 @@ namespace Task.UPCDB.Tasks
                 if (!arg.Contains("/filename")) continue;
                 if (argQueue.Count == 0)
                 {
-                    Log("/filename argument expects a filename.csv value");
+                    Log("/filename argument expects a <filename.csv> value");
                     return false;
                 }
                 var argVal = argQueue.Dequeue();
                 _fileName = _runPath + argVal;
+
                 var fi = new FileInfo(_fileName);
-                if (!fi.Exists)
-                {
-                    fi.CreateText();
-                }
+                _fileName = Path.Combine(fi.FullName,
+                    $"{DateTime.Now.ToString("yyyy-MM-dd HH.mm.ss")}.{fi.Extension}");
+
+                File.AppendText(_fileName);
                 return true;
             }
 
@@ -75,8 +77,19 @@ namespace Task.UPCDB.Tasks
                 }
             }
         }
+        private  List<string> GetPageUrls(int pageCount, int pageSize)
+        {
+            List<string> pg;
+            string page = $"http://www.winemadeeasy.com/wine/products/?limit={pageSize}&p={pageCount}";
+            var getHtmlWeb = new HtmlWeb();
+            var document = getHtmlWeb.Load(page);
 
-        private async Task<List<string>> GetPageUrls(int pageCount, int pageSize)
+            var upcNodes = document.DocumentNode.SelectNodes("//ol[@class='products-list']//li//a[@class='product-image']");
+
+            pg = upcNodes.Select(s => s.Attributes["href"].Value).ToList();
+            return pg;
+        }
+        private async Task<List<string>> GetPageUrlsAsync(int pageCount, int pageSize)
         {
             List<string> pg;
             return await System.Threading.Tasks.Task.Run(() =>
@@ -174,15 +187,20 @@ namespace Task.UPCDB.Tasks
         {
             //   var x =  GetUpcData("http://www.winemadeeasy.com/yardstick-cabernet-sauvignon-ruth-s-reach-2010-750-ml-36114.html");
             //    return true;
-            var processTask = System.Threading.Tasks.Task.Run(async () =>
+            var sync = new object();
+            var processTask = System.Threading.Tasks.Task.Run( async () =>
             {
-                //for (int i = 1; i < 53; i++)
-                //{
-                //    Console.WriteLine("page " + i);
-                //    var pg = await GetPageUrls(i, 100);
-                //    Console.WriteLine("adding results " + i);
-                //    _pages.AddRange(pg);
-                //}
+                Parallel.For(1, 53, async idx =>
+                {
+                   // lock (sync)
+                  //  {
+                        Console.WriteLine("page " + idx);
+                        var pg = await  GetPageUrlsAsync(idx, 100);
+                        Console.WriteLine("adding results " + idx);
+                        _pages.AddRange(pg);
+                  //  }
+                });
+            
                 //using (var processLog = File.AppendText(_fileName))
                 //{
                 //    foreach (var upc in _pages)
