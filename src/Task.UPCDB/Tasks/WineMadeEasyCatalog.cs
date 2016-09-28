@@ -21,7 +21,8 @@ namespace Task.UPCDB.Tasks
     [ScopedDependency(ServiceType = typeof(IScheduledTask))]
     public class WineMadeEasyCatalog : BaseSingleThreadedTask
     {
-         List<string> _pages;
+        readonly List<string> _pages;
+        private StreamWriter _file;
         private const string taskCode = "WINEMADEEASY";
         private string _fileName = "upc.csv";
         private readonly string _fileNameError;
@@ -55,10 +56,10 @@ namespace Task.UPCDB.Tasks
                 _fileName = _runPath + argVal;
 
                 var fi = new FileInfo(_fileName);
-                _fileName = Path.Combine(fi.FullName,
-                    $"{DateTime.Now.ToString("yyyy-MM-dd HH.mm.ss")}.{fi.Extension}");
+                _fileName =
+                    $"{fi.FullName.Replace(fi.Extension, string.Empty)}.{DateTime.Now.ToString("yyyy-MM-dd HH.mm.ss")}{fi.Extension}";
 
-                File.AppendText(_fileName);
+                _file = File.AppendText(_fileName);
                 return true;
             }
 
@@ -77,7 +78,7 @@ namespace Task.UPCDB.Tasks
                 }
             }
         }
-        private  List<string> GetPageUrls(int pageCount, int pageSize)
+        private List<string> GetPageUrls(int pageCount, int pageSize)
         {
             List<string> pg;
             string page = $"http://www.winemadeeasy.com/wine/products/?limit={pageSize}&p={pageCount}";
@@ -105,7 +106,7 @@ namespace Task.UPCDB.Tasks
 
             });
         }
-        private async Task<bool> InsertItemDetailQueue()
+        private async Task<bool> InsertItemDetailQueueAsync()
         {
 
             CloudStorageAccount account;
@@ -122,7 +123,7 @@ namespace Task.UPCDB.Tasks
 
             foreach (var itemUrl in itemDetailUrls)
             {
-                var wine = await GetUpcData(itemUrl);
+                var wine = await GetUpcDataAsync(itemUrl);
                 if (wine == null) continue;
                 var value = Newtonsoft.Json.JsonConvert.SerializeObject(wine);
                 var message = new CloudQueueMessage(value);
@@ -130,11 +131,24 @@ namespace Task.UPCDB.Tasks
                 Console.WriteLine(".");
             }
 
-            Console.Write("Item Queue complete.");
+            Console.WriteLine("999.Item Queue complete.");
             return true;
         }
 
-        private async Task<UpcDbModel> GetUpcData(string page)
+        private void InsertItemDetailRowQueue(CloudQueue queue, string itemUrl)
+        {
+            var wine = GetUpcData(itemUrl);
+            if (wine == null) return;
+            var value = Newtonsoft.Json.JsonConvert.SerializeObject(wine);
+            var message = new CloudQueueMessage(value);
+            queue.AddMessage(message);
+
+            Console.Write("+");
+
+        }
+
+
+        private async Task<UpcDbModel> GetUpcDataAsync(string page)
         {
             var getHtmlWeb = new HtmlWeb();
             var document = getHtmlWeb.Load(page);
@@ -183,33 +197,104 @@ namespace Task.UPCDB.Tasks
             }
             return null;
         }
+        private UpcDbModel GetUpcData(string page)
+        {
+            var getHtmlWeb = new HtmlWeb();
+            var document = getHtmlWeb.Load(page);
+
+            try
+            {
+                //prem-prod-info
+                var upcNodesName = document.DocumentNode.SelectNodes("//div[@class='product-name']//h1");
+                var upcNodesRatings = document.DocumentNode.SelectNodes("//div[@class='ratings']");
+                var upcNodesRegion = document.DocumentNode.SelectNodes("//div[@id='prem-prod-info']//div[@id='prem-prod-region']//dl/dd");
+                var upcNodesContents = document.DocumentNode.SelectNodes("//div[@id='prem-prod-info']//div[@id='prem-prod-contents']");
+                var upcNodesDetails = document.DocumentNode.SelectNodes("//div[@id='prem-prod-info']//div[@id='prem-prod-details']//dl/dd");
+                var upcNodesUpc = document.DocumentNode.SelectNodes("//div[@id='prem-prod-info']//div[@id='prem-prod-details']//dl/meta");
+                var upcNodesUpcImage = document.DocumentNode.SelectNodes("//p[@class='product-image']//img");
+
+                var wine = new UpcDbModel
+                {
+                    WineName = upcNodesName?[0].InnerText.Replace("\n", string.Empty),
+                    Category = upcNodesDetails?[0].InnerText.Replace("\n", string.Empty),
+                    Winery = upcNodesDetails?[1].InnerText.Replace("\n", string.Empty),
+                    Varietal = upcNodesContents?[0].InnerText.Replace("\n", string.Empty),
+                    Region = upcNodesRegion?[0].InnerText.Replace("\n", string.Empty),
+                    UpcCode = upcNodesUpc?[0].Attributes["content"].Value.Replace("\n", string.Empty),
+                    Rating = upcNodesRatings?[0].InnerText.Replace("\n", string.Empty),
+                    ImagePath = upcNodesUpcImage?[0].Attributes["src"].Value.Replace("\n", string.Empty),
+                };
+
+
+                var wineSize = 0;
+                int.TryParse(upcNodesDetails?[2].InnerText.Replace("&nbsp;", string.Empty).Replace("ml.", string.Empty), out wineSize);
+                wine.Size = wineSize;
+
+                var wineYear = 0;
+                int.TryParse(upcNodesDetails?[3].InnerText.Replace("&nbsp;", string.Empty).Replace("ml", string.Empty), out wineYear);
+                wine.Year = wineYear;
+
+                return wine;
+
+            }
+            catch (Exception exception)
+            {
+                object sync = new object();
+                using (var processLog = File.AppendText(_fileNameError))
+                {
+                    lock (sync)
+                    {
+                        processLog.WriteLine($"{page} :: {exception.Message}");
+                    }
+
+                }
+            }
+            return null;
+        }
         public override bool Run()
         {
             //   var x =  GetUpcData("http://www.winemadeeasy.com/yardstick-cabernet-sauvignon-ruth-s-reach-2010-750-ml-36114.html");
             //    return true;
-            var sync = new object();
-            var processTask = System.Threading.Tasks.Task.Run( async () =>
-            {
-                Parallel.For(1, 53, async idx =>
-                {
-                   // lock (sync)
-                  //  {
-                        Console.WriteLine("page " + idx);
-                        var pg = await  GetPageUrlsAsync(idx, 100);
-                        Console.WriteLine("adding results " + idx);
-                        _pages.AddRange(pg);
-                  //  }
-                });
-            
-                //using (var processLog = File.AppendText(_fileName))
-                //{
-                //    foreach (var upc in _pages)
-                //    {
-                //        await processLog.WriteLineAsync(upc);
-                //    }
-                //}
-                await InsertItemDetailQueue();
-            });
+            object sync = new object();
+            var processTask = System.Threading.Tasks.Task.Run(() =>
+          {
+              CloudStorageAccount account;
+              CloudStorageAccount.TryParse("DefaultEndpointsProtocol=https;AccountName=winehunter;AccountKey=tuG0LI1tGsBilE+R8GnG0PlWCFvtoULCOwh/IeFydllu7Onc0k4coRXiCFS3d4bDmcBc4oVdBR951PuAW0NjTw==;", out account);
+              var queueClient = account.CreateCloudQueueClient();
+              // Retrieve a reference to a queue
+              var shopsImportDataQueue = queueClient.GetQueueReference("winelistjson");
+
+              // Create the queue if it doesn't already exist
+              shopsImportDataQueue.CreateIfNotExists();
+
+              var a = DateTime.Now;
+
+              Parallel.For(0, 54, idx =>
+              {
+                  var pg = GetPageUrls(idx, 100);
+                  Console.WriteLine($"Thread id {System.Threading.Tasks.Task.CurrentId} adding results {idx}");
+                  _pages.AddRange(pg);
+              });
+
+              var b = DateTime.Now;
+              Console.WriteLine("Page Scrape Duration" + b.Subtract(a).TotalMinutes);
+
+              a = DateTime.Now;
+
+              Parallel.ForEach(_pages, page =>
+              {
+                  InsertItemDetailRowQueue(shopsImportDataQueue, page);
+                  //using the lock is the same as the for loop in this parallel case
+                  lock (sync)
+                  {
+                      _file.WriteLine(page);
+                  }
+              });
+
+              b = DateTime.Now;
+              Console.WriteLine("Page Detail Data Duration" + b.Subtract(a).TotalMinutes);
+
+          });
             processTask.Wait();
 
             return true;

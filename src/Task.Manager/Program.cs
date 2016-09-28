@@ -344,7 +344,7 @@ namespace Task.Manager
                             }
 
                             // Provide the dependency structure to the task:
-                         //   specificTask.ProvideDependencies(new TaskDependencies(diags));
+                            specificTask.ProvideDependencies(new TaskDependencies(diags));
 
                             // Stuff the remaining arguments into a string[] and have the task parse its arguments:
 

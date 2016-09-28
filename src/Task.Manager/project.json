@@ -19,7 +19,8 @@
     "Microsoft.Extensions.PlatformAbstractions.Dnx": "1.0.0-rc2-20221",
     "Task.PlugInsLoader": "1.0.0",
     "Task.Common": "1.0.0",
-    "System.Linq": "4.1.0"
+    "System.Linq": "4.1.0",
+    "Task.UPCDB": "1.0.0"
   },
 
 

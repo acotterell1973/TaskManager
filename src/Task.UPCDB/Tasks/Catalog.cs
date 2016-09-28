@@ -194,7 +194,7 @@ namespace Task.UpcDb.Tasks
                 });
                 
             }
-            Console.Write("Item Queue complete.");
+            Console.WriteLine("555.Item Queue complete.");
             return true;
         }
         #endregion
