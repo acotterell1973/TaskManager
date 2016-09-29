@@ -7,10 +7,12 @@ using System.Net.Http.Headers;
 using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
+using System.Web;
 using Attributes;
 using HtmlAgilityPack;
 using Microsoft.WindowsAzure.Storage;
 using Microsoft.WindowsAzure.Storage.Queue;
+using Polly;
 using Task.Common;
 using Task.UpcDb;
 using Task.UpcDb.Tasks;
@@ -27,13 +29,17 @@ namespace Task.UPCDB.Tasks
         private string _fileName = "upc.csv";
         private readonly string _fileNameError;
         private readonly string _runPath = @"C:\";
-
+        readonly object _sync = new object();
         public WineMadeEasyCatalog() : base(taskCode)
         {
+
             _pages = new List<string>();
             _runPath += @"\" + taskCode + @"\";
             _fileName = _runPath + _fileName;
-            _fileNameError = _runPath + @"\processError.csv";
+            var di = new DirectoryInfo(_runPath);
+            if (!di.Exists) di.Create();
+
+            _fileNameError = _runPath + @"\processError.txt";
         }
 
         public override string TaskCode => taskCode;
@@ -59,7 +65,11 @@ namespace Task.UPCDB.Tasks
                 _fileName =
                     $"{fi.FullName.Replace(fi.Extension, string.Empty)}.{DateTime.Now.ToString("yyyy-MM-dd HH.mm.ss")}{fi.Extension}";
 
-                _file = File.AppendText(_fileName);
+        
+                lock (_sync)
+                {
+                    _file = File.AppendText(_fileName);
+                }
                 return true;
             }
 
@@ -199,18 +209,66 @@ namespace Task.UPCDB.Tasks
         }
         private UpcDbModel GetUpcData(string page)
         {
-            var getHtmlWeb = new HtmlWeb();
-            var document = getHtmlWeb.Load(page);
+
+            var retries = 0;
+            var eventualFailures = 0;
+
+            HtmlDocument document = null;
+
+            var policy = Policy
+                .Handle<HttpException>()
+                .WaitAndRetry(
+                 retryCount: 3, // Retry 3 times 
+                 sleepDurationProvider: attempt => TimeSpan.FromSeconds(5), // Wait 5s between each try. 
+                 onRetry: (exception, calculatedWaitDuration) => // Capture some info for logging! 
+             {
+                 // This is your new exception handler!  
+                 // Tell the user what they've won! 
+
+                 var processErrorFile = _runPath + @"\policyError.txt";
+                 var fi = new FileInfo(processErrorFile);
+                 processErrorFile =
+                     $"{fi.FullName.Replace(fi.Extension, string.Empty)}.{DateTime.Now.ToString("yyyy-MM-dd HH.mm.ss")}{fi.Extension}";
+      
+                 lock (_sync)
+                 {
+                     using (var processLog = File.AppendText(processErrorFile))
+                     {
+
+                         document = null;
+                         processLog.WriteLine($"Policy logging: {page} :: {exception.Message}");
+                     }
+                 }
+                 retries++;
+             });
+
+
 
             try
             {
+                policy.Execute(() =>
+                {
+                    var getHtmlWeb = new HtmlWeb();
+                    document = getHtmlWeb.Load(page);
+                });
+
+
+                if (document == null) return null;
+
                 //prem-prod-info
                 var upcNodesName = document.DocumentNode.SelectNodes("//div[@class='product-name']//h1");
                 var upcNodesRatings = document.DocumentNode.SelectNodes("//div[@class='ratings']");
-                var upcNodesRegion = document.DocumentNode.SelectNodes("//div[@id='prem-prod-info']//div[@id='prem-prod-region']//dl/dd");
-                var upcNodesContents = document.DocumentNode.SelectNodes("//div[@id='prem-prod-info']//div[@id='prem-prod-contents']");
-                var upcNodesDetails = document.DocumentNode.SelectNodes("//div[@id='prem-prod-info']//div[@id='prem-prod-details']//dl/dd");
-                var upcNodesUpc = document.DocumentNode.SelectNodes("//div[@id='prem-prod-info']//div[@id='prem-prod-details']//dl/meta");
+                var upcNodesRegion =
+                    document.DocumentNode.SelectNodes(
+                        "//div[@id='prem-prod-info']//div[@id='prem-prod-region']//dl/dd");
+                var upcNodesContents =
+                    document.DocumentNode.SelectNodes("//div[@id='prem-prod-info']//div[@id='prem-prod-contents']");
+                var upcNodesDetails =
+                    document.DocumentNode.SelectNodes(
+                        "//div[@id='prem-prod-info']//div[@id='prem-prod-details']//dl/dd");
+                var upcNodesUpc =
+                    document.DocumentNode.SelectNodes(
+                        "//div[@id='prem-prod-info']//div[@id='prem-prod-details']//dl/meta");
                 var upcNodesUpcImage = document.DocumentNode.SelectNodes("//p[@class='product-image']//img");
 
                 var wine = new UpcDbModel
@@ -226,12 +284,16 @@ namespace Task.UPCDB.Tasks
                 };
 
 
-                var wineSize = 0;
-                int.TryParse(upcNodesDetails?[2].InnerText.Replace("&nbsp;", string.Empty).Replace("ml.", string.Empty), out wineSize);
+                int wineSize;
+                int.TryParse(
+                    upcNodesDetails?[2].InnerText.Replace("&nbsp;", string.Empty).Replace("ml.", string.Empty),
+                    out wineSize);
                 wine.Size = wineSize;
 
-                var wineYear = 0;
-                int.TryParse(upcNodesDetails?[3].InnerText.Replace("&nbsp;", string.Empty).Replace("ml", string.Empty), out wineYear);
+                int wineYear;
+                int.TryParse(
+                    upcNodesDetails?[3].InnerText.Replace("&nbsp;", string.Empty).Replace("ml", string.Empty),
+                    out wineYear);
                 wine.Year = wineYear;
 
                 return wine;
@@ -239,23 +301,27 @@ namespace Task.UPCDB.Tasks
             }
             catch (Exception exception)
             {
-                object sync = new object();
-                using (var processLog = File.AppendText(_fileNameError))
+                
+
+                lock (_sync)
                 {
-                    lock (sync)
+                    using (var processLog = File.AppendText(_fileNameError))
                     {
-                        processLog.WriteLine($"{page} :: {exception.Message}");
+                        processLog.WriteLine($"{page} :: {exception.Message} :: failures :: {eventualFailures}");
+                        processLog.WriteLine($"stack trace :: {exception.StackTrace}");
+                        eventualFailures++;
                     }
 
                 }
             }
+
             return null;
         }
         public override bool Run()
         {
             //   var x =  GetUpcData("http://www.winemadeeasy.com/yardstick-cabernet-sauvignon-ruth-s-reach-2010-750-ml-36114.html");
             //    return true;
-            object sync = new object();
+     
             var processTask = System.Threading.Tasks.Task.Run(() =>
           {
               CloudStorageAccount account;
@@ -285,7 +351,7 @@ namespace Task.UPCDB.Tasks
               {
                   InsertItemDetailRowQueue(shopsImportDataQueue, page);
                   //using the lock is the same as the for loop in this parallel case
-                  lock (sync)
+                  lock (_sync)
                   {
                       _file.WriteLine(page);
                   }

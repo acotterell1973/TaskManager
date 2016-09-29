@@ -87,12 +87,14 @@
 --reference:C:\Users\acott\.nuget\packages\Microsoft.Net.Http.Headers\1.0.0\lib\netstandard1.1\Microsoft.Net.Http.Headers.dll
 --reference:C:\Users\acott\.nuget\packages\Microsoft.Win32.Primitives\4.0.1\ref\net46\Microsoft.Win32.Primitives.dll
 --reference:C:\Users\acott\.nuget\packages\Newtonsoft.Json\9.0.1\lib\net45\Newtonsoft.Json.dll
+--reference:C:\Users\acott\.nuget\packages\Polly\4.5.0-beta-netstandar-0001\lib\net45\Polly.dll
 --reference:C:\Users\acott\.nuget\packages\Remotion.Linq\2.1.1\lib\net45\Remotion.Linq.dll
 --reference:C:\Users\acott\.nuget\packages\System.AppContext\4.1.0\ref\net46\System.AppContext.dll
 --reference:C:\Users\acott\.nuget\packages\System.Buffers\4.0.0\lib\netstandard1.1\System.Buffers.dll
 --reference:C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.6\Facades\System.Collections.dll
 --reference:C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.6\Facades\System.Collections.Concurrent.dll
 --reference:C:\Users\acott\.nuget\packages\System.Collections.Immutable\1.2.0\lib\portable-net45+win8+wp8+wpa81\System.Collections.Immutable.dll
+--reference:C:\Users\acott\.nuget\packages\System.Collections.Specialized\4.0.1\ref\net46\System.Collections.Specialized.dll
 --reference:C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.6\Facades\System.ComponentModel.dll
 --reference:C:\Users\acott\.nuget\packages\System.ComponentModel.Primitives\4.1.0\ref\net45\System.ComponentModel.Primitives.dll
 --reference:C:\Users\acott\.nuget\packages\System.ComponentModel.TypeConverter\4.1.0\ref\net45\System.ComponentModel.TypeConverter.dll
@@ -141,6 +143,7 @@
 --reference:C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.6\Facades\System.Threading.dll
 --reference:C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.6\Facades\System.Threading.Tasks.dll
 --reference:C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.6\Facades\System.Threading.Timer.dll
+--reference:C:\Users\acott\.nuget\packages\System.Web.HttpUtility\4.3.0-beta-24528-02\ref\net46\System.Web.HttpUtility.dll
 --reference:C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.6\Facades\System.Xml.ReaderWriter.dll
 --reference:C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.6\Facades\System.Xml.XDocument.dll
 --reference:C:\Users\acott\.nuget\packages\System.Xml.XmlDocument\4.0.1\ref\net46\System.Xml.XmlDocument.dll
@@ -162,6 +165,7 @@
 --reference:C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.6\System.Transactions.dll
 --reference:C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.6\System.IO.Compression.FileSystem.dll
 --reference:C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.6\System.Runtime.Serialization.dll
+--reference:C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.6\System.Web.dll
 C:\GIT\Task.Manager\src\Task.Manager\DiagnosticReporting.cs
 C:\GIT\Task.Manager\src\Task.Manager\Program.cs
 C:\GIT\Task.Manager\src\Task.Manager\Startup.cs

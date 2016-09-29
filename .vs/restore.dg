@@ -1,3 +1,7 @@
+#:C:\GIT\Task.Manager\src\Task.UPCDB\Task.UPCDB.xproj
+C:\GIT\Task.Manager\src\Task.UPCDB\Task.UPCDB.xproj|C:\GIT\Task.Manager\src\Attributes\Attributes.xproj
+C:\GIT\Task.Manager\src\Task.UPCDB\Task.UPCDB.xproj|C:\GIT\Task.Manager\src\Task.Common\Task.Common.xproj
+C:\GIT\Task.Manager\src\Task.Common\Task.Common.xproj|C:\GIT\Task.Manager\src\Common\Common.xproj
 #:C:\GIT\Task.Manager\src\Task.Manager\Task.Manager.xproj
 C:\GIT\Task.Manager\src\Task.Manager\Task.Manager.xproj|C:\GIT\Task.Manager\src\Task.Common\Task.Common.xproj
 C:\GIT\Task.Manager\src\Task.Manager\Task.Manager.xproj|C:\GIT\Task.Manager\src\Task.PlugInsLoader\Task.PlugInsLoader.xproj
