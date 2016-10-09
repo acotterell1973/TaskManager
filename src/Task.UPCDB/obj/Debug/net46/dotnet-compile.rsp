@@ -57,6 +57,7 @@
 --reference:C:\Users\acott\.nuget\packages\System.Diagnostics.DiagnosticSource\4.0.0\lib\net46\System.Diagnostics.DiagnosticSource.dll
 --reference:C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.6\Facades\System.Diagnostics.Tools.dll
 --reference:C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.6\Facades\System.Diagnostics.Tracing.dll
+--reference:C:\Users\acott\.nuget\packages\System.Drawing-dotnet-core\1.0.2\lib\netstandard1.3\System.Drawing-dotnet-core.dll
 --reference:C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.6\Facades\System.Globalization.dll
 --reference:C:\Users\acott\.nuget\packages\System.Globalization.Calendars\4.0.1\ref\net46\System.Globalization.Calendars.dll
 --reference:C:\Users\acott\.nuget\packages\System.Interactive.Async\3.0.0\lib\net45\System.Interactive.Async.dll
@@ -117,17 +118,18 @@ C:\GIT\Task.Manager\src\Task.UPCDB\BaseTask.cs
 C:\GIT\Task.Manager\src\Task.UPCDB\IImageService.cs
 C:\GIT\Task.Manager\src\Task.UPCDB\ImageService.cs
 C:\GIT\Task.Manager\src\Task.UPCDB\UploadedImage.cs
-C:\GIT\Task.Manager\src\Task.UPCDB\Models\MigrationHistory.cs
-C:\GIT\Task.Manager\src\Task.UPCDB\Models\WineCategories.cs
-C:\GIT\Task.Manager\src\Task.UPCDB\Models\WineItems.cs
-C:\GIT\Task.Manager\src\Task.UPCDB\Models\winejournaldbContext.cs
+C:\GIT\Task.Manager\src\Task.UPCDB\Models\WineHunterContext.cs
+C:\GIT\Task.Manager\src\Task.UPCDB\Models\WineJournals.cs
 C:\GIT\Task.Manager\src\Task.UPCDB\Models\WineList.cs
-C:\GIT\Task.Manager\src\Task.UPCDB\Models\WineTastingGuides.cs
-C:\GIT\Task.Manager\src\Task.UPCDB\Models\WineTerms.cs
+C:\GIT\Task.Manager\src\Task.UPCDB\Models\WineRatings.cs
+C:\GIT\Task.Manager\src\Task.UPCDB\Models\WineTypes.cs
+C:\GIT\Task.Manager\src\Task.UPCDB\Models\WineVarieties.cs
+C:\GIT\Task.Manager\src\Task.UPCDB\Models\WineVarietyTyes.cs
 C:\GIT\Task.Manager\src\Task.UPCDB\Properties\AssemblyInfo.cs
 C:\GIT\Task.Manager\src\Task.UPCDB\Tasks\Catalog.cs
 C:\GIT\Task.Manager\src\Task.UPCDB\Tasks\DigitEyes.cs
 C:\GIT\Task.Manager\src\Task.UPCDB\Tasks\DigitEyesModels.cs
 C:\GIT\Task.Manager\src\Task.UPCDB\Tasks\Import.cs
 C:\GIT\Task.Manager\src\Task.UPCDB\Tasks\UpcDbModel.cs
+C:\GIT\Task.Manager\src\Task.UPCDB\Tasks\VineRepublicCatalog.cs
 C:\GIT\Task.Manager\src\Task.UPCDB\Tasks\WineMadeEasyCatalog.cs

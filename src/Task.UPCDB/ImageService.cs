@@ -1,11 +1,7 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Diagnostics;
 using System.IO;
-using System.Linq;
 using System.Net.Http;
-using System.Net.Mime;
-using System.Text;
 using System.Threading.Tasks;
 using ImageProcessor;
 using ImageProcessor.Imaging.Formats;
@@ -21,12 +17,12 @@ namespace Task.UPCDB
         private readonly string _blobStorageConnectionString;
         public ImageService()
         {
-            _imageRootPath = "https://winehunter.blob.core.windows.net/images-container";
-            _containerName = "images-container";
+            _imageRootPath = "https://winehunter.blob.core.windows.net/wine-bottles";
+            _containerName = "wine-bottles";
             _blobStorageConnectionString = "DefaultEndpointsProtocol=https;AccountName=winehunter;AccountKey=tuG0LI1tGsBilE+R8GnG0PlWCFvtoULCOwh/IeFydllu7Onc0k4coRXiCFS3d4bDmcBc4oVdBR951PuAW0NjTw==;";
         }
 
-        public async static Task<byte[]> LoadImage(Uri uri)
+        public static async Task<byte[]> LoadImage(Uri uri)
         {
             byte[] bytes;
             try
@@ -54,13 +50,13 @@ namespace Task.UPCDB
             return null;
         }
 
-        public async Task<UploadedImage> CreateUploadedImage(string imageUrl, string imageName)
+        public async Task<UploadedImage> CreateUploadedImage(string imageUrl, string imageName, string imagePath="")
         {
             if (!string.IsNullOrEmpty(imageName))
             {
                 byte[] fileBytes = await LoadImage(new Uri(imageUrl));
 
-                ISupportedImageFormat format = new JpegFormat { Quality = 70 };
+                ISupportedImageFormat format = new PngFormat(); {   };
                 //   Size size = new Size(150, 0)
                 using (MemoryStream inStream = new MemoryStream(fileBytes))
                 {
@@ -72,25 +68,28 @@ namespace Task.UPCDB
                             // Load, resize, set the format and quality and save an image.
                             imageFactory.Load(inStream)
                                         // .Resize(size)
-                                        // .Format(format)
+                                         .Format(format)
                                         .Save(outStream);
                         }
                         // Do something with the stream.
-                   
-                        using (var fileStream = new FileStream(@"C:\GIT\Task.Manager\" + imageName + ".jpg", FileMode.CreateNew, FileAccess.ReadWrite))
+                        var imageFileName = imagePath + imageName + ".png";
+                        var fi = new FileInfo(imageFileName);
+                        if (!fi.Exists)
                         {
-                            outStream.Position = 0;
-                            outStream.CopyTo(fileStream);
+                            using (
+                                var fileStream = new FileStream(imageFileName, FileMode.CreateNew,
+                                    FileAccess.ReadWrite))
+                            {
+                                outStream.Position = 0;
+                                outStream.CopyTo(fileStream);
+                            }
                         }
                     }
                 }
-                //using (System.Drawing.Image image = Image.FromStream(new MemoryStream(fileBytes)))
-                //{
-                //    image.Save("output.jpg", ImageFormat.Jpeg);  // Or Png
-                //}
+                
                 return new UploadedImage
                 {
-                    ContentType = "image/jpg",
+                    ContentType = "image/png",
                     Data = fileBytes,
                     Name = imageName,
                     Url = $"{_imageRootPath}/{imageName}"

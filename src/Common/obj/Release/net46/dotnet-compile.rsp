@@ -1,0 +1,21 @@
+--temp-output:C:\GIT\Task.Manager\src\Common\obj\Release\net46\
+--out:C:\GIT\Task.Manager\src\Common\bin\Release\net46\Common.dll
+--define:RELEASE
+--define:TRACE
+--define:NET46
+--suppress-warning:CS1701
+--suppress-warning:CS1702
+--suppress-warning:CS1705
+--optimize:True
+--output-name:Common
+--file-version:1.0.0.0
+--version:1.0.0.0
+--informational-version:1.0.0
+--target-framework:.NETFramework,Version=v4.6
+--reference:C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.6\mscorlib.dll
+--reference:C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.6\System.dll
+--reference:C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.6\System.Core.dll
+--reference:C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.6\Microsoft.CSharp.dll
+C:\GIT\Task.Manager\src\Common\Extensions\ListExtensions.cs
+C:\GIT\Task.Manager\src\Common\Extensions\StringExtensions.cs
+C:\GIT\Task.Manager\src\Common\Properties\AssemblyInfo.cs

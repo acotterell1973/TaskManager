@@ -2,12 +2,8 @@
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-using System.Net.Http;
-using System.Net.Http.Headers;
-using System.Text;
-using System.Threading;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
-using System.Web;
 using Attributes;
 using HtmlAgilityPack;
 using Microsoft.WindowsAzure.Storage;
@@ -23,13 +19,16 @@ namespace Task.UPCDB.Tasks
     [ScopedDependency(ServiceType = typeof(IScheduledTask))]
     public class WineMadeEasyCatalog : BaseSingleThreadedTask
     {
-        readonly List<string> _pages;
+        List<string> _pages;
         private StreamWriter _file;
         private const string taskCode = "WINEMADEEASY";
         private string _fileName = "upc.csv";
         private readonly string _fileNameError;
+        private readonly string _urlProcessed;
         private readonly string _runPath = @"C:\";
         readonly object _sync = new object();
+        private bool _fileExists;
+
         public WineMadeEasyCatalog() : base(taskCode)
         {
 
@@ -40,6 +39,7 @@ namespace Task.UPCDB.Tasks
             if (!di.Exists) di.Create();
 
             _fileNameError = _runPath + @"\processError.txt";
+            _urlProcessed = _runPath + @"\processed.csv";
         }
 
         public override string TaskCode => taskCode;
@@ -60,15 +60,25 @@ namespace Task.UPCDB.Tasks
                 }
                 var argVal = argQueue.Dequeue();
                 _fileName = _runPath + argVal;
-
                 var fi = new FileInfo(_fileName);
-                _fileName =
-                    $"{fi.FullName.Replace(fi.Extension, string.Empty)}.{DateTime.Now.ToString("yyyy-MM-dd HH.mm.ss")}{fi.Extension}";
 
-        
-                lock (_sync)
+                string pattern = fi.Name.Replace(fi.Extension,string.Empty);
+                var matches = Directory.GetFiles(_runPath)
+                    .Where(path => Regex.Match(path, pattern).Success).ToList();
+
+                if (!matches.Any())
+                {   
+                    _fileName =
+                        $"{fi.FullName.Replace(fi.Extension, string.Empty)}.{DateTime.Now.ToString("yyyy-MM-dd HH.mm.ss")}{fi.Extension}";
+                }
+                else
                 {
-                    _file = File.AppendText(_fileName);
+                    _fileName = matches.First();
+                    _fileExists = true;
+                }
+                using (var processLog = File.AppendText(_urlProcessed))
+                {
+                    processLog.WriteLine("");
                 }
                 return true;
             }
@@ -153,8 +163,14 @@ namespace Task.UPCDB.Tasks
             var message = new CloudQueueMessage(value);
             queue.AddMessage(message);
 
-            Console.Write("+");
-
+            lock (_sync)
+            {
+                using (var processLog = File.AppendText(_urlProcessed))
+                {
+                    processLog.WriteLine(itemUrl);
+                }
+                Console.Write("+");
+            }
         }
 
 
@@ -210,13 +226,13 @@ namespace Task.UPCDB.Tasks
         private UpcDbModel GetUpcData(string page)
         {
 
-            var retries = 0;
-            var eventualFailures = 0;
+            int retries = 0;
+            int eventualFailures = 0;
 
             HtmlDocument document = null;
 
             var policy = Policy
-                .Handle<HttpException>()
+                .Handle<Exception>()
                 .WaitAndRetry(
                  retryCount: 3, // Retry 3 times 
                  sleepDurationProvider: attempt => TimeSpan.FromSeconds(5), // Wait 5s between each try. 
@@ -228,21 +244,22 @@ namespace Task.UPCDB.Tasks
                  var processErrorFile = _runPath + @"\policyError.txt";
                  var fi = new FileInfo(processErrorFile);
                  processErrorFile =
-                     $"{fi.FullName.Replace(fi.Extension, string.Empty)}.{DateTime.Now.ToString("yyyy-MM-dd HH.mm.ss")}{fi.Extension}";
-      
+                     $"{fi.FullName.Replace(fi.Extension, string.Empty)}.{DateTime.Now.ToString("yyyy-MM-dd")}{fi.Extension}";
+
                  lock (_sync)
                  {
                      using (var processLog = File.AppendText(processErrorFile))
                      {
 
                          document = null;
-                         processLog.WriteLine($"Policy logging: {page} :: {exception.Message}");
+                         // processLog.WriteLine($"Retries {retries}");
+                         processLog.WriteLine($"Retries {retries} :: Policy logging: {page} :: {exception.Message}");
                      }
+
+                     retries++;
                  }
-                 retries++;
+
              });
-
-
 
             try
             {
@@ -277,7 +294,7 @@ namespace Task.UPCDB.Tasks
                     Category = upcNodesDetails?[0].InnerText.Replace("\n", string.Empty),
                     Winery = upcNodesDetails?[1].InnerText.Replace("\n", string.Empty),
                     Varietal = upcNodesContents?[0].InnerText.Replace("\n", string.Empty),
-                    Region = upcNodesRegion?[0].InnerText.Replace("\n", string.Empty),
+                //    Region = upcNodesRegion?[0].InnerText.Replace("\n", string.Empty) + ", " + upcNodesRegion?[1].InnerText.Replace("\n", string.Empty),
                     UpcCode = upcNodesUpc?[0].Attributes["content"].Value.Replace("\n", string.Empty),
                     Rating = upcNodesRatings?[0].InnerText.Replace("\n", string.Empty),
                     ImagePath = upcNodesUpcImage?[0].Attributes["src"].Value.Replace("\n", string.Empty),
@@ -296,20 +313,30 @@ namespace Task.UPCDB.Tasks
                     out wineYear);
                 wine.Year = wineYear;
 
+                if (upcNodesRegion == null) return wine;
+                if (!upcNodesRegion.Any()) return wine;
+                foreach (var region in upcNodesRegion)
+                {
+                    wine.Region += region.InnerText.Replace("\n", string.Empty) + ", ";
+                }
+                var r = wine.Region.TrimEnd(' ').TrimEnd(',');
+                wine.Region = r;
+
+                //Region
                 return wine;
 
             }
             catch (Exception exception)
             {
-                
-
                 lock (_sync)
                 {
                     using (var processLog = File.AppendText(_fileNameError))
                     {
-                        processLog.WriteLine($"{page} :: {exception.Message} :: failures :: {eventualFailures}");
-                        processLog.WriteLine($"stack trace :: {exception.StackTrace}");
-                        eventualFailures++;
+                        eventualFailures += 1;
+
+                        processLog.WriteLine($"Time:: {DateTime.Now} :: {page} :: {exception.Message} :: failures :: {eventualFailures}");
+                        processLog.WriteLine($"stack trace :: {exception}");
+
                     }
 
                 }
@@ -321,46 +348,65 @@ namespace Task.UPCDB.Tasks
         {
             //   var x =  GetUpcData("http://www.winemadeeasy.com/yardstick-cabernet-sauvignon-ruth-s-reach-2010-750-ml-36114.html");
             //    return true;
-     
+
             var processTask = System.Threading.Tasks.Task.Run(() =>
-          {
-              CloudStorageAccount account;
-              CloudStorageAccount.TryParse("DefaultEndpointsProtocol=https;AccountName=winehunter;AccountKey=tuG0LI1tGsBilE+R8GnG0PlWCFvtoULCOwh/IeFydllu7Onc0k4coRXiCFS3d4bDmcBc4oVdBR951PuAW0NjTw==;", out account);
-              var queueClient = account.CreateCloudQueueClient();
-              // Retrieve a reference to a queue
-              var shopsImportDataQueue = queueClient.GetQueueReference("winelistjson");
+            {
+                var startTime = DateTime.Now;
+                DateTime endTime;
+                CloudStorageAccount account;
+                CloudStorageAccount.TryParse("DefaultEndpointsProtocol=https;AccountName=winehunter;AccountKey=tuG0LI1tGsBilE+R8GnG0PlWCFvtoULCOwh/IeFydllu7Onc0k4coRXiCFS3d4bDmcBc4oVdBR951PuAW0NjTw==;", out account);
+                var queueClient = account.CreateCloudQueueClient();
+                // Retrieve a reference to a queue
+                var shopsImportDataQueue = queueClient.GetQueueReference("winelistjson");
 
-              // Create the queue if it doesn't already exist
-              shopsImportDataQueue.CreateIfNotExists();
+                if (!_fileExists)
+                {
+                    if (shopsImportDataQueue.Exists())
+                    {
+                        shopsImportDataQueue.Delete();
+                    }
+                    
+                    startTime = DateTime.Now;
+                    Parallel.For(0, 54, idx =>
+                    {
+                        var pg = GetPageUrls(idx, 100);
+                        Console.WriteLine($"Thread id {System.Threading.Tasks.Task.CurrentId} adding results {idx}");
+                        _pages.AddRange(pg);
+                    });
 
-              var a = DateTime.Now;
+                    endTime = DateTime.Now;
+                    Console.WriteLine("Page Scrape Duration " + endTime.Subtract(startTime).TotalMinutes);
 
-              Parallel.For(0, 54, idx =>
-              {
-                  var pg = GetPageUrls(idx, 100);
-                  Console.WriteLine($"Thread id {System.Threading.Tasks.Task.CurrentId} adding results {idx}");
-                  _pages.AddRange(pg);
-              });
+                    startTime = DateTime.Now;
+                    lock (_sync)
+                    {
+                        File.AppendAllLines(_fileName, _pages);
+                        Console.WriteLine("Pages saved to " + _fileName);
+                    }
+                }
+                if (!_pages.Any())
+                {
+                    var processedPages = (from line in ReadFrom(_urlProcessed)
+                              select line).ToList();
 
-              var b = DateTime.Now;
-              Console.WriteLine("Page Scrape Duration" + b.Subtract(a).TotalMinutes);
+                    _pages = (from line in ReadFrom(_fileName)
+                              where !processedPages.Contains(line)
+                                          select line).ToList();
+                }
+                // Create the queue if it doesn't already exist
+                shopsImportDataQueue.CreateIfNotExists();
+                Parallel.ForEach(_pages, page =>
+                {
+                    InsertItemDetailRowQueue(shopsImportDataQueue, page);
+                    // using the lock is the same as the for loop in this parallel case
 
-              a = DateTime.Now;
+                });
 
-              Parallel.ForEach(_pages, page =>
-              {
-                  InsertItemDetailRowQueue(shopsImportDataQueue, page);
-                  //using the lock is the same as the for loop in this parallel case
-                  lock (_sync)
-                  {
-                      _file.WriteLine(page);
-                  }
-              });
+                endTime = DateTime.Now;
+                Console.WriteLine("Page Detail Data Duration " + endTime.Subtract(startTime).TotalMinutes);
 
-              b = DateTime.Now;
-              Console.WriteLine("Page Detail Data Duration" + b.Subtract(a).TotalMinutes);
+            });
 
-          });
             processTask.Wait();
 
             return true;

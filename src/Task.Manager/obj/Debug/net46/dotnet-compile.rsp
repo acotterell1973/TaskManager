@@ -104,6 +104,7 @@
 --reference:C:\Users\acott\.nuget\packages\System.Diagnostics.DiagnosticSource\4.0.0\lib\net46\System.Diagnostics.DiagnosticSource.dll
 --reference:C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.6\Facades\System.Diagnostics.Tools.dll
 --reference:C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.6\Facades\System.Diagnostics.Tracing.dll
+--reference:C:\Users\acott\.nuget\packages\System.Drawing-dotnet-core\1.0.2\lib\netstandard1.3\System.Drawing-dotnet-core.dll
 --reference:C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.6\Facades\System.Globalization.dll
 --reference:C:\Users\acott\.nuget\packages\System.Globalization.Calendars\4.0.1\ref\net46\System.Globalization.Calendars.dll
 --reference:C:\Users\acott\.nuget\packages\System.Interactive.Async\3.0.0\lib\net45\System.Interactive.Async.dll

@@ -2,7 +2,7 @@
   "profiles": {
     "Task.Manager": {
       "commandName": "Project",
-      "commandLineArgs": "/run WINEMADEEASY /filename winelist.csv"
+      "commandLineArgs": "/run VINEREPUBLIX  /filename vine.csv"
     }
   }
 }

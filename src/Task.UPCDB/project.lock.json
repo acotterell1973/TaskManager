@@ -763,6 +763,18 @@
           "lib/net45/_._": {}
         }
       },
+      "System.Drawing-dotnet-core/1.0.2": {
+        "type": "package",
+        "dependencies": {
+          "NETStandard.Library": "1.6.0"
+        },
+        "compile": {
+          "lib/netstandard1.3/System.Drawing-dotnet-core.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard1.3/System.Drawing-dotnet-core.dll": {}
+        }
+      },
       "System.Globalization/4.0.11": {
         "type": "package",
         "compile": {
@@ -2600,6 +2612,21 @@
         "ref/xamarinmac20/_._",
         "ref/xamarintvos10/_._",
         "ref/xamarinwatchos10/_._"
+      ]
+    },
+    "System.Drawing-dotnet-core/1.0.2": {
+      "sha512": "tuc30qQcbaL72LbQGXZ74u8ZURAek8f977Ib5IRAMw/HmePp2CV6yElpLbvPPwjrKkX1U6yQE76wmvP6/+LI4Q==",
+      "type": "package",
+      "path": "System.Drawing-dotnet-core/1.0.2",
+      "files": [
+        "System.Drawing-dotnet-core.1.0.2.nupkg.sha512",
+        "System.Drawing-dotnet-core.nuspec",
+        "lib/netstandard1.1/System.Drawing-dotnet-core.dll",
+        "lib/netstandard1.2/System.Drawing-dotnet-core.dll",
+        "lib/netstandard1.3/System.Drawing-dotnet-core.dll",
+        "lib/netstandard1.4/System.Drawing-dotnet-core.dll",
+        "lib/netstandard1.5/System.Drawing-dotnet-core.dll",
+        "lib/netstandard1.6/System.Drawing-dotnet-core.dll"
       ]
     },
     "System.Globalization/4.0.11": {
@@ -4930,6 +4957,7 @@
       "NETStandard.Library >= 1.6.0",
       "Newtonsoft.Json >= 9.0.1",
       "Polly >= 4.5.0-beta-netstandar-0001",
+      "System.Drawing-dotnet-core >= 1.0.2",
       "System.Web.HttpUtility >= 4.3.0-beta-24528-02",
       "System.Xml.XmlDocument >= 4.0.1",
       "Task.Common >= 1.0.0-*",
