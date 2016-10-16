@@ -258,6 +258,7 @@ namespace Task.UpcDb.Tasks
         private async Task<bool> UploadImage(string imageUrl, string upc, string imagePath)
         {
             var imageData = await _imageService.CreateUploadedImage(imageUrl, upc, imagePath);
+            if (imageData == null) return false;
             await _imageService.AddImageToBlobStorageAsync(imageData);
             _processLog.WriteLine("Saved Image: " + imageUrl);
             return true;

@@ -55,6 +55,7 @@ namespace Task.UPCDB
             if (!string.IsNullOrEmpty(imageName))
             {
                 byte[] fileBytes = await LoadImage(new Uri(imageUrl));
+                if (fileBytes == null) return null;
 
                 ISupportedImageFormat format = new PngFormat(); {   };
                 //   Size size = new Size(150, 0)
