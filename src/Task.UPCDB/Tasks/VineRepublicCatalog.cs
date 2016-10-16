@@ -4,7 +4,10 @@ using System.IO;
 using System.Linq;
 using System.Net.Http;
 using System.Net.Http.Headers;
+using System.Runtime.CompilerServices;
+using System.Runtime.ExceptionServices;
 using System.Text.RegularExpressions;
+using System.Threading;
 using System.Threading.Tasks;
 using Attributes;
 using HtmlAgilityPack;
@@ -15,6 +18,7 @@ using Task.Common;
 using Task.UpcDb;
 using Task.UpcDb.Tasks;
 using Task.UPCDB.Models;
+using Task = System.Threading.Tasks.Task;
 
 
 namespace Task.UPCDB.Tasks
@@ -32,7 +36,7 @@ namespace Task.UPCDB.Tasks
         private readonly string _runPath = @"C:\";
         readonly object _sync = new object();
         private bool _fileExists;
-
+        private HtmlWeb _getHtmlWeb = new HtmlWeb();
         private WineHunterContext _context;
 
         public VineRepublicCatalog() : base(taskCode)
@@ -119,22 +123,42 @@ namespace Task.UPCDB.Tasks
             return pg;
         }
 
-        private void InsertItemDetailRowQueue(CloudQueue queue, string itemUrl)
+        private bool InsertItemDetailRowQueue(CloudQueue queue, string itemUrl)
         {
-            var wine = GetUpcData(itemUrl);
-            if (wine == null) return;
-            var value = Newtonsoft.Json.JsonConvert.SerializeObject(wine);
-            var message = new CloudQueueMessage(value);
-            queue.AddMessage(message);
-
-            lock (_sync)
+            // ArgumentNullException
+            try
             {
-                using (var processLog = File.AppendText(_urlProcessed))
+                var wine = GetUpcData(itemUrl);
+                if (wine == null)
                 {
-                    processLog.WriteLine(itemUrl);
+                    //TimeSpan time1 = TimeSpan.FromHours(1);
+                    //TimeSpan ts = DateTime.Now.TimeOfDay;
+                    //var ts2 = ts.Add(time1);
+                    //System.Threading.Tasks.Task.Delay(ts2);
+                    //Thread.Sleep(ts2);
+                    return false;
                 }
-                Console.Write("+");
+                var value = Newtonsoft.Json.JsonConvert.SerializeObject(wine);
+                var message = new CloudQueueMessage(value);
+                queue.AddMessage(message);
+
+                lock (_sync)
+                {
+                    using (var processLog = File.AppendText(_urlProcessed))
+                    {
+                        processLog.WriteLine(itemUrl);
+                    }
+                    Console.Write("+");
+                }
             }
+            catch (ArgumentNullException exception)
+            {
+                //TimeSpan time1 = TimeSpan.FromHours(1);
+                //TimeSpan ts = DateTime.Now.TimeOfDay;
+                //var ts2 = ts.Add(time1);
+                //System.Threading.Tasks.Task.Delay(ts2);
+            }
+            return true;
         }
 
 
@@ -229,63 +253,101 @@ namespace Task.UPCDB.Tasks
             {
                 policy.Execute(() =>
                 {
-                    var getHtmlWeb = new HtmlWeb();
-                    document = getHtmlWeb.Load(page);
+                    lock (_sync)
+                    {
+                        _getHtmlWeb = new HtmlWeb();
+                        document = _getHtmlWeb.Load(page);
+                    }
                 });
 
 
                 if (document == null) return null;
 
-                //prem-prod-info
-                var upcNodesName = document.DocumentNode.SelectNodes("//div[@class='product-name']//h1");
-                var upcNodesRatings = document.DocumentNode.SelectNodes("//div[@class='ratings']");
-                var upcNodesRegion =
-                    document.DocumentNode.SelectNodes(
-                        "//div[@id='prem-prod-info']//div[@id='prem-prod-region']//dl/dd");
-                var upcNodesContents =
-                    document.DocumentNode.SelectNodes("//div[@id='prem-prod-info']//div[@id='prem-prod-contents']");
-                var upcNodesDetails =
-                    document.DocumentNode.SelectNodes(
-                        "//div[@id='prem-prod-info']//div[@id='prem-prod-details']//dl/dd");
+                var upcNodes = document.DocumentNode.SelectNodes("//div[@class='characteristicsArea']//a");
+                if (document.DocumentNode.FirstChild == null) throw new ArgumentNullException(page);
+                var category = upcNodes[0].InnerText;
+
+                var varietal = upcNodes[1].InnerText;
+
+                var country = upcNodes.Where(n => n.Attributes["href"].Value.Contains("Country")).Select(n => n.InnerText.Trim());
+                var regions = upcNodes.Where(n => n.Attributes["href"].Value.Contains("Region")).Select(n => n.InnerText.Trim());
+
+                var ctry = "";
+                var reg = "";
+                var enumerable = country as string[] ?? country.ToArray();
+                if (enumerable.ToList().Any())
+                {
+                   ctry= enumerable.ToList().First();
+                }
+                var enumerable1 = regions as string[] ?? regions.ToArray();
+                if (enumerable1.ToList().Any())
+                {
+                    reg = enumerable1.ToList().First();
+                }
+
+                var region = $"{ctry}, {reg}".TrimEnd(Convert.ToChar(","));
+
+                var brandId = upcNodes.Where(n => n.Attributes["href"].Value.Contains("?brandid")).Select(n => n.InnerText.Trim());
+                var id = brandId as string[] ?? brandId.ToArray();
+                string winery ="";
+                if (id.ToList().Any())
+                {
+                    winery = id.ToList()?.First();
+                } 
+               
+
+                var alcoholNode = document.DocumentNode.SelectNodes("//div[@class='characteristicsArea']//p");
+
+                //item title - itemTitle
+                var upcTitleNodes = document.DocumentNode.SelectNodes("//span[@class='title']");
+                var wineName = upcTitleNodes[0].InnerText.Replace(winery, string.Empty).Trim();
+                var yearValue =wineName.Substring(wineName.Length - 4);
+                int year;
+                int.TryParse(yearValue,out year);
+                wineName = wineName.Replace(year.ToString(), string.Empty);
+
+                var ratingLf = document.DocumentNode.SelectNodes("//td[@class='reviewIconLeft']")?[0].InnerText;
+                var ratingRt = document.DocumentNode.SelectNodes("//td[@class='reviewIconRight']")?[0].InnerText;
+
+                //upc
                 var upcNodesUpc =
                     document.DocumentNode.SelectNodes(
                         "//div[@id='prem-prod-info']//div[@id='prem-prod-details']//dl/meta");
-                var upcNodesUpcImage = document.DocumentNode.SelectNodes("//p[@class='product-image']//img");
+
+                //image
+                var upcNodesUpcImage = document.DocumentNode.SelectNodes("//td[@class='imageArea']//img");
 
                 var wine = new UpcDbModel
                 {
-                    WineName = upcNodesName?[0].InnerText.Replace("\n", string.Empty),
-                    Category = upcNodesDetails?[0].InnerText.Replace("\n", string.Empty),
-                    Winery = upcNodesDetails?[1].InnerText.Replace("\n", string.Empty),
-                    Varietal = upcNodesContents?[0].InnerText.Replace("\n", string.Empty),
-                    //    Region = upcNodesRegion?[0].InnerText.Replace("\n", string.Empty) + ", " + upcNodesRegion?[1].InnerText.Replace("\n", string.Empty),
+                    WineName = wineName.Replace("\n", string.Empty),
+                    Category = category.Replace("\n", string.Empty),
+                    Winery = winery.Replace("\n", string.Empty),
+                    Varietal = varietal.Replace("\n", string.Empty),
+                    Region = region,
                     UpcCode = upcNodesUpc?[0].Attributes["content"].Value.Replace("\n", string.Empty),
-                    Rating = upcNodesRatings?[0].InnerText.Replace("\n", string.Empty),
-                    ImagePath = upcNodesUpcImage?[0].Attributes["src"].Value.Replace("\n", string.Empty),
+                    Rating = ratingLf + ratingRt,
+                    ImagePath = "http://" + upcNodesUpcImage?[0].Attributes["src"].Value.Replace("\n", string.Empty),
                 };
 
 
                 int wineSize;
-                int.TryParse(
-                    upcNodesDetails?[2].InnerText.Replace("&nbsp;", string.Empty).Replace("ml.", string.Empty),
-                    out wineSize);
+                int.TryParse("750".Replace("&nbsp;", string.Empty).Replace("ml.", string.Empty), out wineSize);
                 wine.Size = wineSize;
 
                 int wineYear;
-                int.TryParse(
-                    upcNodesDetails?[3].InnerText.Replace("&nbsp;", string.Empty).Replace("ml", string.Empty),
-                    out wineYear);
+                int.TryParse(year.ToString().Replace("&nbsp;", string.Empty).Replace("ml", string.Empty), out wineYear);
                 wine.Year = wineYear;
-
-                if (upcNodesRegion == null) return wine;
-                if (!upcNodesRegion.Any()) return wine;
-                foreach (var region in upcNodesRegion)
-                {
-                    wine.Region += region.InnerText.Replace("\n", string.Empty) + ", ";
-                }
                 var r = wine.Region.TrimEnd(' ').TrimEnd(',');
                 wine.Region = r;
 
+
+                foreach (var node in alcoholNode)
+                {
+                    if (node.InnerText.Contains("%"))
+                    {
+                        wine.AlchoholLevel = Convert.ToDouble(node.InnerText.Replace("%", string.Empty));
+                    }
+                }
                 //Region
                 return wine;
 
@@ -301,6 +363,10 @@ namespace Task.UPCDB.Tasks
                         processLog.WriteLine($"Time:: {DateTime.Now} :: {page} :: {exception.Message} :: failures :: {eventualFailures}");
                         processLog.WriteLine($"stack trace :: {exception}");
 
+                        //TimeSpan time1 = TimeSpan.FromHours(1);
+                        //TimeSpan ts = DateTime.Now.TimeOfDay;
+                        //var ts2 = ts.Add(time1);
+                        //System.Threading.Tasks.Task.Delay(ts2);
                     }
 
                 }
@@ -309,6 +375,25 @@ namespace Task.UPCDB.Tasks
             return null;
         }
 
+        private void ExtractLinksFromHtml()
+        {
+            var pattern = "html";
+            var matches = Directory.GetFiles(_runPath).Where(path => Regex.Match(path, pattern).Success).ToList();
+            foreach (var fileName in matches)
+            {
+                var fi = new FileInfo(fileName);
+                StreamReader sr = fi.OpenText();
+                HtmlDocument doc = new HtmlDocument();
+                doc.Load(sr);
+
+                var upcNodes = doc.DocumentNode.SelectNodes("//div[@class='right']//a");
+                lock (_sync)
+                {
+                    File.AppendAllLines(_fileProductUrls, upcNodes.Select(u => u.Attributes["href"].Value));
+                }
+            }
+
+        }
 
         private async Task<IEnumerable<VineUrl>> GetUrlsByVarietal(string varietalName)
         {
@@ -333,7 +418,7 @@ namespace Task.UPCDB.Tasks
                             File.AppendAllLines(_fileProductUrls, vineUrls.Select(u => "http://www.vinerepublic.com" + u.url));
                         }
                     }
-                    
+
                 }
             }
 
@@ -342,79 +427,60 @@ namespace Task.UPCDB.Tasks
 
         public override bool Run()
         {
-            var processTask = System.Threading.Tasks.Task.Run(async () =>
-            {
-                _context = new WineHunterContext();
-                var wineVarieties = _context.WineVarieties.ToList();
-                foreach (var wv in wineVarieties)
-                {
-                    var result = await GetUrlsByVarietal(wv.Name);
-                }
-            });
-            processTask.Wait();
+
+            //     ExtractLinksFromHtml();
+            ////    var result1 =  GetUpcData("http://www.vinerepublic.com/r/products/10885680/carpineto-vino-nobile-di-montepulciano-riserva-2011");
+            //     return true;
+            //     var processTask = System.Threading.Tasks.Task.Run(async () =>
+            //     {
+            //         _context = new WineHunterContext();
+            //         var wineVarieties = _context.WineVarieties.ToList();
+            //         foreach (var wv in wineVarieties)
+            //         {
+            //             var result = await GetUrlsByVarietal(wv.Name);
+            //         }
+            //     });
+            //     processTask.Wait();
 
             //   var x =  GetUpcData("http://www.winemadeeasy.com/yardstick-cabernet-sauvignon-ruth-s-reach-2010-750-ml-36114.html");
             //    return true;
 
-            //var processTask = System.Threading.Tasks.Task.Run(() =>
-            //{
-            //    var startTime = DateTime.Now;
-            //    DateTime endTime;
-            //    CloudStorageAccount account;
-            //    CloudStorageAccount.TryParse("DefaultEndpointsProtocol=https;AccountName=winehunter;AccountKey=tuG0LI1tGsBilE+R8GnG0PlWCFvtoULCOwh/IeFydllu7Onc0k4coRXiCFS3d4bDmcBc4oVdBR951PuAW0NjTw==;", out account);
-            //    var queueClient = account.CreateCloudQueueClient();
-            //    // Retrieve a reference to a queue
-            //    var shopsImportDataQueue = queueClient.GetQueueReference("winelistjson");
+            var processTask = System.Threading.Tasks.Task.Run(() =>
+            {
+                var startTime = DateTime.Now;
+                DateTime endTime;
+                CloudStorageAccount account;
+                CloudStorageAccount.TryParse("DefaultEndpointsProtocol=https;AccountName=winehunter;AccountKey=tuG0LI1tGsBilE+R8GnG0PlWCFvtoULCOwh/IeFydllu7Onc0k4coRXiCFS3d4bDmcBc4oVdBR951PuAW0NjTw==;", out account);
+                var queueClient = account.CreateCloudQueueClient();
+                // Retrieve a reference to a queue
+                var shopsImportDataQueue = queueClient.GetQueueReference("winelistjson");
 
-            //    if (!_fileExists)
-            //    {
-            //        if (shopsImportDataQueue.Exists())
-            //        {
-            //            shopsImportDataQueue.Delete();
-            //        }
 
-            //        startTime = DateTime.Now;
-            //        Parallel.For(0, 54, idx =>
-            //        {
-            //            var pg = GetPageUrls(idx, 100);
-            //            Console.WriteLine($"Thread id {System.Threading.Tasks.Task.CurrentId} adding results {idx}");
-            //            _pages.AddRange(pg);
-            //        });
+                if (!_pages.Any())
+                {
+                    var processedPages = (from line in ReadFrom(_urlProcessed)
+                                          select line).ToList();
 
-            //        endTime = DateTime.Now;
-            //        Console.WriteLine("Page Scrape Duration " + endTime.Subtract(startTime).TotalMinutes);
+                    _pages = (from line in ReadFrom(_fileName)
+                              where !processedPages.Contains(line) && line.Contains("/products/")
+                              select line).ToList();
 
-            //        startTime = DateTime.Now;
-            //        lock (_sync)
-            //        {
-            //            File.AppendAllLines(_fileName, _pages);
-            //            Console.WriteLine("Pages saved to " + _fileName);
-            //        }
-            //    }
-            //    if (!_pages.Any())
-            //    {
-            //        var processedPages = (from line in ReadFrom(_urlProcessed)
-            //                              select line).ToList();
 
-            //        _pages = (from line in ReadFrom(_fileName)
-            //                  where !processedPages.Contains(line)
-            //                  select line).ToList();
-            //    }
-            //    // Create the queue if it doesn't already exist
-            //    shopsImportDataQueue.CreateIfNotExists();
-            //    Parallel.ForEach(_pages, page =>
-            //    {
-            //        InsertItemDetailRowQueue(shopsImportDataQueue, page);
-            //        // using the lock is the same as the for loop in this parallel case
+                    _pages = _pages.ToList().Distinct().ToList();
+                }
+                // Create the queue if it doesn't already exist
+                shopsImportDataQueue.CreateIfNotExists();
+                Parallel.ForEach(_pages, page =>
+                {
+                    var result = InsertItemDetailRowQueue(shopsImportDataQueue, page);
+                });
 
-            //    });
+                endTime = DateTime.Now;
+                Console.WriteLine("Page Detail Data Duration " + endTime.Subtract(startTime).TotalMinutes);
 
-            //    endTime = DateTime.Now;
-            //    Console.WriteLine("Page Detail Data Duration " + endTime.Subtract(startTime).TotalMinutes);
+            });
 
-            //});
-
-            //processTask.Wait();
+            processTask.Wait();
 
             return true;
         }

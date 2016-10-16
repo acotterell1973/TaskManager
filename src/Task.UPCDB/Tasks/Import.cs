@@ -103,7 +103,7 @@ namespace Task.UpcDb.Tasks
             //   CloudQueueMessage peekedMessage = importDataQueue.PeekMessage();
 
             _processLog = File.AppendText(_fileName);
-        //    _taskDependencies.Diagnostics.Log("","");
+            //    _taskDependencies.Diagnostics.Log("","");
             _context = new WineHunterContext();
             _context.ChangeTracker.AutoDetectChangesEnabled = false;
             var maxQueueSize = 32;
@@ -117,14 +117,24 @@ namespace Task.UpcDb.Tasks
                     var wineInfo = Newtonsoft.Json.JsonConvert.DeserializeObject<UpcDbModel>(message.AsString);
                     var wineVariety = GetWineVariety(wineInfo.Varietal);
                     var existingItem =
-                        _context.WineList.Any(item => item.WineVarietiesVarietyId == wineVariety.VarietyId
+                        _context.WineList.Where(item => item.WineVarietiesVarietyId == wineVariety.VarietyId
                                                       && item.Producer == wineInfo.Winery
                                                       && item.Vintage == wineInfo.Year);
 
-                    if (existingItem)
+                    if (existingItem.Any())
                     {
                         _processLog.WriteLine("Existing item: " + wineInfo.WineName + " -  " + wineInfo.Varietal + ", " +
                                               wineInfo.Winery);
+                        if (wineInfo.UpcCode != null)
+                        {
+                            foreach (var wineList in existingItem)
+                            {
+                                if (IsNullOrEmpty(wineInfo.UpcCode)) continue;
+                                wineList.Upc = wineInfo.UpcCode;
+                                _context.SaveChanges();
+                            }
+                        }
+                        importDataQueue.DeleteMessage(message);
                         continue;
                     }
                     var wineItem = SaveWineItem(wineInfo, wineVariety);
@@ -132,7 +142,11 @@ namespace Task.UpcDb.Tasks
                     SaveWineRating(wineItem.WineListId, wineInfo);
                     var imageTask = System.Threading.Tasks.Task.Run(async () =>
                     {
-                        await UploadImage(wineInfo.ImagePath, wineItem.Upc, _runPath);
+                        if (!IsNullOrEmpty(wineInfo.ImagePath))
+                        {
+                            await UploadImage(wineInfo.ImagePath.Replace("////", "//"), wineItem.Upc, _runPath);
+                        }
+
                     });
                     imageTask.Wait();
 
@@ -141,7 +155,7 @@ namespace Task.UpcDb.Tasks
                 }
             }
 
-            
+
             //var processResults = new List<System.Threading.Tasks.Task>();
 
             //var queueCount = importDataQueue.ApproximateMessageCount;

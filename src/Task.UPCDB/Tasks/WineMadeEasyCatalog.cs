@@ -361,10 +361,7 @@ namespace Task.UPCDB.Tasks
 
                 if (!_fileExists)
                 {
-                    if (shopsImportDataQueue.Exists())
-                    {
-                        shopsImportDataQueue.Delete();
-                    }
+ 
                     
                     startTime = DateTime.Now;
                     Parallel.For(0, 54, idx =>

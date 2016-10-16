@@ -24,7 +24,7 @@ namespace Task.UpcDb
         public virtual string TaskCode => _taskCode;
         public abstract string TaskName { get; }
         public abstract string TaskDescription { get; }
-        public virtual bool AllowMultipleInstances { get; } = false;
+        public virtual bool AllowMultipleInstances { get; } = true;
         public virtual IEnumerable<ArgumentDescriptor> ArgumentDescriptors => new[]
         {
             new ArgumentDescriptor("/test", "Enables test mode which disables delivery of any notifications"),

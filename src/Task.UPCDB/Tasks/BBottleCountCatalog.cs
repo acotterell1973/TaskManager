@@ -24,8 +24,8 @@ namespace Task.UpcDb.Tasks
     [ScopedDependency(ServiceType = typeof(IScheduledTask))]
     public sealed class Catalog : BaseSingleThreadedTask
     {
-        private const string taskCode = "UPCDB";
-        private string _fileName = "upc.csv";
+        private const string taskCode = "Bot";
+        private string _fileName = "bottlecount.csv";
         private readonly string _runPath = @"c:\";
         public Catalog() : base(taskCode)
         {
