@@ -232,8 +232,8 @@ namespace Task.UPCDB.Tasks
                     ImagePath = imageNode?.Attributes["src"].Value.Replace("\n", string.Empty),
                 };
 
-                var wineSize = 0;
-                int.TryParse(sizeNode?.InnerText.Replace(" fl oz", string.Empty).Replace("ml", string.Empty), out wineSize);
+                decimal wineSize = 0;
+                decimal.TryParse(sizeNode?.InnerText.Replace(" fl oz", string.Empty).Replace("ml", string.Empty), out wineSize);
                 wine.Size = wineSize;
 
                 var wineYear = 0;

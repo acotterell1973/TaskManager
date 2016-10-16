@@ -231,8 +231,8 @@ namespace Task.UPCDB.Tasks
                     Rating = upcNodes[6].InnerText.Replace("&nbsp;", string.Empty)
                 };
 
-                var wineSize = 0;
-                int.TryParse(upcNodes[9].InnerText.Replace("&nbsp;", string.Empty).Replace("ml", string.Empty), out wineSize);
+                decimal wineSize = 0;
+                decimal.TryParse(upcNodes[9].InnerText.Replace("&nbsp;", string.Empty).Replace("ml", string.Empty), out wineSize);
                 wine.Size = wineSize;
 
                 var wineYear = 0;

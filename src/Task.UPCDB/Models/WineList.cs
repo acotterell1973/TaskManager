@@ -17,8 +17,8 @@ namespace Task.UPCDB.Models
         public string Producer { get; set; }
         public string Region { get; set; }
         public int Vintage { get; set; }
-        public int? Size { get; set; }
-        public int? AlchoholLevel { get; set; }
+        public decimal? Size { get; set; }
+        public decimal? AlchoholLevel { get; set; }
         public bool? HasSulphites { get; set; }
         public DateTime CreatedDate { get; set; }
 

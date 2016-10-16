@@ -14,8 +14,8 @@ namespace Task.UpcDb.Tasks
         public string Varietal { get; set; }
         public string Region { get; set; }
         public int Year { get; set; }
-        public int Size { get; set; }
-        public double AlchoholLevel { get; set; }
+        public decimal Size { get; set; }
+        public decimal AlchoholLevel { get; set; }
         public string Rating { get; set; }
 		public string Category { get; set; }
         public string ImagePath { get; set; }

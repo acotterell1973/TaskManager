@@ -301,8 +301,8 @@ namespace Task.UPCDB.Tasks
                 };
 
 
-                int wineSize;
-                int.TryParse(
+                decimal wineSize;
+                decimal.TryParse(
                     upcNodesDetails?[2].InnerText.Replace("&nbsp;", string.Empty).Replace("ml.", string.Empty),
                     out wineSize);
                 wine.Size = wineSize;

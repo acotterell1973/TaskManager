@@ -330,8 +330,8 @@ namespace Task.UPCDB.Tasks
                 };
 
 
-                int wineSize;
-                int.TryParse("750".Replace("&nbsp;", string.Empty).Replace("ml.", string.Empty), out wineSize);
+                decimal wineSize;
+                decimal.TryParse("750".Replace("&nbsp;", string.Empty).Replace("ml.", string.Empty), out wineSize);
                 wine.Size = wineSize;
 
                 int wineYear;
@@ -345,7 +345,7 @@ namespace Task.UPCDB.Tasks
                 {
                     if (node.InnerText.Contains("%"))
                     {
-                        wine.AlchoholLevel = Convert.ToDouble(node.InnerText.Replace("%", string.Empty));
+                        wine.AlchoholLevel = Convert.ToDecimal(node.InnerText.Replace("%", string.Empty));
                     }
                 }
                 //Region

@@ -110,28 +110,32 @@ namespace Task.UpcDb.Tasks
             importDataQueue.FetchAttributes();
             var queueCount = importDataQueue.ApproximateMessageCount;
             int loopCount = queueCount.GetValueOrDefault() / maxQueueSize;
+            if (queueCount < maxQueueSize) loopCount = queueCount.GetValueOrDefault();
             for (var i = 0; i < loopCount; i++)
             {
                 foreach (CloudQueueMessage message in importDataQueue.GetMessages(maxQueueSize, TimeSpan.FromMinutes(5)))
                 {
                     var wineInfo = Newtonsoft.Json.JsonConvert.DeserializeObject<UpcDbModel>(message.AsString);
                     var wineVariety = GetWineVariety(wineInfo.Varietal);
+                    if (wineVariety == null) continue;
                     var existingItem =
                         _context.WineList.Where(item => item.WineVarietiesVarietyId == wineVariety.VarietyId
                                                       && item.Producer == wineInfo.Winery
-                                                      && item.Vintage == wineInfo.Year);
+                                                      && item.Vintage == wineInfo.Year).ToList();
 
                     if (existingItem.Any())
                     {
                         _processLog.WriteLine("Existing item: " + wineInfo.WineName + " -  " + wineInfo.Varietal + ", " +
                                               wineInfo.Winery);
-                        if (wineInfo.UpcCode != null)
+                        if (!IsNullOrEmpty(wineInfo.UpcCode))
                         {
                             foreach (var wineList in existingItem)
                             {
-                                if (IsNullOrEmpty(wineInfo.UpcCode)) continue;
                                 wineList.Upc = wineInfo.UpcCode;
+                                wineList.Size = wineInfo.Size;
+                                wineList.AlchoholLevel = wineInfo.AlchoholLevel;
                                 _context.SaveChanges();
+                                Console.Write("U");
                             }
                         }
                         importDataQueue.DeleteMessage(message);
@@ -186,6 +190,7 @@ namespace Task.UpcDb.Tasks
 
         private WineVarieties GetWineVariety(string varietyName)
         {
+            if (varietyName == null) return null;
             var fixedName = varietyName.Replace("What's in the Bottle", String.Empty);
             var wineVarieties = _context.WineVarieties.ToList();
 
@@ -247,11 +252,14 @@ namespace Task.UpcDb.Tasks
                 wineData.Region = string.Empty;
             }
 
+            if (wineData.Size == 0) wineData.Size = 750;
+
             wineData.CreatedDate = DateTime.UtcNow;
             _context.WineList.Add(wineData);
             _context.SaveChanges();
 
             _processLog.WriteLine("UPC: " + wineData.Upc + " Saving item: " + wineInfo.WineName + " -  " + wineInfo.Varietal + ", " + wineInfo.Winery);
+            Console.Write(".");
             return wineData;
         }
 

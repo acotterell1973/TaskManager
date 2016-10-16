@@ -2,7 +2,7 @@
   "profiles": {
     "Task.Manager": {
       "commandName": "Project",
-      "commandLineArgs": "/run ALBERTSONS  /filename albertsons.csv"
+      "commandLineArgs": "/run UPCDB_IMPORT  /filename importResults.csv"
     }
   }
 }
